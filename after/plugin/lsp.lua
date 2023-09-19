@@ -61,19 +61,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
         bufmap('n', '<leader>dl', '<cmd>lua vim.diagnostic.setloclist()<cr>')
 
         -- Format the current buffer
-        bufmap('n', '<leader>f', '<cmd>lua vim.lsp.buf.format()<cr>')
+        -- bufmap('n', '<leader>f', '<cmd>lua vim.lsp.buf.format()<cr>')
     end,
 })
 
-vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
-    vim.lsp.handlers.hover,
-    { border = 'rounded' }
-)
-
-vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
-    vim.lsp.handlers.signature_help,
-    { border = 'rounded' }
-)
+require('lspconfig.ui.windows').default_options.border = 'single'
+vim.lsp.handlers['textDocument/hover'] = vim.lsp.with( vim.lsp.handlers.hover, { border = 'rounded' })
+vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with( vim.lsp.handlers.signature_help, { border = 'rounded' })
 
 vim.diagnostic.config {
     -- virtual_text = true,
@@ -99,7 +93,6 @@ sign({ name = 'DiagnosticSignInfo', text = '' })
 
 --- CMP CONFIG ---
 -- vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
-
 require('luasnip.loaders.from_vscode').lazy_load()
 
 local cmp = require('cmp')
@@ -222,3 +215,29 @@ require("lspconfig").ltex.setup {}
 require("lspconfig").ocamllsp.setup {}
 require("lspconfig").rust_analyzer.setup {}
 require("lspconfig").jdtls.setup {}
+
+-- FORMATTERS
+-- local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+local null_ls = require("null-ls")
+local formatting = null_ls.builtins.formatting
+-- local diagnostics = null_ls.builtins.diagnostics
+null_ls.setup({
+    sources = {
+        formatting.black,
+        formatting.isort,
+    },
+    -- on_attach = function(client, bufnr)
+    --     if client.supports_method("textDocument/formatting") then
+    --         vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+    --         vim.api.nvim_create_autocmd("BufWritePre", {
+    --             group = augroup,
+    --             buffer = bufnr,
+    --             callback = function()
+    --                 -- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
+    --                 vim.lsp.buf.format({ bufnr = bufnr })
+    --             end,
+    --         })
+    --     end
+    -- end,
+})
+
