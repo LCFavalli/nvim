@@ -63,6 +63,8 @@ end
 -- ColorMyPencils('rose-pine')
 
 vim.cmd('set background=light')
+-- vim.g.tokyobones = {transparent_background = true}
 -- ColorMyPencils('zenbones')
 -- ColorMyPencils('zenwritten')
+-- ColorMyPencils('rosebones')
 ColorMyPencils('tokyobones')
