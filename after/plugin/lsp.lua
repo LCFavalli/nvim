@@ -8,9 +8,6 @@ lsp_defaults.capabilities = vim.tbl_deep_extend(
     require('cmp_nvim_lsp').default_capabilities()
 )
 
--- Global mappings.
--- See `:help vim.diagnostic.*` for documentation on any of the below functions
-
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -66,15 +63,14 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 require('lspconfig.ui.windows').default_options.border = 'single'
-vim.lsp.handlers['textDocument/hover'] = vim.lsp.with( vim.lsp.handlers.hover, { border = 'rounded' })
-vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with( vim.lsp.handlers.signature_help, { border = 'rounded' })
+vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' })
+vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' })
 
 vim.diagnostic.config {
-    -- virtual_text = true,
     virtual_text = {
-    -- source = "always",  -- Or "if_many"
-    prefix = '●', -- Could be '■', '▎', 'x'
-  },
+        -- source = "always",  -- Or "if_many"
+        prefix = '●', -- Could be '■', '▎', 'x'
+    },
     underline = true,
     float = { border = "rounded" }
 }
@@ -83,7 +79,7 @@ local sign = function(opts)
     vim.fn.sign_define(opts.name, {
         texthl = opts.name,
         text = opts.text,
-        numhl = ''
+        numhl = '',
     })
 end
 sign({ name = 'DiagnosticSignError', text = '✘' })
@@ -121,15 +117,44 @@ cmp.setup({
         completion = cmp.config.window.bordered(),
     },
     formatting = {
-        fields = { 'menu', 'abbr', 'kind' },
+        fields = { 'abbr', 'menu', 'kind' },
         format = function(entry, item)
             local menu_icon = {
                 nvim_lsp = 'λ',
+                nvim_lua = '',
                 luasnip = '⋗',
                 buffer = 'Ω',
                 path = '🖫',
             }
             item.menu = menu_icon[entry.source.name]
+            -- Set the fixed width of the completion menu to 60 characters.
+            -- fixed_width = 20
+            -- Set 'fixed_width' to false if not provided.
+            fixed_width = fixed_width or false
+            -- Get the completion entry text shown in the completion window.
+            local content = item.abbr
+
+            -- Set the fixed completion window width.
+            if fixed_width then
+                vim.o.pumwidth = fixed_width
+            end
+
+            -- Get the width of the current window.
+            local win_width = vim.api.nvim_win_get_width(0)
+
+            -- Set the max content width based on either: 'fixed_width'
+            -- or a percentage of the window width, in this case 20%.
+            -- We subtract 10 from 'fixed_width' to leave room for 'kind' fields.
+            local max_content_width = fixed_width and fixed_width - 10 or math.floor(win_width * 0.2)
+
+            -- Truncate the completion entry text if it's longer than the
+            -- max content width. We subtract 3 from the max content width
+            -- to account for the "..." that will be appended to it.
+            if #content > max_content_width then
+                item.abbr = vim.fn.strcharpart(content, 0, max_content_width - 3) .. "..."
+            else
+                item.abbr = content .. (" "):rep(max_content_width - #content)
+            end
             return item
         end,
     },
@@ -193,6 +218,7 @@ require("mason-lspconfig").setup({
     automatic_installation = true,
 })
 
+
 require("lspconfig").lua_ls.setup {
     settings = {
         Lua = {
@@ -215,6 +241,7 @@ require("lspconfig").ltex.setup {}
 require("lspconfig").ocamllsp.setup {}
 require("lspconfig").rust_analyzer.setup {}
 require("lspconfig").jdtls.setup {}
+require("lspconfig").gopls.setup {}
 
 -- FORMATTERS
 -- local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
@@ -225,6 +252,10 @@ null_ls.setup({
     sources = {
         formatting.black,
         formatting.ocamlformat,
+        formatting.clang_format,
+        formatting.gofumpt,
+        formatting.goimports,
+        formatting.golines,
     },
     border = "rounded",
     -- on_attach = function(client, bufnr)
@@ -241,4 +272,3 @@ null_ls.setup({
     --     end
     -- end,
 })
-

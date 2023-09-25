@@ -1,6 +1,7 @@
+-- =============================================================================
 require("tokyonight").setup({
     style = "night", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
-    -- transparent = false, -- Enable this to disable setting the background color
+    -- transparent = true, -- Enable this to disable setting the background color
     -- styles = {
     -- -- Style to be applied to different syntax groups
     -- -- Value is any valid attr-list value for `:help nvim_set_hl`
@@ -21,10 +22,8 @@ require("tokyonight").setup({
     -- end
     -- -----------------------------------------------
 })
-
+-- =============================================================================
 require('rose-pine').setup({
-    -- disable_float_background = true,
-    -- disable_italics = true,
     variant = 'auto', --- @usage 'auto'|'main'|'moon'|'dawn'
     -- disable_background = true,
     -- groups = {
@@ -36,35 +35,79 @@ require('rose-pine').setup({
     --     CursorLine = { bg = 'pine', blend = 10 },
     --     StatusLine = { fg = 'pine', bg = 'pine', blend = 10 },
     -- }
+    -- disable_float_background = true,
+    -- disable_italics = true,
 })
-
+-- =============================================================================
+require("catppuccin").setup({
+    flavour = "mocha", -- latte, frappe, macchiato, mocha
+    background = {     -- :h background
+        light = "latte",
+        dark = "mocha",
+    },
+    -- transparent_background = false, -- disables setting the background color.
+    -- show_end_of_buffer = false,     -- shows the '~' characters after the end of buffers
+    -- term_colors = false,            -- sets terminal colors (e.g. `g:terminal_color_0`)
+    -- dim_inactive = {
+    --     enabled = false,            -- dims the background color of inactive window
+    --     shade = "dark",
+    --     percentage = 0.15,          -- percentage of the shade to apply to the inactive window
+    -- },
+    no_italic = false,           -- Force no italic
+    no_bold = false,             -- Force no bold
+    no_underline = false,        -- Force no underline
+    styles = {                   -- Handles the styles of general hi groups (see `:h highlight-args`):
+        comments = { "italic" }, -- Change the style of comments
+        conditionals = { "italic" },
+        -- loops = {},
+        -- functions = {},
+        -- keywords = {},
+        -- strings = {},
+        -- variables = {},
+        -- numbers = {},
+        -- booleans = {},
+        -- properties = {},
+        -- types = {},
+        -- operators = {},
+    },
+    color_overrides = {
+        mocha = {
+            -- base = "#000000",
+            -- mantle = "#000000",
+            -- crust = "#000000",
+        },
+    },
+    custom_highlights = {},
+    integrations = {
+        cmp = true,
+        gitsigns = true,
+        nvimtree = true,
+        treesitter = true,
+    },
+})
+-- =============================================================================
 local set_hl_for_floating_window = function()
-    vim.api.nvim_set_hl(0, 'NormalFloat', {
-        link = 'Normal',
-    })
-    vim.api.nvim_set_hl(0, 'FloatBorder', {
-        bg = 'none',
-    })
-    -- vim.api.nvim_set_hl(0, 'Normal', {
-    --     bg = 'none',
-    -- })
+    vim.api.nvim_set_hl(0, 'NormalFloat', { link = 'Normal', })
+    vim.api.nvim_set_hl(0, 'FloatBorder', { bg = 'none', })
+    -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+    -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 end
 vim.api.nvim_create_autocmd('ColorScheme', {
     pattern = '*',
     callback = set_hl_for_floating_window,
 })
 set_hl_for_floating_window()
-
+-- =============================================================================
 function ColorMyPencils(color)
     color = color or "rose-pine"
     vim.cmd.colorscheme(color)
 end
--- ColorMyPencils('tokyonight')
--- ColorMyPencils('rose-pine')
 
-vim.cmd('set background=light')
+-- ColorMyPencils('rose-pine')
+-- ColorMyPencils('tokyonight')
+ColorMyPencils('catppuccin')
+
+-- ---------- BEST LIGHT THEME ----------
 -- vim.g.tokyobones = {transparent_background = true}
--- ColorMyPencils('zenbones')
--- ColorMyPencils('zenwritten')
--- ColorMyPencils('rosebones')
-ColorMyPencils('tokyobones')
+-- vim.cmd('set background=light')
+-- ColorMyPencils('tokyobones')

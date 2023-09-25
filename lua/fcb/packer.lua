@@ -43,6 +43,7 @@ return require("packer").startup(function(use)
     -- COLORSCHEME
     use { 'rose-pine/neovim', as = 'rose-pine',}
     use { 'folke/tokyonight.nvim', as = 'tokyonight',}
+    use { "catppuccin/nvim", as = "catppuccin" }
     use { "mcchrish/zenbones.nvim", requires = "rktjmp/lush.nvim" }
 
     -- SYNTAX HIGHLIGHTING
@@ -72,7 +73,7 @@ return require("packer").startup(function(use)
     use { "jose-elias-alvarez/null-ls.nvim" }
 
     -- LSP
-    use { "neovim/nvim-lspconfig" }   -- enable LSP
+    use { "neovim/nvim-lspconfig", }   -- enable LSP
     use { "williamboman/mason.nvim" } -- simple to use language server installer
     use { "williamboman/mason-lspconfig.nvim" }
 
@@ -84,7 +85,10 @@ return require("packer").startup(function(use)
     use { "theprimeagen/harpoon" }
 
     -- COMMENT
-    use { 'numToStr/Comment.nvim', }
+    use { 'numToStr/Comment.nvim' }
+
+    -- COQ
+    use { 'whonore/Coqtail' }
 
     -- LATEX PREVIEW
     use { "lervag/vimtex" }
