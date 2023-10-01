@@ -70,13 +70,13 @@ require("catppuccin").setup({
         -- types = {},
         -- operators = {},
     },
-    color_overrides = {
-        mocha = {
+    -- color_overrides = {
+    --     mocha = {
             -- base = "#000000",
             -- mantle = "#000000",
             -- crust = "#000000",
-        },
-    },
+    --     },
+    -- },
     custom_highlights = {},
     integrations = {
         cmp = true,
@@ -91,6 +91,11 @@ local set_hl_for_floating_window = function()
     vim.api.nvim_set_hl(0, 'FloatBorder', { bg = 'none', })
     -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
     -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+
+    vim.api.nvim_set_hl(0, "DiagnosticVirtualTextError", { link="DiagnosticError" })
+    vim.api.nvim_set_hl(0, "DiagnosticVirtualTextWarn", { link="DiagnosticWarn" })
+    vim.api.nvim_set_hl(0, "DiagnosticVirtualTextInfo", { link="DiagnosticInfo" })
+    vim.api.nvim_set_hl(0, "DiagnosticVirtualTextHint", { link="DiagnosticHint" })
 end
 vim.api.nvim_create_autocmd('ColorScheme', {
     pattern = '*',
@@ -111,3 +116,4 @@ ColorMyPencils('catppuccin')
 -- vim.g.tokyobones = {transparent_background = true}
 -- vim.cmd('set background=light')
 -- ColorMyPencils('tokyobones')
+
