@@ -113,7 +113,8 @@ end
 ColorMyPencils('catppuccin')
 
 -- ---------- BEST LIGHT THEME ----------
--- vim.g.tokyobones = {transparent_background = true}
+-- -- vim.g.tokyobones = {transparent_background = true}
 -- vim.cmd('set background=light')
 -- ColorMyPencils('tokyobones')
+
 

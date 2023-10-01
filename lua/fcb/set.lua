@@ -35,7 +35,7 @@ vim.opt.guicursor = "v:block,i:ver25,r:hor20"
 
 vim.opt.splitbelow = true
 vim.opt.splitright = true
--- vim.opt.termguicolors = true
+vim.opt.termguicolors = true
 
 -- vim.opt.cursorline = true
 -- vim.opt.cursorcolumn = true
