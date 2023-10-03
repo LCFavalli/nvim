@@ -1,4 +1,6 @@
---- LSP CONFIG ---
+------------------------------------------------------
+-------------------- LSP CONFIG ----------------------
+------------------------------------------------------
 local lspconfig = require('lspconfig')
 local lsp_defaults = lspconfig.util.default_config
 
@@ -87,8 +89,10 @@ sign({ name = 'DiagnosticSignWarn', text = '▲' })
 sign({ name = 'DiagnosticSignHint', text = '⚑' })
 sign({ name = 'DiagnosticSignInfo', text = '' })
 
---- CMP CONFIG ---
--- vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
+------------------------------------------------------
+-------------------- CMP CONFIG ----------------------
+------------------------------------------------------
+vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 require('luasnip.loaders.from_vscode').lazy_load()
 
 local cmp = require('cmp')
@@ -197,7 +201,9 @@ cmp.setup.cmdline({ "/", "?" }, {
     sources = { { name = "buffer" }, { name = "cmdline" }, { name = "path" } }
 })
 
---- MASON ---
+------------------------------------------------------
+-------------------- MASON CONFIG --------------------
+------------------------------------------------------
 local settings = {
     ui = {
         border = "rounded",
@@ -243,7 +249,9 @@ require("lspconfig").rust_analyzer.setup {}
 require("lspconfig").jdtls.setup {}
 require("lspconfig").gopls.setup {}
 
--- FORMATTERS
+------------------------------------------------------
+-------------------- NULL-LS CONFIG ------------------
+------------------------------------------------------
 -- local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 local null_ls = require("null-ls")
 local formatting = null_ls.builtins.formatting
@@ -272,3 +280,4 @@ null_ls.setup({
     --     end
     -- end,
 })
+
