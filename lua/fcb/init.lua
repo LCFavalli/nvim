@@ -1,6 +1,8 @@
-require("fcb.set")
+require("fcb.set") -- TODO
 require("fcb.remap")
+require("fcb.script")
 -- require("fcb.packer")
+
 
 local augroup = vim.api.nvim_create_augroup
 local fcb = augroup('fcb', {})
