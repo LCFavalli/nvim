@@ -1,3 +1,16 @@
+local actions = require("telescope.actions")
+
+require("telescope").setup({
+  defaults = {
+    mappings = {
+      i = {
+        ["<esc>"] = actions.close,
+        ["<C-c>"] = actions.close,
+      },
+    },
+  },
+})
+
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<C-p>', builtin.find_files, {})
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
@@ -11,9 +24,10 @@ vim.keymap.set('n', '<leader>ds', builtin.lsp_document_symbols, {})
 vim.keymap.set('n', '<leader>ws', builtin.lsp_workspace_symbols, {})
 
 
+
+vim.api.nvim_set_hl(0, 'TelescopeNormal', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'TelescopeBorder', { bg = 'none' })
+
 -- vim.keymap.set('n', '<leader>ps', function()
 --     builtin.grep_string({ search = vim.fn.input("Grep > ") })
 -- end)
-
-vim.api.nvim_set_hl(0, 'TelescopeNormal', {bg='none'})
-vim.api.nvim_set_hl(0, 'TelescopeBorder', {bg='none'})
