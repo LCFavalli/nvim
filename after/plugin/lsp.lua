@@ -84,10 +84,10 @@ local sign = function(opts)
         text = opts.text,
     })
 end
-sign({ name = 'DiagnosticSignError', text = ' ' }) -- text = '✘' })
-sign({ name = 'DiagnosticSignWarn', text = '' }) --text = '▲' })
-sign({ name = 'DiagnosticSignHint', text = '' }) --text = '⚑' })
-sign({ name = 'DiagnosticSignInfo', text = '󰌵' }) --text = '' })
+sign({ name = 'DiagnosticSignError', text = '✘' }) -- text = ' ' })
+sign({ name = 'DiagnosticSignWarn', text = '▲' })  --text = '' })
+sign({ name = 'DiagnosticSignHint', text = '⚑' })  --text = '' })
+sign({ name = 'DiagnosticSignInfo', text = '' })  --text = '󰌵' })
 
 ------------------------------------------------------
 -------------------- CMP CONFIG ----------------------
