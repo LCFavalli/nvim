@@ -42,6 +42,8 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.termguicolors = true
 
+vim.opt.cmdheight = 0
+
 -- vim.opt.cursorline = true
 -- vim.opt.cursorcolumn = true
 vim.opt.listchars = {
