@@ -17,85 +17,91 @@ vim.cmd([[
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
-    return
+  return
 end
 
 -- Have packer use a popup window
 packer.init({
-    display = {
-        open_fn = function()
-            return require("packer.util").float({ border = "rounded" })
-        end,
-    },
+  display = {
+    open_fn = function()
+      return require("packer.util").float({ border = "rounded" })
+    end,
+  },
 })
 
 return require("packer").startup(function(use)
-    -- Packer can manage itself
-    use 'wbthomason/packer.nvim'
+  -- Packer can manage itself
+  use 'wbthomason/packer.nvim'
 
-    -- FUZZY FINDER
-    use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.0',
-        -- or                            , branch = '0.1.x',
-        requires = { { 'nvim-lua/plenary.nvim' } }
-    }
+  -- FUZZY FINDER
+  use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    -- or                            , branch = '0.1.x',
+    requires = { { 'nvim-lua/plenary.nvim' } }
+  }
 
-    -- COLORSCHEME
-    use { 'rose-pine/neovim', as = 'rose-pine',}
-    use { 'folke/tokyonight.nvim', as = 'tokyonight',}
-    use { "catppuccin/nvim", as = "catppuccin" }
-    use { "mcchrish/zenbones.nvim", requires = "rktjmp/lush.nvim" }
+  -- COLORSCHEME
+  use { 'rose-pine/neovim', as = 'rose-pine', }
+  use { 'folke/tokyonight.nvim', as = 'tokyonight', }
+  use { "catppuccin/nvim", as = "catppuccin" }
+  use { "mcchrish/zenbones.nvim", requires = "rktjmp/lush.nvim" }
 
-    -- SYNTAX HIGHLIGHTING
-    use { 'nvim-treesitter/nvim-treesitter' }
-    use("nvim-treesitter/nvim-treesitter-context")
-    -- use("nvim-treesitter/playground")
+  -- SYNTAX HIGHLIGHTING
+  use { 'nvim-treesitter/nvim-treesitter' }
+  use("nvim-treesitter/nvim-treesitter-context")
+  -- use("nvim-treesitter/playground")
 
-    -- LSP
-    use { "neovim/nvim-lspconfig", }   -- enable LSP
-    use { "williamboman/mason.nvim" } -- simple to use language server installer
-    use { "williamboman/mason-lspconfig.nvim" }
-    -- AUTO COMPLETION
-    use { "hrsh7th/nvim-cmp" }         -- The completion plugin
-    use { "hrsh7th/cmp-buffer" }       -- buffer completions
-    use { "hrsh7th/cmp-path" }         -- path completions
-    use { "saadparwaiz1/cmp_luasnip" } -- snippet completions
-    use { "hrsh7th/cmp-nvim-lsp" }     -- LSP completions
-    use { "hrsh7th/cmp-nvim-lua" }     -- nvim lua completions
-    -- SNIPPETS
-    use { "L3MON4D3/LuaSnip" }             --snippet engine
-    use { "rafamadriz/friendly-snippets" } -- a bunch of snippets to use
+  -- LSP
+  use { "neovim/nvim-lspconfig", }    -- enable LSP
+  use { "williamboman/mason.nvim" }   -- simple to use language server installer
+  use { "williamboman/mason-lspconfig.nvim" }
+  -- AUTO COMPLETION
+  use { "hrsh7th/nvim-cmp" }               -- The completion plugin
+  use { "hrsh7th/cmp-buffer" }             -- buffer completions
+  use { "hrsh7th/cmp-path" }               -- path completions
+  use { "saadparwaiz1/cmp_luasnip" }       -- snippet completions
+  use { "hrsh7th/cmp-nvim-lsp" }           -- LSP completions
+  use { "hrsh7th/cmp-nvim-lua" }           -- nvim lua completions
+  -- SNIPPETS
+  use { "L3MON4D3/LuaSnip" }               --snippet engine
+  use { "rafamadriz/friendly-snippets" }   -- a bunch of snippets to use
 
-    -- FORMAT
-    use { "jose-elias-alvarez/null-ls.nvim" }
+  -- FORMAT
+  use { "jose-elias-alvarez/null-ls.nvim" }
 
-    -- GIT
-    use { "lewis6991/gitsigns.nvim" }
-    use { "tpope/vim-fugitive" }
+  -- STATUSLINE
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  }
 
-    -- FILE NAVIGATION
-    use { "theprimeagen/harpoon" }
+  -- GIT
+  use { "lewis6991/gitsigns.nvim" }
+  use { "tpope/vim-fugitive" }
 
-    -- COMMENT
-    use { 'numToStr/Comment.nvim' }
+  -- FILE NAVIGATION
+  use { "theprimeagen/harpoon" }
 
-    -- COQ
-    use { 'whonore/Coqtail' }
+  -- COMMENT
+  use { 'numToStr/Comment.nvim' }
 
-    -- LATEX PREVIEW
-    use { "lervag/vimtex" }
+  -- COQ
+  use { 'whonore/Coqtail' }
 
-    -- MARKDOWN PREVIEW
-    use { "iamcco/markdown-preview.nvim", run = function() vim.fn["mkdp#util#install"]() end, }
+  -- LATEX PREVIEW
+  use { "lervag/vimtex" }
 
-    -- UNDO TREE
-    use { "mbbill/undotree" }
+  -- MARKDOWN PREVIEW
+  use { "iamcco/markdown-preview.nvim", run = function() vim.fn["mkdp#util#install"]() end, }
 
-    -- ZEN MODE
-    use { "folke/zen-mode.nvim" }
+  -- UNDO TREE
+  use { "mbbill/undotree" }
 
-    -- COPILOT
-    use { "github/copilot.vim", commit = "f2a4acd62587c62910bda0b79405c585af43c002" }
+  -- ZEN MODE
+  use { "folke/zen-mode.nvim" }
+
+  -- COPILOT
+  use { "github/copilot.vim", commit = "f2a4acd62587c62910bda0b79405c585af43c002" }
 end)
 
 -- use({
