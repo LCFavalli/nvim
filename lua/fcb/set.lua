@@ -10,7 +10,6 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 
 vim.opt.wrap = false
--- vim.opt.autochdir = true
 
 vim.opt.swapfile = false
 vim.opt.backup = false
@@ -42,7 +41,8 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.termguicolors = true
 
-vim.opt.cmdheight = 0
+-- vim.opt.cmdheight = 0
+-- vim.opt.autochdir = true
 
 -- vim.opt.cursorline = true
 -- vim.opt.cursorcolumn = true
