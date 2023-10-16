@@ -1,3 +1,8 @@
+-- ========================= BEST LIGHT THEME ==================================
+-- -- vim.g.tokyobones = {transparent_background = true}
+-- vim.cmd('set background=light')
+-- vim.cmd.colorscheme('tokyobones')
+
 -- =============================================================================
 require("tokyonight").setup({
     style = "night", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
@@ -86,12 +91,17 @@ require("catppuccin").setup({
     },
 })
 -- =============================================================================
+vim.g.moonflyCursorColor = true
+-- Lua initialization file
+vim.g.moonflyWinSeparator = 2
+-- =============================================================================
 local set_hl_for_floating_window = function()
     vim.api.nvim_set_hl(0, 'NormalFloat', { link = 'Normal', })
     vim.api.nvim_set_hl(0, 'FloatBorder', { bg = 'none', })
     -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
     -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 
+    -- Transparent background for Diagnostic virtual text
     vim.api.nvim_set_hl(0, "DiagnosticVirtualTextError", { link="DiagnosticError" })
     vim.api.nvim_set_hl(0, "DiagnosticVirtualTextWarn", { link="DiagnosticWarn" })
     vim.api.nvim_set_hl(0, "DiagnosticVirtualTextInfo", { link="DiagnosticInfo" })
@@ -110,11 +120,5 @@ end
 
 -- ColorMyPencils('rose-pine')
 -- ColorMyPencils('tokyonight')
-ColorMyPencils('catppuccin')
-
--- ---------- BEST LIGHT THEME ----------
--- -- vim.g.tokyobones = {transparent_background = true}
--- vim.cmd('set background=light')
--- ColorMyPencils('tokyobones')
-
-
+-- ColorMyPencils('catppuccin')
+ColorMyPencils('moonfly')

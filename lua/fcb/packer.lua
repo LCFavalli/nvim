@@ -41,10 +41,11 @@ return require("packer").startup(function(use)
   }
 
   -- COLORSCHEME
+  use { "mcchrish/zenbones.nvim", requires = "rktjmp/lush.nvim" }
   use { 'rose-pine/neovim', as = 'rose-pine', }
   use { 'folke/tokyonight.nvim', as = 'tokyonight', }
   use { "catppuccin/nvim", as = "catppuccin" }
-  use { "mcchrish/zenbones.nvim", requires = "rktjmp/lush.nvim" }
+  use { 'bluz71/vim-moonfly-colors', as = 'moonfly' }
 
   -- SYNTAX HIGHLIGHTING
   use { 'nvim-treesitter/nvim-treesitter' }
