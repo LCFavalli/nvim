@@ -37,7 +37,8 @@ return require("packer").startup(function(use)
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
     -- or                            , branch = '0.1.x',
-    requires = { { 'nvim-lua/plenary.nvim' } }
+    requires = { { 'nvim-lua/plenary.nvim' } },
+    commit = "5a747a9587e4bfc4ae086a38cc679fe54f983b69"
   }
 
   -- COLORSCHEME
