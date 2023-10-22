@@ -29,6 +29,8 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
+-- Highlight column to red
+vim.cmd[[autocmd VimEnter * highlight ColorColumn ctermbg=0 guibg=lightgrey]]
 
 ------
 vim.opt.runtimepath:remove("/usr/share/vim/vimfiles") -- separate vim plugins from neovim in case vim still in use
