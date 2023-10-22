@@ -92,8 +92,8 @@ require("catppuccin").setup({
 })
 -- =============================================================================
 vim.g.moonflyCursorColor = true
--- Lua initialization file
 vim.g.moonflyWinSeparator = 2
+vim.g.moonflyTransparent = true
 -- =============================================================================
 local set_hl_for_floating_window = function()
     vim.api.nvim_set_hl(0, 'NormalFloat', { link = 'Normal', })
