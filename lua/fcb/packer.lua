@@ -42,11 +42,12 @@ return require("packer").startup(function(use)
   }
 
   -- COLORSCHEME
-  use { "mcchrish/zenbones.nvim", requires = "rktjmp/lush.nvim" }
+  use { "mcchrish/zenbones.nvim", requires = "rktjmp/lush.nvim" } -- white colorscheme
   use { 'rose-pine/neovim', as = 'rose-pine', }
   use { 'folke/tokyonight.nvim', as = 'tokyonight', }
   use { "catppuccin/nvim", as = "catppuccin" }
   use { 'bluz71/vim-moonfly-colors', as = 'moonfly' }
+  use { 'blazkowolf/gruber-darker.nvim', as = 'gruber-darker' }
 
   -- SYNTAX HIGHLIGHTING
   use { 'nvim-treesitter/nvim-treesitter' }
@@ -54,19 +55,19 @@ return require("packer").startup(function(use)
   -- use("nvim-treesitter/playground")
 
   -- LSP
-  use { "neovim/nvim-lspconfig", }    -- enable LSP
-  use { "williamboman/mason.nvim" }   -- simple to use language server installer
+  use { "neovim/nvim-lspconfig", }  -- enable LSP
+  use { "williamboman/mason.nvim" } -- simple to use language server installer
   use { "williamboman/mason-lspconfig.nvim" }
   -- AUTO COMPLETION
-  use { "hrsh7th/nvim-cmp" }               -- The completion plugin
-  use { "hrsh7th/cmp-buffer" }             -- buffer completions
-  use { "hrsh7th/cmp-path" }               -- path completions
-  use { "saadparwaiz1/cmp_luasnip" }       -- snippet completions
-  use { "hrsh7th/cmp-nvim-lsp" }           -- LSP completions
-  use { "hrsh7th/cmp-nvim-lua" }           -- nvim lua completions
+  use { "hrsh7th/nvim-cmp" }             -- The completion plugin
+  use { "hrsh7th/cmp-buffer" }           -- buffer completions
+  use { "hrsh7th/cmp-path" }             -- path completions
+  use { "saadparwaiz1/cmp_luasnip" }     -- snippet completions
+  use { "hrsh7th/cmp-nvim-lsp" }         -- LSP completions
+  use { "hrsh7th/cmp-nvim-lua" }         -- nvim lua completions
   -- SNIPPETS
-  use { "L3MON4D3/LuaSnip" }               --snippet engine
-  use { "rafamadriz/friendly-snippets" }   -- a bunch of snippets to use
+  use { "L3MON4D3/LuaSnip" }             --snippet engine
+  use { "rafamadriz/friendly-snippets" } -- a bunch of snippets to use
 
   -- FORMAT
   use { "jose-elias-alvarez/null-ls.nvim" }
@@ -104,7 +105,6 @@ return require("packer").startup(function(use)
 
   -- COPILOT
   use { "github/copilot.vim", commit = "f2a4acd62587c62910bda0b79405c585af43c002" }
-
 end)
 
 -- use({
