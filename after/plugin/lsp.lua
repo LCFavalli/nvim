@@ -248,6 +248,7 @@ require("lspconfig").ocamllsp.setup {}
 require("lspconfig").rust_analyzer.setup {}
 require("lspconfig").jdtls.setup {}
 require("lspconfig").gopls.setup {}
+require("lspconfig").erlangls.setup {}
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'testlang',
   callback = function()
@@ -299,6 +300,7 @@ null_ls.setup({
     formatting.gofumpt,
     formatting.goimports,
     formatting.golines,
+    formatting.erlfmt,
   },
   border = "rounded",
   -- on_attach = function(client, bufnr)
