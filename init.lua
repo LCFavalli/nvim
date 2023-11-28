@@ -1,5 +1,4 @@
 require("fcb")
--- set highlight warning to traspasarent
 
 -- sudo update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
 -- sudo update-alternatives --config vi

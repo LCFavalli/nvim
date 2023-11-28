@@ -22,3 +22,6 @@ tags
 /undodir/
 
 /plugin/
+
+# Json files
+*.json
