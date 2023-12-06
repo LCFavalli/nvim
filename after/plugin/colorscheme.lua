@@ -136,7 +136,7 @@ end
 -- ColorMyPencils('catppuccin')
 -- ColorMyPencils('moonfly')
 -- ColorMyPencils('gruber-darker')
-ColorMyPencils('industry')
+-- ColorMyPencils('industry')
 
 -- ========================= BEST LIGHT THEME ==================================
 -- -- vim.g.tokyobones = {transparent_background = true}
