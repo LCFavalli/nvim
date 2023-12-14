@@ -135,12 +135,12 @@ end
 -- ColorMyPencils('tokyonight')
 -- ColorMyPencils('catppuccin')
 -- ColorMyPencils('moonfly')
--- ColorMyPencils('gruber-darker')
+ColorMyPencils('gruber-darker')
 -- ==== Defult =====
 -- ColorMyPencils('industry') -- black
 -- ColorMyPencils('torte') -- black
 -- ColorMyPencils('slate') -- gray
-ColorMyPencils('shine') -- light
+-- ColorMyPencils('shine') -- light
 
 -- ========================= BEST LIGHT THEME ==================================
 -- -- vim.g.tokyobones = {transparent_background = true}
