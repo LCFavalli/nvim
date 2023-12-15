@@ -107,6 +107,12 @@ require('gruber-darker').setup({
   underline = true,
 })
 -- =============================================================================
+require('ayu').setup({
+    mirage = false, -- Set to `true` to use `mirage` variant instead of `dark` for dark background.
+    overrides = {}, -- A dictionary of group names, each associated with a dictionary of parameters (`bg`, `fg`, `sp` and `style`) and colors in hex.
+})
+-- vim.cmd('set background=light')
+-- =============================================================================
 local set_hl_for_floating_window = function()
   vim.api.nvim_set_hl(0, 'NormalFloat', { link = 'Normal', })
   vim.api.nvim_set_hl(0, 'FloatBorder', { bg = 'none', })
@@ -135,7 +141,8 @@ end
 -- ColorMyPencils('tokyonight')
 -- ColorMyPencils('catppuccin')
 -- ColorMyPencils('moonfly')
-ColorMyPencils('gruber-darker')
+-- ColorMyPencils('gruber-darker')
+ColorMyPencils('ayu')
 -- ==== Defult =====
 -- ColorMyPencils('industry') -- black
 -- ColorMyPencils('torte') -- black

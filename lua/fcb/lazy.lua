@@ -33,17 +33,20 @@ require("lazy").setup({
   { "jose-elias-alvarez/null-ls.nvim" },
 
   -- SYNTAX HIGHLIGHTING
-  { 'nvim-treesitter/nvim-treesitter' },
+  { 'nvim-treesitter/nvim-treesitter'}, -- , commit = "180e1ca385442e35e1d18420221a148c5e045671" },
   { "nvim-treesitter/nvim-treesitter-context"},
   -- use("nvim-treesitter/playground")
 
-  -- COLORSCHEME Best default colorscheme `habamax`
+  -- COLORSCHEME
   { 'mcchrish/zenbones.nvim', requires = 'rktjmp/lush.nvim' }, -- white colorscheme
   { 'rose-pine/neovim', as = 'rose-pine', },
   { 'folke/tokyonight.nvim', as = 'tokyonight', },
   { "catppuccin/nvim", as = "catppuccin" },
   { 'bluz71/vim-moonfly-colors', as = 'moonfly' },
   { 'blazkowolf/gruber-darker.nvim', as = 'gruber-darker' },
+  { 'Shatur/neovim-ayu', as = 'ayu' },
+
+
 
   -- STATUSLINE
   {
