@@ -41,6 +41,11 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.termguicolors = true
 
+vim.opt.foldmethod = "indent" -- "syntax"
+vim.opt.foldlevel = 99
+vim.opt.foldnestmax = 10
+
+
 -- vim.opt.cmdheight = 0
 -- vim.opt.autochdir = true
 
