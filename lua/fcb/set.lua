@@ -48,12 +48,12 @@ vim.opt.termguicolors = true
 -- vim.opt.cursorcolumn = true
 vim.opt.listchars = {
     tab = '│·', -- '> '
-    lead = '·',
-    extends = '⟩',
-    precedes = '⟨',
+    lead = '·', -- '.'
+    -- extends = '⟩',
+    -- precedes = '⟨',
     -- eol = '¶'-- '↲',
     -- nbsp = '␣',
-    -- trail = '·'
+    -- trail = '·' -- '•'
 }
 vim.opt.list = true
 -- function Hi()
