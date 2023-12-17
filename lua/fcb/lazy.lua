@@ -33,7 +33,7 @@ require("lazy").setup({
   { "jose-elias-alvarez/null-ls.nvim" },
 
   -- SYNTAX HIGHLIGHTING
-  { 'nvim-treesitter/nvim-treesitter'}, -- , commit = "180e1ca385442e35e1d18420221a148c5e045671" },
+  { 'nvim-treesitter/nvim-treesitter'},
   { "nvim-treesitter/nvim-treesitter-context"},
   -- use("nvim-treesitter/playground")
 
