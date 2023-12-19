@@ -1,7 +1,8 @@
 local g = vim.g
 
-g.vimtex_view_method = 'zathura'
-g.vimtex_view_general_viewer = 'zathura'
+-- g.tex_flavor = 'latex'
+g.vimtex_view_method = 'skim' -- 'zathura'
+g.vimtex_view_general_viewer = 'skim' -- 'zathura'
 g.vimtex_view_general_options = '--unique file:@pdf#src:@line@tex'
 g.vimtex_compiler_method = 'latexmk'
 
