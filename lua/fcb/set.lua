@@ -1,11 +1,12 @@
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
-local TAB = 4
+local TAB = 2
 vim.opt.tabstop = TAB
 vim.opt.softtabstop = TAB
 vim.opt.shiftwidth = TAB
 vim.opt.expandtab = true
+
 
 vim.opt.smartindent = true
 
@@ -31,6 +32,8 @@ vim.opt.colorcolumn = "80"
 -- vim.cmd[[autocmd VimEnter * highlight ColorColumn ctermbg=0 guibg=lightgrey]]
 
 ------
+-- set rtp^="/Users/federicobruzzone/.opam/4.14.0/share/ocp-indent/vim"
+
 vim.opt.runtimepath:remove("/usr/share/vim/vimfiles") -- separate vim plugins from neovim in case vim still in use
 
 vim.opt.modeline = false

@@ -78,10 +78,16 @@ require('gitsigns').setup {
 
     -- Text object
     -- map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
-    vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
-    vim.api.nvim_set_hl(0, "GitSignsAdd", { guibg = NONE })
-    vim.api.nvim_set_hl(0, "GitSignsChange", { guibg = NONE })
-    vim.api.nvim_set_hl(0, "GitSignsDelete", { guibg = NONE })
-    vim.api.nvim_set_hl(0, "GitSignsChangeDelete", { guibg = NONE })
+
+    -- vim.api.nvim_set_hl(0, "SignColumn", { bg = "None" })
+    -- vim.api.nvim_set_hl(0, "GitSignsAdd", { bg = "None" })
+    -- vim.api.nvim_set_hl(0, "GitSignsChange", { bg = "None" })
+    -- vim.api.nvim_set_hl(0, "GitSignsDelete", { bg = "None" })
+    -- vim.api.nvim_set_hl(0, "GitSignsChangeDelete", { bg = "None" })
+
+    -- vim.api.nvim_set_hl(0, "GitSignsAdd", { guibg = NONE })
+    -- vim.api.nvim_set_hl(0, "GitSignsChange", { guibg = NONE })
+    -- vim.api.nvim_set_hl(0, "GitSignsDelete", { guibg = NONE })
+    -- vim.api.nvim_set_hl(0, "GitSignsChangeDelete", { guibg = NONE })
   end
 }

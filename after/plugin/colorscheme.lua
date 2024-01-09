@@ -135,7 +135,6 @@ local set_hl_for_floating_window = function()
   vim.api.nvim_set_hl(0, "DiagnosticVirtualTextWarn", { link = "DiagnosticWarn" })
   vim.api.nvim_set_hl(0, "DiagnosticVirtualTextInfo", { link = "DiagnosticInfo" })
   vim.api.nvim_set_hl(0, "DiagnosticVirtualTextHint", { link = "DiagnosticHint" })
-
 end
 vim.api.nvim_create_autocmd('ColorScheme', {
   pattern = '*',
