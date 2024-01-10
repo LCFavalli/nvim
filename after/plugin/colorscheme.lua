@@ -24,11 +24,11 @@ require("tokyonight").setup({
 -- =============================================================================
 require('rose-pine').setup({
   variant = 'auto', --- @usage 'auto'|'main'|'moon'|'dawn'
-  disable_background = true,
-  -- groups = {
-  --     background = 'NONE',
-  --     background_nc = 'NONE',
-  -- },
+  -- disable_background = true,
+  groups = {
+      background = 'NONE',
+      background_nc = 'NONE',
+  },
   -- highlight_groups = {
   --     -- Blend colours against the "base" background
   --     CursorLine = { bg = 'pine', blend = 10 },
