@@ -15,8 +15,7 @@ require("tokyonight").setup({
   -- on_colors = function (colors)
   --     colors.bg = "#353535"
   -- end;
-  -- on_highlights = function(hl, colors)
-  --     hl.LineNr = {
+  -- on_highlights = function(hl, colors) hl.LineNr = {
   --       fg = colors.yellow
   --     }
   -- end
@@ -25,7 +24,7 @@ require("tokyonight").setup({
 -- =============================================================================
 require('rose-pine').setup({
   variant = 'auto', --- @usage 'auto'|'main'|'moon'|'dawn'
-  -- disable_background = true,
+  disable_background = true,
   -- groups = {
   --     background = 'NONE',
   --     background_nc = 'NONE',
@@ -110,17 +109,17 @@ require('gruber-darker').setup({
 require('ayu').setup({
     mirage = false, -- Set to `true` to use `mirage` variant instead of `dark` for dark background.
     -- overrides = {}, -- A dictionary of group names, each associated with a dictionary of parameters (`bg`, `fg`, `sp` and `style`) and colors in hex.
-    overrides = {
-        Normal = { bg = "None" },
-        ColorColumn = { bg = "None" },
-        SignColumn = { bg = "None" },
-        Folded = { bg = "None" },
-        FoldColumn = { bg = "None" },
-        CursorLine = { bg = "None" },
-        CursorColumn = { bg = "None" },
-        WhichKeyFloat = { bg = "None" },
-        VertSplit = { bg = "None" },
-    },
+    -- overrides = {
+    --     Normal = { bg = "None" },
+    --     ColorColumn = { bg = "None" },
+    --     SignColumn = { bg = "None" },
+    --     Folded = { bg = "None" },
+    --     FoldColumn = { bg = "None" },
+    --     CursorLine = { bg = "None" },
+    --     CursorColumn = { bg = "None" },
+    --     WhichKeyFloat = { bg = "None" },
+    --     VertSplit = { bg = "None" },
+    -- },
 })
 -- vim.cmd('set background=light')
 -- =============================================================================
@@ -147,12 +146,12 @@ function ColorMyPencils(color)
   vim.cmd.colorscheme(color)
 end
 
--- ColorMyPencils('rose-pine')
+ColorMyPencils('rose-pine')
 -- ColorMyPencils('tokyonight')
 -- ColorMyPencils('catppuccin')
 -- ColorMyPencils('moonfly')
 -- ColorMyPencils('gruber-darker')
-ColorMyPencils('ayu')
+-- ColorMyPencils('ayu')
 -- ==== Defult =====
 -- ColorMyPencils('industry') -- black
 -- ColorMyPencils('torte') -- black
