@@ -251,7 +251,7 @@ require("lspconfig").clangd.setup {
 
 require("lspconfig").pyright.setup {}
 require("lspconfig").tsserver.setup {}
-require("lspconfig").ltex.setup {}
+-- require("lspconfig").ltex.setup {}
 require("lspconfig").ocamllsp.setup {}
 require("lspconfig").rust_analyzer.setup {}
 require("lspconfig").jdtls.setup {}
@@ -294,6 +294,17 @@ vim.api.nvim_create_autocmd('FileType', {
   end,
 })
 
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'statemachine',
+  callback = function()
+    vim.lsp.start({
+      name = 'statemachine',
+      cmd = vim.lsp.rpc.connect('127.0.0.1', 5123),
+      root_dir = vim.fs.dirname(vim.fs.find({ 'start.lsp' }, { upward = true })[1]),
+      -- filetypes = { 'tst', 'nl },
+    })
+  end,
+})
 ------------------------------------------------------
 -------------------- NULL-LS CONFIG ------------------
 ------------------------------------------------------
