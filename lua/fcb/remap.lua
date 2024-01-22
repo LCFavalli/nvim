@@ -124,6 +124,24 @@ function Align()
 end
 vim.api.nvim_set_keymap("v", "<leader>as", ":lua Align()<CR>", { noremap = true, silent = true })
 
+-- GUI FONT SIZE
+if vim.fn.has("gui_running") then
+  -- vim.cmd("set guifont=PragmataProMonoLiga\\ Nerd\\ Font:h12")
+  -- vim.opt.guifont = "PragmataProMonoLiga Nerd Font:h12"
+  vim.opt.guifont = "MonoLisa Nerd Font Mono:h20"
+end
+
+local fontsize = 20 -- 12
+function AdjustFontSize(amount)
+  fontsize = fontsize + amount
+  vim.opt.guifont = "MonoLisa Nerd Font Mono:h" .. fontsize
+end
+
+vim.api.nvim_set_keymap('n', '<C-ScrollWheelUp>', [[:lua AdjustFontSize(1)<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-ScrollWheelDown>', [[:lua AdjustFontSize(-1)<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<C-ScrollWheelUp>', [[<Esc>:lua AdjustFontSize(1)<CR>a]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<C-ScrollWheelDown>', [[<Esc>:lua AdjustFontSize(-1)<CR>a]], { noremap = true, silent = true })
+
 -- vim.cmd[[imap <silent><script><expr> <C-,> copilot#Accept("\<CR>")]]
 -- vim.g.copilot_no_tab_map = true
 -- vim.g.copilot_assume_mapped = true

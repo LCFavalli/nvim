@@ -1,12 +1,11 @@
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
-local TAB = 2
+local TAB = 4
 vim.opt.tabstop = TAB
 vim.opt.softtabstop = TAB
 vim.opt.shiftwidth = TAB
 vim.opt.expandtab = true
-
 
 vim.opt.smartindent = true
 
@@ -48,12 +47,12 @@ vim.opt.foldmethod = "indent" -- "syntax"
 vim.opt.foldlevel = 99
 vim.opt.foldnestmax = 10
 
-
 -- vim.opt.cmdheight = 0
 -- vim.opt.autochdir = true
 
--- vim.opt.cursorline = true
--- vim.opt.cursorcolumn = true
+vim.opt.cursorline = true
+vim.opt.cursorcolumn = true
+
 vim.opt.listchars = {
     tab = '│·', -- '> '
     lead = '·', -- '.'
