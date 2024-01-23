@@ -33,11 +33,15 @@ vim.opt.colorcolumn = "80"
 ------
 -- set rtp^="/Users/federicobruzzone/.opam/4.14.0/share/ocp-indent/vim"
 
+-- Disable mousescroll orizontal
+vim.cmd(":set mousescroll=ver:1,hor:0")
+vim.cmd(":set sidescrolloff=0")
+
 vim.opt.runtimepath:remove("/usr/share/vim/vimfiles") -- separate vim plugins from neovim in case vim still in use
 
 vim.opt.modeline = false
 
-vim.opt.guicursor = "v:block,i:ver25,r:hor20"
+-- vim.opt.guicursor = "v:block,i:ver25,r:hor20"
 
 vim.opt.splitbelow = true
 vim.opt.splitright = true
@@ -50,8 +54,8 @@ vim.opt.foldnestmax = 10
 -- vim.opt.cmdheight = 0
 -- vim.opt.autochdir = true
 
-vim.opt.cursorline = true
-vim.opt.cursorcolumn = true
+-- vim.opt.cursorline = true
+-- vim.opt.cursorcolumn = true
 
 vim.opt.listchars = {
     tab = '│·', -- '> '
