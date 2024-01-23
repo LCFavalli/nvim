@@ -19,7 +19,6 @@ vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>p", [["+p]])
 vim.keymap.set({"n", "v"}, "<leader>Y<CR>", [["+Y]])
 
-
 -- This is going to get me cancelled
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
