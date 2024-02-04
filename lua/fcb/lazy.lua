@@ -46,8 +46,6 @@ require("lazy").setup({
   { 'blazkowolf/gruber-darker.nvim', as = 'gruber-darker' },
   { 'Shatur/neovim-ayu', as = 'ayu' },
 
-
-
   -- STATUSLINE
   {
     'nvim-lualine/lualine.nvim',

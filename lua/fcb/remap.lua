@@ -40,7 +40,9 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 -- Paste at the end of the line
 vim.keymap.set("n", "<leader>pe", "A <Esc>p")
 
-vim.keymap.set("n", "<leader>ppv", ":Lex 20<CR>")
+-- vim.keymap.set("n", "<tab>", "<cmd>tabNext<CR>")
+
+-- vim.keymap.set("n", "<leader>ppv", ":Lex 20<CR>")
 vim.api.nvim_set_keymap('n', '<ESC>u', ':nohlsearch<CR>', { noremap = true, silent = true })
 
 -- exit terminal mode
@@ -48,11 +50,7 @@ vim.api.nvim_set_keymap('t', '<C-w>N', '<C-\\><C-n>', { noremap = true, silent =
 vim.api.nvim_set_keymap('t', '<C-w>w', '<C-\\><C-n><C-w>W', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('t', '<C-w><C-w>', '<C-\\><C-n><C-w>W', { noremap = true, silent = true })
 
--- resize with ctrl + arrow
--- vim.api.nvim_set_keymap('n', '<C-Up>', ':resize -2<CR>', { noremap = true, silent = true })
--- vim.api.nvim_set_keymap('n', '<C-Down>', ':resize +2<CR>', { noremap = true, silent = true })
--- vim.api.nvim_set_keymap('n', '<C-Left>', ':vertical resize -2<CR>', { noremap = true, silent = true })
--- vim.api.nvim_set_keymap('n', '<C-Right>', ':vertical resize +2<CR>', { noremap = true, silent = true })
+-- resize with alt + arrow
 vim.api.nvim_set_keymap('n', '<A-Up>', ':resize -2<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<A-Down>', ':resize +2<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<A-Left>', ':vertical resize -2<CR>', { noremap = true, silent = true })
@@ -126,7 +124,7 @@ function Align()
         end
     end
 end
-vim.api.nvim_set_keymap("v", "<leader>as", ":lua Align()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "<leader>aw", ":lua Align()<CR>", { noremap = true, silent = true })
 
 -- GUI FONT SIZE
 if vim.fn.has("gui_running") then
