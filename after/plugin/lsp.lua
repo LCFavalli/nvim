@@ -250,7 +250,12 @@ require("lspconfig").clangd.setup {
 require("lspconfig").pyright.setup {}
 require("lspconfig").tsserver.setup {}
 require("lspconfig").ocamllsp.setup {}
-require("lspconfig").rust_analyzer.setup {}
+require("lspconfig").rust_analyzer.setup {
+    -- "unresolved-proc-macro"
+    diagnostics = {
+        disabled = { "unresolved-proc-macro" }
+    }
+}
 require("lspconfig").jdtls.setup {}
 require("lspconfig").gopls.setup {}
 require("lspconfig").erlangls.setup {}
