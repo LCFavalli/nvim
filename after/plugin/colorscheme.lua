@@ -16,7 +16,7 @@ require('rose-pine').setup({
 })
 -- =============================================================================
 require("tokyonight").setup({
-  style = "night", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
+  style = "day", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
   -- transparent = true, -- Enable this to disable setting the background color
   -- styles = {
   -- -- Style to be applied to different syntax groups
@@ -148,12 +148,12 @@ function ColorMyPencils(color)
   vim.cmd.colorscheme(color)
 end
 
-ColorMyPencils('rose-pine')
--- ColorMyPencils('tokyonight')
+-- ColorMyPencils('rose-pine')
+ColorMyPencils('tokyonight')
 -- ColorMyPencils('catppuccin')
--- ColorMyPencils('moonfly')
 -- ColorMyPencils('gruber-darker')
--- ColorMyPencils('ayu')
+-- ColorMyPencils('moonfly') -- black
+-- ColorMyPencils('ayu') -- dark gray
 -- ==== Defult =====
 -- ColorMyPencils('industry') -- black
 -- ColorMyPencils('torte') -- black
