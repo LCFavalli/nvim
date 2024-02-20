@@ -28,7 +28,7 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = "80"
+-- vim.opt.colorcolumn = "80"
 -- vim.cmd[[autocmd VimEnter * highlight ColorColumn ctermbg=0 guibg=lightgrey]]
 
 ------
