@@ -33,8 +33,8 @@ require("lazy").setup({
   { "jose-elias-alvarez/null-ls.nvim" },
 
   -- SYNTAX HIGHLIGHTING
-  { 'nvim-treesitter/nvim-treesitter'},
-  { "nvim-treesitter/nvim-treesitter-context"},
+  { 'nvim-treesitter/nvim-treesitter', build = ":TSUpdate"},
+  -- { "nvim-treesitter/nvim-treesitter-context"},
   -- use("nvim-treesitter/playground")
 
   -- COLORSCHEME

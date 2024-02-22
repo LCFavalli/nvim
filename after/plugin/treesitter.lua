@@ -21,11 +21,10 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
-require'treesitter-context'.setup{
-    max_lines = 1,
-    line_numbers = false,
-    -- Separator between context and content. Should be a single character string, like '-'.
-    -- When separator is set, the context will only show up when there are at least 2 lines above cursorline.
-    separator = '_',
-}
-
+-- require'treesitter-context'.setup{
+--     max_lines = 1,
+--     line_numbers = false,
+--     -- Separator between context and content. Should be a single character string, like '-'.
+--     -- When separator is set, the context will only show up when there are at least 2 lines above cursorline.
+--     separator = '_',
+-- }
