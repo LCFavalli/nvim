@@ -11,13 +11,17 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 -- greatest remap ever
 
-vim.keymap.set("x", "<leader>P", [["_dP]])
+vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set({"n", "v"}, "<leader>D", [["_d]])
+
+-- Paste at the end of the line
+vim.keymap.set("n", "<leader>pe", "A <Esc>p")
 
 -- next greatest remap ever
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
-vim.keymap.set("n", "<leader>p", [["+p]])
-vim.keymap.set({"n", "v"}, "<leader>Y<CR>", [["+Y]])
+
+-- vim.keymap.set("n", "<leader>p", [["+p]])
+-- vim.keymap.set({"n", "v"}, "<leader>Y<CR>", [["+Y]])
 
 -- This is going to get me cancelled
 vim.keymap.set("i", "<C-c>", "<Esc>")
@@ -37,8 +41,6 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- NEW REMAP
 
--- Paste at the end of the line
-vim.keymap.set("n", "<leader>pe", "A <Esc>p")
 
 -- vim.keymap.set("n", "<tab>", "<cmd>tabNext<CR>")
 
