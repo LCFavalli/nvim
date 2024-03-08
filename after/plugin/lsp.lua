@@ -253,7 +253,7 @@ require("lspconfig").ocamllsp.setup {}
 require("lspconfig").rust_analyzer.setup {
     diagnostics = {
         disabled = { "unresolved-proc-macro" }
-    }
+    },
 }
 require("lspconfig").jdtls.setup {}
 require("lspconfig").gopls.setup {}
