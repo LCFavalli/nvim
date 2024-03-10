@@ -38,7 +38,7 @@ require("lazy").setup({
     -- use("nvim-treesitter/playground")
 
     -- COLORSCHEME
-    { 'mcchrish/zenbones.nvim',           requires = 'rktjmp/lush.nvim' }, -- white colorscheme
+    { 'mcchrish/zenbones.nvim',           dependencies = { 'rktjmp/lush.nvim' } }, -- white colorscheme
     { 'rose-pine/neovim',                 as = 'rose-pine', },
     { 'folke/tokyonight.nvim',            as = 'tokyonight', },
     { "catppuccin/nvim",                  as = "catppuccin" },

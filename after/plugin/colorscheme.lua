@@ -149,11 +149,12 @@ function ColorMyPencils(color)
 end
 
 -- ColorMyPencils('rose-pine')
-ColorMyPencils('tokyonight')
+-- ColorMyPencils('tokyonight')
 -- ColorMyPencils('catppuccin')
 -- ColorMyPencils('gruber-darker')
 -- ColorMyPencils('moonfly') -- black
 -- ColorMyPencils('ayu') -- dark gray
+ColorMyPencils('zenbones')
 -- ==== Defult =====
 -- ColorMyPencils('industry') -- black
 -- ColorMyPencils('torte') -- black
