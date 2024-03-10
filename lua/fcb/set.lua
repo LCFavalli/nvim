@@ -43,6 +43,7 @@ vim.opt.runtimepath:remove("/usr/share/vim/vimfiles") -- separate vim plugins fr
 vim.opt.modeline = false
 
 -- vim.opt.guicursor = "v:block,i:ver25,r:hor20"
+vim.opt.guicursor = ""
 
 vim.opt.splitbelow = true
 vim.opt.splitright = true
@@ -58,16 +59,19 @@ vim.opt.foldnestmax = 10
 -- vim.opt.cursorline = true
 -- vim.opt.cursorcolumn = true
 
-vim.opt.listchars = {
-    tab = '│·', -- '> '
-    lead = '·', -- '.'
-    -- extends = '⟩',
-    -- precedes = '⟨',
-    -- eol = '¶'-- '↲',
-    -- nbsp = '␣',
-    -- trail = '·' -- '•'
-}
-vim.opt.list = true
+--------------------------------
+-- vim.opt.listchars = {
+--     tab = '│·', -- '> '
+--     lead = '·', -- '.'
+--     -- extends = '⟩',
+--     -- precedes = '⟨',
+--     -- eol = '¶'-- '↲',
+--     -- nbsp = '␣',
+--     -- trail = '·' -- '•'
+-- }
+-- vim.opt.list = true
+---------------------------------
+
 -- function Hi()
 --     -- vim.cmd([[hi! link NonText @character]])
 --     -- vim.cmd([[hi! link Whitespace @todo]])
