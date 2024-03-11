@@ -154,7 +154,8 @@ end
 -- ColorMyPencils('gruber-darker')
 -- ColorMyPencils('moonfly') -- black
 -- ColorMyPencils('ayu') -- dark gray
-ColorMyPencils('zenbones')
+-- ColorMyPencils('zenbones')
+ColorMyPencils('rosebones')
 -- ==== Defult =====
 -- ColorMyPencils('industry') -- black
 -- ColorMyPencils('torte') -- black

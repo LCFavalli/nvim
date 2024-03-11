@@ -10,6 +10,9 @@ syn keyword slOtherKeywords  return
 syn keyword slConditionalStatements if else
 syn region slComment start="/\*" end="\*/"
 syn match slComment "//.*$"
+" String
+
+
 
 
 hi def link slKeywords Statement
