@@ -7,13 +7,13 @@ endif
 syntax clear
 
 " Keywords
-syn keyword smallerbasicControl If Then Else EndIf While EndWhile For To Step EndFor Goto Sub EndSub And Or 
+syn keyword smallerbasicControl If Then Else EndIf While EndWhile For To Step EndFor Goto Sub EndSub And Or
 
 " Operators
 syn keyword smallerbasicOperator = < > >= <= <> + - * /
 
 " Constants
-syn keyword smallerbasicConstant true false 
+syn keyword smallerbasicConstant true false
 
 " Comments
 syn match smallerbasicComment "'.*$" contains=smallerbasicTodo,@Spell
@@ -32,12 +32,12 @@ syn match smallerbasicVariable /\w\+/ contained
 syn match smallerbasicString /".*"/ contains=smallerbasicTodo,@Spell
 
 " Numbers
-" syn match smallerbasicNumber /\v\d+(\.\d+)?([Ee]\d+)?/ 
+" syn match smallerbasicNumber /\v\d+(\.\d+)?([Ee]\d+)?/
 syn match smallerbasicNumber /\v\d+(\.\d+)?([Ee][+-]?\d+)?/
 
 " Highlighting
-hi def link smallerbasicStatement Statement
-hi def link smallerbasicExpression Statement
+" hi def link smallerbasicStatement Statement
+" hi def link smallerbasicExpression Statement
 hi def link smallerbasicControl Keyword
 hi def link smallerbasicConstant Constant
 hi def link smallerbasicOperator Operator
