@@ -14,7 +14,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
         { 'nvim-telescope/telescope.nvim' },
         { 'nvim-lua/plenary.nvim' },
-
         -- LSP
         { "neovim/nvim-lspconfig" },   -- enable LSP
         { "williamboman/mason.nvim" }, -- simple to use language server installer
@@ -51,6 +50,10 @@ require("lazy").setup({
                 requires = { 'nvim-tree/nvim-web-devicons', opt = true }
         },
 
+        -- SHOW INDENTATION
+        -- { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+        { "shellRaining/hlchunk.nvim", event = { "UIEnter" } },
+
         -- GIT
         { "lewis6991/gitsigns.nvim" },
         { "tpope/vim-fugitive" },
@@ -82,5 +85,6 @@ require("lazy").setup({
         { "folke/zen-mode.nvim" },
 
         -- COPILOT
-        { "github/copilot.vim" }
+        { "github/copilot.vim" },
+
 })
