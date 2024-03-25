@@ -1,7 +1,7 @@
 -- =============================================================================
 require('rose-pine').setup({
-  variant = 'auto', --- @usage 'auto'|'main'|'moon'|'dawn'
-  disable_background = true,
+  variant = 'main', --- @usage 'auto'|'main'|'moon'|'dawn'
+  -- disable_background = true,
   -- disable_float_background = true,
   -- groups = {
   --     background = 'NONE',

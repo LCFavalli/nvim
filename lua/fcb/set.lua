@@ -42,8 +42,18 @@ vim.opt.runtimepath:remove("/usr/share/vim/vimfiles") -- separate vim plugins fr
 
 vim.opt.modeline = false
 
+-- Block cursor
+-- vim.opt.guicursor = ""
+
+-- Vertical bar cursor in insert mode
 -- vim.opt.guicursor = "v:block,i:ver25,r:hor20"
-vim.opt.guicursor = ""
+
+-- Block but transparent cursor in normal mode
+-- vim.opt.guicursor = "n-v-c:block-Cursor/lCursor,ve:ver25-Cursor/lCursor"
+
+-- Underline cursor in replace mode
+vim.opt.guicursor = "v:block,i:hor20,r:hor20"
+
 
 vim.opt.splitbelow = true
 vim.opt.splitright = true
