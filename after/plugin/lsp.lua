@@ -249,8 +249,20 @@ require("lspconfig").clangd.setup {
 }
 require("lspconfig").pyright.setup {
         root_dir = function(fname)
-                return lspconfig.util.root_pattern('pyproject.toml', 'setup.py', 'setup.cfg', 'requirements.txt', 'Pipfile', '.git', '__init__.py')(fname) or lspconfig.util.find_git_ancestor(fname) or lspconfig.util.path.dirname(fname)
+                return lspconfig.util.root_pattern('pyproject.toml', 'setup.py', 'setup.cfg', 'requirements.txt',
+                            'Pipfile', '.git', '__init__.py')(fname) or lspconfig.util.find_git_ancestor(fname) or
+                    lspconfig.util.path.dirname(fname)
         end,
+        settings = {
+                pyright = { autoImportCompletion = true, },
+                python = {
+                        analysis = {
+                                autoSearchPaths = true,
+                                diagnosticMode = 'openFilesOnly',
+                                useLibraryCodeForTypes = true,
+                                typeCheckingMode = 'off' }
+                }
+        }
 }
 require("lspconfig").tsserver.setup {}
 require("lspconfig").ocamllsp.setup {}
