@@ -81,10 +81,11 @@ vim.opt.foldnestmax = 10
 -- }
 -- vim.opt.list = true
 ---------------------------------
-
+--
 -- function Hi()
 --     -- vim.cmd([[hi! link NonText @character]])
 --     -- vim.cmd([[hi! link Whitespace @todo]])
 --     vim.cmd([[hi! link Whitespace @character]])
 -- end
 -- vim.cmd[[autocmd VimEnter * lua Hi()]]
+
