@@ -44,6 +44,16 @@ require("lazy").setup({
         { 'blazkowolf/gruber-darker.nvim',    as = 'gruber-darker' },
         { 'Shatur/neovim-ayu',                as = 'ayu' },
 
+        -- FILE EXPLORER
+        {
+                "nvim-tree/nvim-tree.lua",
+                version = "*",
+                lazy = false,
+                dependencies = {
+                        "nvim-tree/nvim-web-devicons",
+                }
+        },
+
         -- STATUSLINE
         {
                 'nvim-lualine/lualine.nvim',
@@ -51,15 +61,12 @@ require("lazy").setup({
         },
 
         -- SHOW INDENTATION
-        -- { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
-        { "shellRaining/hlchunk.nvim", event = { "UIEnter" } },
+        { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+        -- { "shellRaining/hlchunk.nvim", event = { "UIEnter" } },
 
         -- GIT
         { "lewis6991/gitsigns.nvim" },
         { "tpope/vim-fugitive" },
-
-        -- FILE NAVIGATION
-        { "theprimeagen/harpoon" },
 
         -- COMMENT
         { 'numToStr/Comment.nvim' },
@@ -78,13 +85,15 @@ require("lazy").setup({
                 build = function() vim.fn["mkdp#util#install"]() end,
         },
 
-        -- UNDO TREE
-        { "mbbill/undotree" },
-
-        -- ZEN MODE
-        { "folke/zen-mode.nvim" },
-
         -- COPILOT
         { "github/copilot.vim" },
 
+        -- FILE NAVIGATION
+        -- { "theprimeagen/harpoon" },
+
+        -- UNDO TREE
+        -- { "mbbill/undotree" },
+
+        -- ZEN MODE
+        -- { "folke/zen-mode.nvim" },
 })
