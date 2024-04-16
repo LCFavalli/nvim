@@ -152,6 +152,28 @@ function ColorMyPencils(color)
                 vim.cmd('highlight GitSignsChange guibg=NONE guifg=yellow')
                 vim.cmd('highlight GitSignsDelete guibg=NONE guifg=red')
                 vim.cmd('highlight GitSignsChangeDelete guibg=NONE guifg=purple')
+
+
+                -- Enable italic
+                vim.cmd('highlight Comment cterm=italic gui=italic')
+                vim.cmd('highlight Conditional cterm=italic gui=italic')
+                vim.cmd('highlight Repeat cterm=italic gui=italic')
+                vim.cmd('highlight Statement cterm=italic gui=italic')
+                -- vim.cmd('highlight Type cterm=italic gui=italic')
+                -- vim.cmd('highlight Function cterm=italic gui=italic')
+                -- vim.cmd('highlight Identifier cterm=italic gui=italic')
+                -- vim.cmd('highlight PreProc cterm=italic gui=italic')
+                -- vim.cmd('highlight Special cterm=italic gui=italic')
+                -- vim.cmd('highlight Todo cterm=italic gui=italic')
+                -- vim.cmd('highlight Underlined cterm=italic gui=italic')
+                -- vim.cmd('highlight Label cterm=italic gui=italic')
+                -- vim.cmd('highlight SpecialKey cterm=italic gui=italic')
+                -- vim.cmd('highlight NonText cterm=italic gui=italic')
+                -- vim.cmd('highlight SpecialComment cterm=italic gui=italic')
+                -- vim.cmd('highlight SpecialChar cterm=italic gui=italic')
+                -- vim.cmd('highlight SpecialComment cterm=italic gui=italic')
+                -- vim.cmd('highlight Special cterm=italic gui=italic')
+
         end
 end
 
