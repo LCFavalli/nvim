@@ -12,13 +12,14 @@ vim.keymap.set("n", "N", "Nzzzv")
 -- greatest remap ever
 
 vim.keymap.set("x", "<leader>p", [["_dP]])
-vim.keymap.set({"n", "v"}, "<leader>D", [["_d]])
+vim.keymap.set({ "v" }, "p", [["_dP]], { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- Paste at the end of the line
 vim.keymap.set("n", "<leader>pe", "A <Esc>p")
 
 -- next greatest remap ever
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 
 -- vim.keymap.set("n", "<leader>p", [["+p]])
 -- vim.keymap.set({"n", "v"}, "<leader>Y<CR>", [["+Y]])
@@ -40,8 +41,6 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- NEW REMAP
-
-
 -- vim.keymap.set("n", "<tab>", "<cmd>tabNext<CR>")
 
 -- vim.keymap.set("n", "<leader>ppv", ":Lex 20<CR>")
@@ -62,91 +61,95 @@ vim.api.nvim_set_keymap('v', '<', '<gv', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', '>', '>gv', { noremap = true, silent = true })
 
 function ToggleLineNumbers()
-    if vim.wo.number then
-        vim.opt.nu = false
-        vim.opt.relativenumber = false
-    else
-        vim.opt.nu = true
-        vim.opt.relativenumber = true
-    end
+        if vim.wo.number then
+                vim.opt.nu = false
+                vim.opt.relativenumber = false
+        else
+                vim.opt.nu = true
+                vim.opt.relativenumber = true
+        end
 end
+
 vim.api.nvim_set_keymap("n", "<leader>n", ":lua ToggleLineNumbers()<CR>", { noremap = true, silent = true })
 
 function Surround(t)
-    local open_char = vim.fn.input("Surround with: ")
-    local closed_char = nil
-    if open_char == "(" then closed_char = ")" end
-    if open_char == "[" then closed_char = "]" end
-    if open_char == "{" then closed_char = "}" end
-    if open_char == "<" then closed_char = ">" end
-    if open_char == "'" then closed_char = "'" end
-    if open_char == '"' then closed_char = '"' end
-    if open_char == "`" then closed_char = "`" end
-    if open_char == "/" then closed_char = "/" end
-    if open_char == "|" then closed_char = "|" end
+        local open_char = vim.fn.input("Surround with: ")
+        local closed_char = nil
+        if open_char == "(" then closed_char = ")" end
+        if open_char == "[" then closed_char = "]" end
+        if open_char == "{" then closed_char = "}" end
+        if open_char == "<" then closed_char = ">" end
+        if open_char == "'" then closed_char = "'" end
+        if open_char == '"' then closed_char = '"' end
+        if open_char == "`" then closed_char = "`" end
+        if open_char == "/" then closed_char = "/" end
+        if open_char == "|" then closed_char = "|" end
 
-    if t == "w" then
-        vim.cmd("normal! ciw" .. open_char)
-    elseif t == "W" then
-        vim.cmd("normal! ciW" .. open_char)
-    elseif t == "$" then
-        vim.cmd("normal! c$" .. open_char)
-    end
-    vim.cmd("normal! p")
-    vim.cmd("normal! a" .. closed_char)
-    vim.cmd("normal! a")
+        if t == "w" then
+                vim.cmd("normal! ciw" .. open_char)
+        elseif t == "W" then
+                vim.cmd("normal! ciW" .. open_char)
+        elseif t == "$" then
+                vim.cmd("normal! c$" .. open_char)
+        end
+        vim.cmd("normal! p")
+        vim.cmd("normal! a" .. closed_char)
+        vim.cmd("normal! a")
 end
+
 vim.api.nvim_set_keymap("n", "<leader>sw", ":lua Surround('w')<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>sW", ":lua Surround('W')<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>s$", ":lua Surround('$')<CR>", { noremap = true, silent = true })
 
 function Align()
-    local c = vim.fn.input("Align with: ")
-    local start = vim.fn.col("'<")
-    local max = 0
-    for i = vim.fn.line("'<"), vim.fn.line("'>") do
-        local line = vim.fn.getline(i)
-        local equals = string.find(line, c, start)
-        if equals then
-            local length = equals - start
-            if length > max then
-                max = length
-            end
+        local c = vim.fn.input("Align with: ")
+        local start = vim.fn.col("'<")
+        local max = 0
+        for i = vim.fn.line("'<"), vim.fn.line("'>") do
+                local line = vim.fn.getline(i)
+                local equals = string.find(line, c, start)
+                if equals then
+                        local length = equals - start
+                        if length > max then
+                                max = length
+                        end
+                end
         end
-    end
-    for i = vim.fn.line("'<"), vim.fn.line("'>") do
-        local line = vim.fn.getline(i)
-        local equals = string.find(line, c, start)
-        if equals then
-            local length = equals - start
-            local spaces = max - length
-            local spaces_string = string.rep(" ", spaces)
-            local new_line = string.sub(line, 0, equals - 1) .. spaces_string .. string.sub(line, equals)
-            vim.fn.setline(i, new_line)
+        for i = vim.fn.line("'<"), vim.fn.line("'>") do
+                local line = vim.fn.getline(i)
+                local equals = string.find(line, c, start)
+                if equals then
+                        local length = equals - start
+                        local spaces = max - length
+                        local spaces_string = string.rep(" ", spaces)
+                        local new_line = string.sub(line, 0, equals - 1) .. spaces_string .. string.sub(line, equals)
+                        vim.fn.setline(i, new_line)
+                end
         end
-    end
 end
+
 vim.api.nvim_set_keymap("v", "<leader>aw", ":lua Align()<CR>", { noremap = true, silent = true })
 
 -- GUI FONT SIZE
 if vim.fn.has("gui_running") then
-  -- vim.cmd("set guifont=PragmataProMonoLiga\\ Nerd\\ Font:h12")
-  -- vim.opt.guifont = "PragmataProMonoLiga Nerd Font:h12"
-  vim.opt.guifont = "MonoLisa Nerd Font Mono:h20"
+        -- vim.cmd("set guifont=PragmataProMonoLiga\\ Nerd\\ Font:h12")
+        -- vim.opt.guifont = "PragmataProMonoLiga Nerd Font:h12"
+        vim.opt.guifont = "MonoLisa Nerd Font Mono:h20"
 end
 
 local fontsize = 20 -- 12
 function AdjustFontSize(amount)
-  fontsize = fontsize + amount
-  vim.opt.guifont = "MonoLisa Nerd Font Mono:h" .. fontsize
+        fontsize = fontsize + amount
+        vim.opt.guifont = "MonoLisa Nerd Font Mono:h" .. fontsize
 end
+
 vim.api.nvim_set_keymap('n', '<C-ScrollWheelUp>', [[:lua AdjustFontSize(1)<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-ScrollWheelDown>', [[:lua AdjustFontSize(-1)<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('i', '<C-ScrollWheelUp>', [[<Esc>:lua AdjustFontSize(1)<CR>a]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('i', '<C-ScrollWheelDown>', [[<Esc>:lua AdjustFontSize(-1)<CR>a]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<C-ScrollWheelDown>', [[<Esc>:lua AdjustFontSize(-1)<CR>a]],
+        { noremap = true, silent = true })
 
 
 -- vim.cmd[[imap <silent><script><expr> <C-,> copilot#Accept("\<CR>")]]
 -- vim.g.copilot_no_tab_map = true
 -- vim.g.copilot_assume_mapped = true
-
