@@ -123,6 +123,12 @@ require('ayu').setup({
 })
 -- vim.cmd('set background=light')
 -- =============================================================================
+require('solarized').setup({
+        theme = 'neo',
+        palette = 'solarized', -- or selenized
+})
+
+-- =============================================================================
 local set_hl_for_floating_window = function()
         -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" }) -- FORCE TRANSPARENCY
         -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
@@ -173,7 +179,6 @@ function ColorMyPencils(color)
                 -- vim.cmd('highlight SpecialChar cterm=italic gui=italic')
                 -- vim.cmd('highlight SpecialComment cterm=italic gui=italic')
                 -- vim.cmd('highlight Special cterm=italic gui=italic')
-
         end
 end
 
@@ -188,7 +193,11 @@ end
 -- ColorMyPencils('zenbones')
 -- ColorMyPencils('rosebones')
 
-ColorMyPencils("default")
+vim.cmd('set background=light')
+ColorMyPencils('solarized')
+
+-- ColorMyPencils("default")
+
 
 -- ==== Defult =====
 -- ColorMyPencils('industry') -- black

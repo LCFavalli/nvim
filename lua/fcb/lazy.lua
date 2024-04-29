@@ -43,7 +43,7 @@ require("lazy").setup({
         { 'bluz71/vim-moonfly-colors',        as = 'moonfly' },
         { 'blazkowolf/gruber-darker.nvim',    as = 'gruber-darker' },
         { 'Shatur/neovim-ayu',                as = 'ayu' },
-
+        { 'maxmx03/solarized.nvim',           as = 'solarized' },
         -- FILE EXPLORER
         {
                 "nvim-tree/nvim-tree.lua",
