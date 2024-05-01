@@ -62,7 +62,7 @@ require("lazy").setup({
         },
 
         -- SHOW INDENTATION
-        { "lukas-reineke/indent-blankline.nvim",  main = "ibl", opts = {} },
+        -- { "lukas-reineke/indent-blankline.nvim",  main = "ibl", opts = {} },
         -- { "shellRaining/hlchunk.nvim", event = { "UIEnter" } },
 
         -- GIT
