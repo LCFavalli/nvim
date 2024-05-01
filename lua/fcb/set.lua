@@ -52,7 +52,7 @@ vim.opt.modeline = false
 -- vim.opt.guicursor = "n-v-c:block-Cursor/lCursor,ve:ver25-Cursor/lCursor"
 
 -- Underline cursor in replace mode
-vim.opt.guicursor = "v:block,i:hor20,r:hor20"
+-- vim.opt.guicursor = "v:block,i:hor20,r:hor20"
 
 
 vim.opt.splitbelow = true

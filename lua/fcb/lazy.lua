@@ -41,7 +41,8 @@ require("lazy").setup({
         { 'folke/tokyonight.nvim',            as = 'tokyonight', },
         { "catppuccin/nvim",                  as = "catppuccin" },
         { 'bluz71/vim-moonfly-colors',        as = 'moonfly' },
-        { 'blazkowolf/gruber-darker.nvim',    as = 'gruber-darker' },
+        -- { 'blazkowolf/gruber-darker.nvim',    as = 'gruber-darker' },
+        { dir = '~/TMP/gruber-darker.nvim/',  as = 'gruber-darker' },
         { 'Shatur/neovim-ayu',                as = 'ayu' },
         { 'maxmx03/solarized.nvim',           as = 'solarized' },
         -- FILE EXPLORER
@@ -61,7 +62,7 @@ require("lazy").setup({
         },
 
         -- SHOW INDENTATION
-        { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+        { "lukas-reineke/indent-blankline.nvim",  main = "ibl", opts = {} },
         -- { "shellRaining/hlchunk.nvim", event = { "UIEnter" } },
 
         -- GIT
