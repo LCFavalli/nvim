@@ -28,7 +28,7 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = "80"
+-- vim.opt.colorcolumn = "80"
 -- vim.cmd[[autocmd VimEnter * highlight ColorColumn ctermbg=0 guibg=lightgrey]]
 
 ------
@@ -66,8 +66,8 @@ vim.opt.foldnestmax = 10
 -- vim.opt.cmdheight = 0
 -- vim.opt.autochdir = true
 
--- vim.opt.cursorline = true
 -- vim.opt.cursorcolumn = true
+vim.opt.cursorline = true
 
 --------------------------------
 -- vim.opt.listchars = {
@@ -88,4 +88,3 @@ vim.opt.foldnestmax = 10
 --     vim.cmd([[hi! link Whitespace @character]])
 -- end
 -- vim.cmd[[autocmd VimEnter * lua Hi()]]
-

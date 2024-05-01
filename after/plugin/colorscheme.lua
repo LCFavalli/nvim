@@ -149,9 +149,12 @@ vim.api.nvim_create_autocmd('ColorScheme', {
 })
 -- set_hl_for_floating_window()
 -- =============================================================================
-function ColorMyPencils(color)
-        color = color or "rose-pine"
+function ColorMyPencils(color, disable_bg_of_cursor_line)
         vim.cmd.colorscheme(color)
+
+        if disable_bg_of_cursor_line then
+                vim.api.nvim_set_hl(0, "CursorLine", { bg = 'none' })
+        end
 
         if color == "default" then
                 vim.api.nvim_set_hl(0, "SignColumn", { bg = "None" }) -- vim.cmd('hi SignColumn ctermbg=0 guibg=black')
@@ -195,7 +198,7 @@ end
 
 -- vim.cmd('set background=light')
 -- ColorMyPencils('solarized')
-ColorMyPencils('gruber-darker')
+ColorMyPencils('gruber-darker', true)
 
 -- ColorMyPencils("default")
 
