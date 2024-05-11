@@ -66,7 +66,7 @@ vim.opt.foldnestmax = 10
 -- vim.opt.cmdheight = 0
 -- vim.opt.autochdir = true
 
--- vim.opt.cursorcolumn = true
+vim.opt.cursorcolumn = true
 vim.opt.cursorline = true
 
 --------------------------------
