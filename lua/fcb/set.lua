@@ -1,7 +1,7 @@
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
-local TAB = 8
+local TAB = 4
 vim.opt.tabstop = TAB
 vim.opt.softtabstop = TAB
 vim.opt.shiftwidth = TAB
@@ -40,7 +40,7 @@ vim.cmd(":set sidescrolloff=0")
 
 vim.opt.runtimepath:remove("/usr/share/vim/vimfiles") -- separate vim plugins from neovim in case vim still in use
 
-vim.opt.modeline = false
+vim.opt.modeline = true
 
 -- Block cursor
 -- vim.opt.guicursor = ""
@@ -70,16 +70,16 @@ vim.opt.cursorcolumn = true
 vim.opt.cursorline = true
 
 --------------------------------
--- vim.opt.listchars = {
---     tab = '│·', -- '> '
---     lead = '·', -- '.'
---     -- extends = '⟩',
---     -- precedes = '⟨',
---     -- eol = '¶'-- '↲',
---     -- nbsp = '␣',
---     -- trail = '·' -- '•'
--- }
--- vim.opt.list = true
+vim.opt.listchars = {
+        tab = '│·', -- '> '
+        lead = '·', -- '.'
+        -- extends = '⟩',
+        -- precedes = '⟨',
+        -- eol = '¶'-- '↲',
+        -- nbsp = '␣',
+        -- trail = '·' -- '•'
+}
+vim.opt.list = true
 ---------------------------------
 --
 -- function Hi()
