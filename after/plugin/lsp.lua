@@ -321,6 +321,7 @@ vim.api.nvim_create_autocmd('FileType', {
 --     end,
 -- })
 
+-- Pipe connection
 vim.api.nvim_create_autocmd('FileType', {
         pattern = 'simplelanguage',
         callback = function()
