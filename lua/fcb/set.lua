@@ -66,20 +66,20 @@ vim.opt.foldnestmax = 10
 -- vim.opt.cmdheight = 0
 -- vim.opt.autochdir = true
 
-vim.opt.cursorcolumn = true
-vim.opt.cursorline = true
+-- vim.opt.cursorcolumn = true
+-- vim.opt.cursorline = true
 
 --------------------------------
-vim.opt.listchars = {
-        tab = '│·', -- '> '
-        lead = '·', -- '.'
-        -- extends = '⟩',
-        -- precedes = '⟨',
-        -- eol = '¶'-- '↲',
-        -- nbsp = '␣',
-        -- trail = '·' -- '•'
-}
-vim.opt.list = true
+-- vim.opt.listchars = {
+--         tab = '│·', -- '> '
+--         lead = '·', -- '.'
+--         -- extends = '⟩',
+--         -- precedes = '⟨',
+--         -- eol = '¶'-- '↲',
+--         -- nbsp = '␣',
+--         -- trail = '·' -- '•'
+-- }
+-- vim.opt.list = true
 ---------------------------------
 --
 -- function Hi()

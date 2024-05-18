@@ -199,8 +199,7 @@ end
 -- vim.cmd('set background=light')
 -- ColorMyPencils('solarized')
 
--- ColorMyPencils("default")
-ColorMyPencils('gruber-darker', false)
+ColorMyPencils("default")
 
 
 -- ==== Defult =====
