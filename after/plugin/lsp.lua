@@ -243,7 +243,7 @@ require("lspconfig").lua_ls.setup {
 -- local capabilities = vim.lsp.protocol.make_client_capabilities()
 -- capabilities.offsetEncoding = { "utf-16" }
 local capabilities = lsp_defaults.capabilities
-capabilities.offsetEncoding = { "utf-16" }
+capabilities.offsetEncoding = { "utf-8" }
 require("lspconfig").clangd.setup {
     capabilities = capabilities,
 }
@@ -274,10 +274,7 @@ require("lspconfig").rust_analyzer.setup {
 require("lspconfig").jdtls.setup {}
 require("lspconfig").gopls.setup {}
 require("lspconfig").erlangls.setup {}
-require("lspconfig").ltex.setup {
-    -- Do not use in markdown files
-    filetypes = { "tex" },
-}
+require("lspconfig").ltex.setup {}
 require("lspconfig").typst_lsp.setup {
     settings = {
         exportPdf = "onType" -- Choose onType, onSave or never.
