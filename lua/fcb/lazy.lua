@@ -36,16 +36,22 @@ require("lazy").setup({
     -- { "nvim-treesitter/nvim-treesitter-context"},
 
     -- COLORSCHEME
-    { 'mcchrish/zenbones.nvim',           dependencies = { 'rktjmp/lush.nvim' } }, -- white colorscheme
+    { 'rktjmp/lush.nvim' },
+    { 'mcchrish/zenbones.nvim',           as = 'zenbones', },
     { 'rose-pine/neovim',                 as = 'rose-pine', },
     { 'folke/tokyonight.nvim',            as = 'tokyonight', },
     { "catppuccin/nvim",                  as = "catppuccin" },
     { 'bluz71/vim-moonfly-colors',        as = 'moonfly' },
     { 'blazkowolf/gruber-darker.nvim',    as = 'gruber-darker' },
+    {
+        'uloco/bluloco.nvim',
+        lazy = false,
+        priority = 1000,
+    },
     -- { dir = '~/TMP/gruber-darker.nvim/',  as = 'gruber-darker' },
 
-    { 'Shatur/neovim-ayu',                as = 'ayu' },
-    { 'maxmx03/solarized.nvim',           as = 'solarized' },
+    { 'Shatur/neovim-ayu',      as = 'ayu' },
+    { 'maxmx03/solarized.nvim', as = 'solarized' },
     -- FILE EXPLORER
     {
         "nvim-tree/nvim-tree.lua",

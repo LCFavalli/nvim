@@ -107,27 +107,27 @@
 -- })
 -- vim.cmd('set background=light')
 -- =============================================================================
-require('solarized').setup({
-    theme = 'neo',
-    palette = 'solarized', -- or selenized
-})
+-- require('solarized').setup({
+--     theme = 'neo',
+--     palette = 'solarized', -- or selenized
+-- })
 -- =============================================================================
-require('gruber-darker').setup({
-    -- bold = true,
-    -- invert = {
-    --         signs = false,
-    --         tabline = false,
-    --         visual = false,
-    -- },
-    -- italic = {
-    --         strings = false, -- true,
-    --         comments = true,
-    --         operators = false,
-    --         folds = true,
-    -- },
-    -- undercurl = true,
-    -- underline = true,
-})
+-- require('gruber-darker').setup({
+--     -- bold = true,
+--     -- invert = {
+--     --         signs = false,
+--     --         tabline = false,
+--     --         visual = false,
+--     -- },
+--     -- italic = {
+--     --         strings = false, -- true,
+--     --         comments = true,
+--     --         operators = false,
+--     --         folds = true,
+--     -- },
+--     -- undercurl = true,
+--     -- underline = true,
+-- })
 -- =============================================================================
 local set_hl_for_floating_window = function()
     -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" }) -- FORCE TRANSPARENCY
@@ -200,7 +200,8 @@ end
 -- ColorMyPencils('solarized')
 
 -- ColorMyPencils("default")
-ColorMyPencils('rose-pine')
+-- ColorMyPencils('rose-pine')
+ColorMyPencils('bluloco')
 
 -- ==== Defult =====
 -- ColorMyPencils('industry') -- black
