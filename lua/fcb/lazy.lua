@@ -35,23 +35,7 @@ require("lazy").setup({
     { 'nvim-treesitter/nvim-treesitter',  build = ":TSUpdate" },
     -- { "nvim-treesitter/nvim-treesitter-context"},
 
-    -- COLORSCHEME
-    { 'rktjmp/lush.nvim' },
-    { 'mcchrish/zenbones.nvim',           as = 'zenbones', },
-    { 'rose-pine/neovim',                 as = 'rose-pine', },
-    { 'folke/tokyonight.nvim',            as = 'tokyonight', },
-    { "catppuccin/nvim",                  as = "catppuccin" },
-    { 'bluz71/vim-moonfly-colors',        as = 'moonfly' },
-    { 'blazkowolf/gruber-darker.nvim',    as = 'gruber-darker' },
-    {
-        'uloco/bluloco.nvim',
-        lazy = false,
-        priority = 1000,
-    },
-    -- { dir = '~/TMP/gruber-darker.nvim/',  as = 'gruber-darker' },
 
-    { 'Shatur/neovim-ayu',      as = 'ayu' },
-    { 'maxmx03/solarized.nvim', as = 'solarized' },
     -- FILE EXPLORER
     {
         "nvim-tree/nvim-tree.lua",
@@ -67,7 +51,6 @@ require("lazy").setup({
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     },
-
 
     -- GIT
     { "lewis6991/gitsigns.nvim" },
@@ -89,6 +72,28 @@ require("lazy").setup({
 
     -- COPILOT
     { "github/copilot.vim" },
+
+    -- COLORSCHEME
+    { 'rktjmp/lush.nvim' },
+    { 'rose-pine/neovim',              as = 'rose-pine', },
+    { "catppuccin/nvim",               as = "catppuccin" },
+    { 'Shatur/neovim-ayu',             as = 'ayu' },
+    { 'folke/tokyonight.nvim',         as = 'tokyonight', },
+    { 'maxmx03/solarized.nvim',        as = 'solarized' },
+    { 'mcchrish/zenbones.nvim',        as = 'zenbones', },
+    { 'bluz71/vim-moonfly-colors',     as = 'moonfly' },
+    { 'blazkowolf/gruber-darker.nvim', as = 'gruber-darker' },
+    {
+        'uloco/bluloco.nvim',
+        lazy = false,
+        priority = 1000,
+    },
+    {
+        "scottmckendry/cyberdream.nvim",
+        lazy = false,
+        priority = 1000,
+    },
+    -- { dir = '~/TMP/gruber-darker.nvim/',  as = 'gruber-darker' },
 
     -- SHOW INDENTATION
     -- { "lukas-reineke/indent-blankline.nvim",  main = "ibl", opts = {} },
