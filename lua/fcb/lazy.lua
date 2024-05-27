@@ -93,6 +93,11 @@ require("lazy").setup({
         lazy = false,
         priority = 1000,
     },
+    {
+        'Verf/deepwhite.nvim',
+        lazy = false,
+        priority = 1000,
+    }
     -- { dir = '~/TMP/gruber-darker.nvim/',  as = 'gruber-darker' },
 
     -- SHOW INDENTATION

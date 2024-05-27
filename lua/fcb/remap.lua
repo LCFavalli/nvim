@@ -70,7 +70,7 @@ function ToggleLineNumbers()
         end
 end
 
-vim.api.nvim_set_keymap("n", "<leader>n", ":lua ToggleLineNumbers()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>tn", ":lua ToggleLineNumbers()<CR>", { noremap = true, silent = true })
 
 function Surround(t)
         local open_char = vim.fn.input("Surround with: ")

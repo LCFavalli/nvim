@@ -240,7 +240,8 @@ end
 -- ColorMyPencils('solarized')
 
 -- ColorMyPencils("default")
-ColorMyPencils("cyberdream")
+-- ColorMyPencils("cyberdream")
+ColorMyPencils("deepwhite")
 
 -- ==== Defult =====
 -- ColorMyPencils('industry') -- black
