@@ -35,17 +35,6 @@ require("lazy").setup({
     { 'nvim-treesitter/nvim-treesitter',  build = ":TSUpdate" },
     -- { "nvim-treesitter/nvim-treesitter-context"},
 
-
-    -- FILE EXPLORER
-    {
-        "nvim-tree/nvim-tree.lua",
-        version = "*",
-        lazy = false,
-        dependencies = {
-            "nvim-tree/nvim-web-devicons",
-        }
-    },
-
     -- STATUSLINE
     {
         'nvim-lualine/lualine.nvim',
@@ -98,6 +87,18 @@ require("lazy").setup({
         lazy = false,
         priority = 1000,
     }
+
+    -- FILE EXPLORER
+    -- {
+        --     "nvim-tree/nvim-tree.lua",
+        --     version = "*",
+        --     lazy = false,
+        --     dependencies = {
+            --         "nvim-tree/nvim-web-devicons",
+            --     }
+            -- },
+
+    -- CUSTOM COLORSCHEME
     -- { dir = '~/TMP/gruber-darker.nvim/',  as = 'gruber-darker' },
 
     -- SHOW INDENTATION
