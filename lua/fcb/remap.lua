@@ -60,37 +60,6 @@ vim.api.nvim_set_keymap('n', '<S-Right>', ':vertical resize +2<CR>', { noremap =
 vim.api.nvim_set_keymap('v', '<', '<gv', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', '>', '>gv', { noremap = true, silent = true })
 
-
-local toggle = true
-function RegexpOfCurrentWord()
-    local disabled_ft = { "qf", "fugitive", "nerdtree", "gundo", "diff", "fzf", "floaterm" }
-    local ft = vim.bo.filetype
-    local bt = vim.bo.buftype
-    local diff = vim.wo.diff
-
-    if diff or bt == "terminal" or vim.tbl_contains(disabled_ft, ft) then
-        return
-    end
-
-    local col = vim.fn.col(".")
-    local line = vim.fn.getline(".")
-    local char = line:sub(col, col)
-
-    if not char:match("[%p%s]") then
-        local word = vim.fn.expand("<cword>")
-        if toggle then
-            vim.fn.setreg("/", word)
-        end
-    end
-
-end
-function SetToggle()
-    toggle = not toggle
-end
-vim.api.nvim_create_augroup("RegexpOfCurrentWord", { clear = true })
-vim.api.nvim_create_autocmd({"CursorHold", "CursorHoldI"}, { group = "RegexpOfCurrentWord", callback = RegexpOfCurrentWord })
-vim.api.nvim_set_keymap("n", "<leader>h", ":lua SetToggle()<CR>", { noremap = true, silent = true })
-
 function ToggleLineNumbers()
         if vim.wo.number then
                 vim.opt.nu = false
