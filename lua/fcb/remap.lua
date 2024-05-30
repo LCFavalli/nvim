@@ -60,6 +60,37 @@ vim.api.nvim_set_keymap('n', '<S-Right>', ':vertical resize +2<CR>', { noremap =
 vim.api.nvim_set_keymap('v', '<', '<gv', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', '>', '>gv', { noremap = true, silent = true })
 
+
+local toggle = true
+function RegexpOfCurrentWord()
+    local disabled_ft = { "qf", "fugitive", "nerdtree", "gundo", "diff", "fzf", "floaterm" }
+    local ft = vim.bo.filetype
+    local bt = vim.bo.buftype
+    local diff = vim.wo.diff
+
+    if diff or bt == "terminal" or vim.tbl_contains(disabled_ft, ft) then
+        return
+    end
+
+    local col = vim.fn.col(".")
+    local line = vim.fn.getline(".")
+    local char = line:sub(col, col)
+
+    if not char:match("[%p%s]") then
+        local word = vim.fn.expand("<cword>")
+        if toggle then
+            vim.fn.setreg("/", word)
+        end
+    end
+
+end
+function SetToggle()
+    toggle = not toggle
+end
+vim.api.nvim_create_augroup("RegexpOfCurrentWord", { clear = true })
+vim.api.nvim_create_autocmd({"CursorHold", "CursorHoldI"}, { group = "RegexpOfCurrentWord", callback = RegexpOfCurrentWord })
+vim.api.nvim_set_keymap("n", "<leader>h", ":lua SetToggle()<CR>", { noremap = true, silent = true })
+
 function ToggleLineNumbers()
         if vim.wo.number then
                 vim.opt.nu = false
@@ -69,7 +100,6 @@ function ToggleLineNumbers()
                 vim.opt.relativenumber = true
         end
 end
-
 vim.api.nvim_set_keymap("n", "<leader>tn", ":lua ToggleLineNumbers()<CR>", { noremap = true, silent = true })
 
 function Surround(t)
@@ -127,8 +157,33 @@ function Align()
                 end
         end
 end
-
 vim.api.nvim_set_keymap("v", "<leader>aw", ":lua Align()<CR>", { noremap = true, silent = true })
+
+-- function HighlightWordUnderCursor()
+--     local disabled_ft = { "qf", "fugitive", "nerdtree", "gundo", "diff", "fzf", "floaterm" }
+--     local ft = vim.bo.filetype
+--     local bt = vim.bo.buftype
+--     local diff = vim.wo.diff
+--
+--     if diff or bt == "terminal" or vim.tbl_contains(disabled_ft, ft) then
+--         return
+--     end
+--
+--     local col = vim.fn.col(".")
+--     local line = vim.fn.getline(".")
+--     local char = line:sub(col, col)
+--
+--     if not char:match("[%p%s]") then
+--         vim.cmd("hi MatchWord guibg=#3b404a") -- vim.cmd("hi MatchWord gui=undercurl guibg=#3b404a")
+--         vim.cmd("match MatchWord /\\V\\<" .. vim.fn.expand("<cword>") .. "\\>/")
+--         vim.fn.setreg("/", vim.fn.expand("<cword>"))
+--     else
+--         vim.cmd("match none")
+--     end
+-- end
+-- vim.api.nvim_create_augroup("MatchWord", { clear = true })
+-- vim.api.nvim_create_autocmd({"CursorHold", "CursorHoldI"}, { group = "MatchWord", callback = HighlightWordUnderCursor })
+-- vim.api.nvim_set_keymap("n", "<leader>h", ":lua HighlightWordUnderCursor()<CR>", { noremap = true, silent = true })
 
 -- GUI FONT SIZE
 if vim.fn.has("gui_running") then
