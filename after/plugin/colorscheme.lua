@@ -241,6 +241,7 @@ end
 -- ColorMyPencils("default", "0.9.0")
 
 ColorMyPencils("default")
+vim.cmd('set background=light')
 -- vim.cmd('highlight Normal guibg=black ctermbg=black')
 
 
