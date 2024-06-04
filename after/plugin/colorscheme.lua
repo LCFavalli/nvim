@@ -129,50 +129,50 @@
 --     -- underline = true,
 -- })
 -- =============================================================================
--- require("cyberdream").setup({
---     -- Enable transparent background
---     transparent = true,
---
---     -- -- Enable italics comments
---     -- italic_comments = false,
---     --
---     -- -- Replace all fillchars with ' ' for the ultimate clean look
---     -- hide_fillchars = false,
---     --
---     -- -- Modern borderless telescope theme
---     -- borderless_telescope = true,
---     --
---     -- -- Set terminal colors used in `:terminal`
---     -- terminal_colors = true,
---     --
---     -- theme = {
---     --     variant = "default", -- use "light" for the light variant
---     --     highlights = {
---     --         -- Highlight groups to override, adding new groups is also possible
---     --         -- See `:h highlight-groups` for a list of highlight groups or run `:hi` to see all groups and their current values
---     --
---     --         -- Example:
---     --         Comment = { fg = "#696969", bg = "NONE", italic = true },
---     --
---     --         -- Complete list can be found in `lua/cyberdream/theme.lua`
---     --     },
---     --
---     --     -- Override a color entirely
---     --     colors = {
---     --         -- For a list of colors see `lua/cyberdream/colours.lua`
---     --         -- Example:
---     --         bg = "#000000",
---     --         green = "#00ff00",
---     --         magenta = "#ff00ff",
---     --     },
---     -- },
--- })
+require("cyberdream").setup({
+    -- Enable transparent background
+    transparent = true,
+
+    -- -- Enable italics comments
+    -- italic_comments = false,
+    --
+    -- -- Replace all fillchars with ' ' for the ultimate clean look
+    -- hide_fillchars = false,
+    --
+    -- -- Modern borderless telescope theme
+    -- borderless_telescope = true,
+    --
+    -- -- Set terminal colors used in `:terminal`
+    -- terminal_colors = true,
+    --
+    -- theme = {
+    --     variant = "default", -- use "light" for the light variant
+    --     highlights = {
+    --         -- Highlight groups to override, adding new groups is also possible
+    --         -- See `:h highlight-groups` for a list of highlight groups or run `:hi` to see all groups and their current values
+    --
+    --         -- Example:
+    --         Comment = { fg = "#696969", bg = "NONE", italic = true },
+    --
+    --         -- Complete list can be found in `lua/cyberdream/theme.lua`
+    --     },
+    --
+    --     -- Override a color entirely
+    --     colors = {
+    --         -- For a list of colors see `lua/cyberdream/colours.lua`
+    --         -- Example:
+    --         bg = "#000000",
+    --         green = "#00ff00",
+    --         magenta = "#ff00ff",
+    --     },
+    -- },
+})
 -- =============================================================================
 local set_hl_for_floating_window = function()
     -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" }) -- FORCE TRANSPARENCY
     -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-    vim.api.nvim_set_hl(0, 'NormalFloat', { link = 'Normal', })
-    vim.api.nvim_set_hl(0, 'FloatBorder', { bg = 'none', })
+    vim.api.nvim_set_hl(0, 'NormalFloat', { link = "Normal", })
+    vim.api.nvim_set_hl(0, 'FloatBorder', { bg = "none" })
     vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
     vim.api.nvim_set_hl(0, "NormalSB", { bg = "none" })
 
@@ -197,7 +197,6 @@ function ColorMyPencils(color, version)
         vim.cmd('highlight GitSignsChange guibg=NONE guifg=yellow')
         vim.cmd('highlight GitSignsDelete guibg=NONE guifg=red')
         vim.cmd('highlight GitSignsChangeDelete guibg=NONE guifg=purple')
-
 
         -- Enable italic
         vim.cmd('highlight Comment cterm=italic gui=italic')
@@ -236,15 +235,11 @@ end
 -- ColorMyPencils('solarized')
 
 -- ColorMyPencils("deepwhite")
--- ColorMyPencils("cyberdream")
+
+ColorMyPencils("cyberdream")
 
 -- ColorMyPencils("default", "0.9.0")
-
-ColorMyPencils("default")
-vim.cmd('set background=light')
--- vim.cmd('highlight Normal guibg=black ctermbg=black')
-
-
+-- ColorMyPencils("default")
 
 -- ==== Defult =====
 -- ColorMyPencils('industry') -- black
