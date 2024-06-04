@@ -60,7 +60,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
         bufmap('n', '<leader>dl', '<cmd>lua vim.diagnostic.setloclist()<cr>')
 
         -- Format the current buffer
-        -- bufmap('n', '<leader>f', '<cmd>lua vim.lsp.buf.format()<cr>')
+        bufmap('n', '<leader>f', '<cmd>lua vim.lsp.buf.format()<cr>')
     end,
 })
 
@@ -69,7 +69,7 @@ vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { 
 vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' })
 
 vim.diagnostic.config {
-    virtual_text = false,
+    virtual_text = true,
     -- virtual_text = {
     --     -- source = "always",  -- Or "if_many"
     --     prefix = '●', -- Could be '■', '▎', 'x'
@@ -274,7 +274,8 @@ require("lspconfig").rust_analyzer.setup {
 require("lspconfig").jdtls.setup {}
 require("lspconfig").gopls.setup {}
 require("lspconfig").erlangls.setup {}
-require("lspconfig").ltex.setup {}
+-- require("lspconfig").ltex.setup {}
+-- require("lspconfig").texlab.setup {}
 require("lspconfig").typst_lsp.setup {
     settings = {
         exportPdf = "onType" -- Choose onType, onSave or never.
@@ -386,6 +387,7 @@ null_ls.setup({
         formatting.goimports,
         formatting.golines,
         formatting.erlfmt,
+        formatting.rustfmt,
     },
     border = "rounded",
     -- on_attach = function(client, bufnr)
