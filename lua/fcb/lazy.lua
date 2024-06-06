@@ -14,6 +14,8 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     { 'nvim-telescope/telescope.nvim' },
     { 'nvim-lua/plenary.nvim' },
+    { 'nvim-tree/nvim-web-devicons' },
+
     -- LSP
     { "neovim/nvim-lspconfig" },   -- enable LSP
     { "williamboman/mason.nvim" }, -- simple to use language server installer
@@ -29,17 +31,14 @@ require("lazy").setup({
     { "L3MON4D3/LuaSnip" },             --snippet engine
     { "rafamadriz/friendly-snippets" }, -- a bunch of snippets to use
     -- FORMAT
-    { "jose-elias-alvarez/null-ls.nvim" },
+    { "nvimtools/none-ls.nvim" },       -- { "jose-elias-alvarez/null-ls.nvim" },
 
     -- SYNTAX HIGHLIGHTING
     { 'nvim-treesitter/nvim-treesitter',  build = ":TSUpdate" },
     -- { "nvim-treesitter/nvim-treesitter-context"},
 
     -- STATUSLINE
-    {
-        'nvim-lualine/lualine.nvim',
-        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-    },
+    { 'nvim-lualine/lualine.nvim', },
 
     -- GIT
     { "lewis6991/gitsigns.nvim" },
@@ -48,9 +47,33 @@ require("lazy").setup({
     -- COMMENT
     { 'numToStr/Comment.nvim' },
 
-    -- COQ
-    { 'whonore/Coqtail' },
+    -- MULTICURSOR
+    {
+        "brenton-leighton/multiple-cursors.nvim",
+        version = "*", -- Use the latest tagged version
+        opts = {
+            -- custom_key_maps = {
+            --     { "n", "<Leader>|", function() require("multiple-cursors").align() end },
+            -- },
+        },
+        keys = {
+            { "<C-j>",         "<Cmd>MultipleCursorsAddDown<CR>",          mode = { "n", "x" },      desc = "Add cursor and move down" },
+            { "<C-k>",         "<Cmd>MultipleCursorsAddUp<CR>",            mode = { "n", "x" },      desc = "Add cursor and move up" },
 
+            { "<C-Up>",        "<Cmd>MultipleCursorsAddUp<CR>",            mode = { "n", "i", "x" }, desc = "Add cursor and move up" },
+            { "<C-Down>",      "<Cmd>MultipleCursorsAddDown<CR>",          mode = { "n", "i", "x" }, desc = "Add cursor and move down" },
+
+            { "<C-LeftMouse>", "<Cmd>MultipleCursorsMouseAddDelete<CR>",   mode = { "n", "i" },      desc = "Add or remove cursor" },
+
+            { "<Leader>a",     "<Cmd>MultipleCursorsAddMatches<CR>",       mode = { "n", "x" },      desc = "Add cursors to cword" },
+            { "<Leader>A",     "<Cmd>MultipleCursorsAddMatchesV<CR>",      mode = { "n", "x" },      desc = "Add cursors to cword in previous area" },
+
+            { "<Leader>d",     "<Cmd>MultipleCursorsAddJumpNextMatch<CR>", mode = { "n", "x" },      desc = "Add cursor and jump to next cword" },
+            { "<Leader>D",     "<Cmd>MultipleCursorsJumpNextMatch<CR>",    mode = { "n", "x" },      desc = "Jump to next cword" },
+
+            { "<Leader>l",     "<Cmd>MultipleCursorsLock<CR>",             mode = { "n", "x" },      desc = "Lock virtual cursors" },
+        },
+    },
     -- MARKDOWN PREVIEW
     {
         "iamcco/markdown-preview.nvim",
@@ -90,13 +113,16 @@ require("lazy").setup({
 
     -- FILE EXPLORER
     -- {
-        --     "nvim-tree/nvim-tree.lua",
-        --     version = "*",
-        --     lazy = false,
-        --     dependencies = {
-            --         "nvim-tree/nvim-web-devicons",
-            --     }
-            -- },
+    --     "nvim-tree/nvim-tree.lua",
+    --     version = "*",
+    --     lazy = false,
+    --     dependencies = {
+    --         "nvim-tree/nvim-web-devicons",
+    --     }
+    -- },
+
+    -- COQ
+    -- { 'whonore/Coqtail' },
 
     -- CUSTOM COLORSCHEME
     -- { dir = '~/TMP/gruber-darker.nvim/',  as = 'gruber-darker' },
