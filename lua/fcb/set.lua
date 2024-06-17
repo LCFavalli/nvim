@@ -43,7 +43,7 @@ vim.opt.runtimepath:remove("/usr/share/vim/vimfiles") -- separate vim plugins fr
 vim.opt.modeline = true
 
 -- Block cursor
--- vim.opt.guicursor = ""
+vim.opt.guicursor = ""
 
 -- Vertical bar cursor in insert mode
 -- vim.opt.guicursor = "v:block,i:ver25,r:hor20"

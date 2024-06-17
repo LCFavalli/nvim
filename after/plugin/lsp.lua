@@ -388,7 +388,6 @@ null_ls.setup({
         formatting.goimports,
         formatting.golines,
         formatting.erlfmt,
-        formatting.rustfmt,
     },
     border = "rounded",
     -- on_attach = function(client, bufnr)
