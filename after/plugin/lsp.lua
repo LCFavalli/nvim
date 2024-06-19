@@ -268,20 +268,21 @@ require("lspconfig").pyright.setup {
 require("lspconfig").tsserver.setup {}
 require("lspconfig").ocamllsp.setup {}
 require("lspconfig").rust_analyzer.setup {
-    diagnostics = {
-        disabled = { "unresolved-proc-macro" }
-    },
+    -- diagnostics = {
+    --     disabled = { "unresolved-proc-macro" }
+    -- },
 }
 require("lspconfig").jdtls.setup {}
 require("lspconfig").gopls.setup {}
 require("lspconfig").erlangls.setup {}
--- require("lspconfig").ltex.setup {}
--- require("lspconfig").texlab.setup {}
 require("lspconfig").typst_lsp.setup {
     settings = {
         exportPdf = "onType" -- Choose onType, onSave or never.
         -- serverPath = "" -- Normally, there is no need to uncomment it.
-    } }
+    }
+}
+-- require("lspconfig").ltex.setup {}
+-- require("lspconfig").texlab.setup {}
 
 vim.api.nvim_create_autocmd('FileType', {
     pattern = 'testlang',
