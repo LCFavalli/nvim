@@ -281,8 +281,7 @@ require("lspconfig").typst_lsp.setup {
         -- serverPath = "" -- Normally, there is no need to uncomment it.
     }
 }
--- require("lspconfig").ltex.setup {}
--- require("lspconfig").texlab.setup {}
+require("lspconfig").texlab.setup {}
 
 vim.api.nvim_create_autocmd('FileType', {
     pattern = 'testlang',
