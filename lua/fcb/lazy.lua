@@ -37,8 +37,6 @@ require("lazy").setup({
     { 'nvim-treesitter/nvim-treesitter',  build = ":TSUpdate" },
     -- { "nvim-treesitter/nvim-treesitter-context"},
 
-    -- STATUSLINE
-    { 'nvim-lualine/lualine.nvim', },
 
     -- GIT
     { "lewis6991/gitsigns.nvim" },
@@ -86,30 +84,33 @@ require("lazy").setup({
     { "github/copilot.vim" },
 
     -- COLORSCHEME
-    { 'rktjmp/lush.nvim' },
     { 'rose-pine/neovim',              as = 'rose-pine', },
-    { "catppuccin/nvim",               as = "catppuccin" },
-    { 'Shatur/neovim-ayu',             as = 'ayu' },
-    { 'folke/tokyonight.nvim',         as = 'tokyonight', },
-    { 'maxmx03/solarized.nvim',        as = 'solarized' },
-    { 'mcchrish/zenbones.nvim',        as = 'zenbones', },
-    { 'bluz71/vim-moonfly-colors',     as = 'moonfly' },
-    { 'blazkowolf/gruber-darker.nvim', as = 'gruber-darker' },
-    {
-        'uloco/bluloco.nvim',
-        lazy = false,
-        priority = 1000,
-    },
-    {
-        "scottmckendry/cyberdream.nvim",
-        lazy = false,
-        priority = 1000,
-    },
-    {
-        'Verf/deepwhite.nvim',
-        lazy = false,
-        priority = 1000,
-    }
+    -- { 'rktjmp/lush.nvim' },
+    -- { "catppuccin/nvim",               as = "catppuccin" },
+    -- { 'Shatur/neovim-ayu',             as = 'ayu' },
+    -- { 'folke/tokyonight.nvim',         as = 'tokyonight', },
+    -- { 'maxmx03/solarized.nvim',        as = 'solarized' },
+    -- { 'mcchrish/zenbones.nvim',        as = 'zenbones', },
+    -- { 'bluz71/vim-moonfly-colors',     as = 'moonfly' },
+    -- { 'blazkowolf/gruber-darker.nvim', as = 'gruber-darker' },
+    -- {
+    --     'uloco/bluloco.nvim',
+    --     lazy = false,
+    --     priority = 1000,
+    -- },
+    -- {
+    --     "scottmckendry/cyberdream.nvim",
+    --     lazy = false,
+    --     priority = 1000,
+    -- },
+    -- {
+    --     'Verf/deepwhite.nvim',
+    --     lazy = false,
+    --     priority = 1000,
+    -- }
+
+    -- STATUSLINE
+    -- { 'nvim-lualine/lualine.nvim', },
 
     -- FILE EXPLORER
     -- {

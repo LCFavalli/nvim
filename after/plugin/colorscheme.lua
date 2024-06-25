@@ -168,25 +168,24 @@ require('rose-pine').setup({
 --     -- },
 -- })
 -- =============================================================================
-local set_hl_for_floating_window = function()
-    -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" }) -- FORCE TRANSPARENCY
-    -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-    vim.api.nvim_set_hl(0, 'NormalFloat', { link = "Normal", })
-    vim.api.nvim_set_hl(0, 'FloatBorder', { bg = "none" })
-    vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
-    vim.api.nvim_set_hl(0, "NormalSB", { bg = "none" })
-
-    -- Transparent background for Diagnostic virtual text
-    vim.api.nvim_set_hl(0, "DiagnosticVirtualTextError", { link = "DiagnosticError" })
-    vim.api.nvim_set_hl(0, "DiagnosticVirtualTextWarn", { link = "DiagnosticWarn" })
-    vim.api.nvim_set_hl(0, "DiagnosticVirtualTextInfo", { link = "DiagnosticInfo" })
-    vim.api.nvim_set_hl(0, "DiagnosticVirtualTextHint", { link = "DiagnosticHint" })
-end
-vim.api.nvim_create_autocmd('ColorScheme', {
-    pattern = '*',
-    callback = set_hl_for_floating_window,
-})
--- set_hl_for_floating_window()
+-- local set_hl_for_floating_window = function()
+--     -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" }) -- FORCE TRANSPARENCY
+--     -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+--     vim.api.nvim_set_hl(0, 'NormalFloat', { link = "Normal", })
+--     vim.api.nvim_set_hl(0, 'FloatBorder', { bg = "none" })
+--     vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
+--     vim.api.nvim_set_hl(0, "NormalSB", { bg = "none" })
+--
+--     -- Transparent background for Diagnostic virtual text
+--     vim.api.nvim_set_hl(0, "DiagnosticVirtualTextError", { link = "DiagnosticError" })
+--     vim.api.nvim_set_hl(0, "DiagnosticVirtualTextWarn", { link = "DiagnosticWarn" })
+--     vim.api.nvim_set_hl(0, "DiagnosticVirtualTextInfo", { link = "DiagnosticInfo" })
+--     vim.api.nvim_set_hl(0, "DiagnosticVirtualTextHint", { link = "DiagnosticHint" })
+-- end
+-- vim.api.nvim_create_autocmd('ColorScheme', {
+--     pattern = '*',
+--     callback = set_hl_for_floating_window,
+-- })
 -- =============================================================================
 function ColorMyPencils(color, version)
     vim.cmd.colorscheme(color)
