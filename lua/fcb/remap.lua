@@ -1,6 +1,8 @@
-vim.api.nvim_set_keymap('i', '<esc>', '<nop>', { noremap = true, silent = true })
-
 vim.g.mapleader = " "
+vim.api.nvim_set_keymap('i', '<esc>', '<nop>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>ce', ':Copilot enable<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>cd', ':Copilot disable<CR>', { noremap = true })
+
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")

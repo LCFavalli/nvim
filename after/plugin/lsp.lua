@@ -315,7 +315,8 @@ vim.api.nvim_create_autocmd('FileType', {
             "java",
             "-jar",
             -- "/Users/federicobruzzone/Documents/ADAPT-LAB/tesi-dagostino/trunk/neverlang-lsp/neverlang-lsp-implementation/build/libs/neverlang-client.jar"
-            "/Users/federicobruzzone/Documents/ADAPT-LAB/tesi-dagostino/trunk/examples/neverlang/build/libs/neverlang.compiler.lsp.NeverlangLangLSP-client.jar"
+            -- "/Users/federicobruzzone/Documents/ADAPT-LAB/tesi-dagostino/trunk/examples/neverlang/build/libs/neverlang.compiler.lsp.NeverlangLangLSP-client.jar"
+            "/home/fcb/Documents/neverlang-lsp/examples/neverlang/build/libs/neverlang.compiler.lsp.NeverlangLangLSP-client.jar"
         }
         local client = vim.lsp.start({
             name = 'neverlang',
