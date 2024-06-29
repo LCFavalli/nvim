@@ -302,7 +302,7 @@ vim.api.nvim_create_autocmd('FileType', {
 --                 vim.lsp.start({
 --                         name = 'neverlang',
 --                         cmd = vim.lsp.rpc.connect('127.0.0.1', 5123),
---                         root_dir = vim.fs.dirname(vim.fs.find({ 'start.lsp' }, { upward = true })[1]),
+--                         root_dir = vim.fs.dirname(vim.fs.find({ 'build.gradle', 'start.lsp' }, { upward = true })[1]),
 --                         -- filetypes = { 'tst', 'nl' },
 --                 })
 --         end,
@@ -326,6 +326,7 @@ vim.api.nvim_create_autocmd('FileType', {
         vim.lsp.buf_attach_client(0, client)
     end,
 })
+
 -- Socket connection
 -- vim.api.nvim_create_autocmd('FileType', {
 --     pattern = 'simplelanguage',
