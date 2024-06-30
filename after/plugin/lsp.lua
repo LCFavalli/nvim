@@ -3,12 +3,25 @@
 ------------------------------------------------------
 local lspconfig = require('lspconfig')
 local lsp_defaults = lspconfig.util.default_config
+if vim.lsp.inlay_hint then
+    vim.lsp.inlay_hint.enable(true, { 0 })
+    -- Toggle inlay hints
+    vim.keymap.set('n', 'L', function()
+        if vim.lsp.inlay_hint.is_enabled() then
+            vim.lsp.inlay_hint.enable(false, { 0 })
+        else
+            vim.lsp.inlay_hint.enable(true, { 0 })
+        end
+    end)
+end
+
 
 lsp_defaults.capabilities = vim.tbl_deep_extend(
     'force',
     lsp_defaults.capabilities,
     require('cmp_nvim_lsp').default_capabilities()
 )
+
 
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
