@@ -22,7 +22,6 @@ lsp_defaults.capabilities = vim.tbl_deep_extend(
     require('cmp_nvim_lsp').default_capabilities()
 )
 
-
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -128,7 +127,7 @@ cmp.setup({
     },
     completion = {
         completeopt = 'menu,menuone,noinsert,noselect',
-        -- autocomplete = false
+        autocomplete = false
     },
     window = {
         documentation = cmp.config.window.bordered(),
