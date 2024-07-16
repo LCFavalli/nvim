@@ -127,7 +127,7 @@ cmp.setup({
     },
     completion = {
         completeopt = 'menu,menuone,noinsert,noselect',
-        autocomplete = false
+        -- autocomplete = false
     },
     window = {
         documentation = cmp.config.window.bordered(),
