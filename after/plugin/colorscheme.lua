@@ -1,18 +1,18 @@
 -- =============================================================================
 require('rose-pine').setup({
-        variant = 'main', --- @usage 'auto'|'main'|'moon'|'dawn'
-        disable_background = true,
-        disable_italics = true,
-        -- disable_float_background = true,
-        -- groups = {
-        --     background = 'NONE',
-        --     background_nc = 'NONE',
-        -- },
-        -- highlight_groups = {
-        --     -- Blend colours against the "base" background
-        --     CursorLine = { bg = 'pine', blend = 10 },
-        --     StatusLine = { fg = 'pine', bg = 'pine', blend = 10 },
-        -- }
+    variant = 'main',     --- @usage 'auto'|'main'|'moon'|'dawn'
+    disable_background = true,
+    disable_italics = true,
+    -- disable_float_background = true,
+    -- groups = {
+    --     background = 'NONE',
+    --     background_nc = 'NONE',
+    -- },
+    -- highlight_groups = {
+    --     -- Blend colours against the "base" background
+    --     CursorLine = { bg = 'pine', blend = 10 },
+    --     StatusLine = { fg = 'pine', bg = 'pine', blend = 10 },
+    -- }
 })
 -- =============================================================================
 -- require("tokyonight").setup({
@@ -190,7 +190,7 @@ require('rose-pine').setup({
 function ColorMyPencils(color, version)
     vim.cmd.colorscheme(color)
 
-    if color == "default" and version == "0.9.0" then
+    if color == "vim" or (color == "default" and version == "0.9.0") then
         vim.api.nvim_set_hl(0, "SignColumn", { bg = "None" }) -- vim.cmd('hi SignColumn ctermbg=0 guibg=black')
         vim.cmd('highlight GitSignsAdd guibg=NONE guifg=green')
         vim.cmd('highlight GitSignsChange guibg=NONE guifg=yellow')
@@ -237,8 +237,8 @@ end
 -- ColorMyPencils("cyberdream")
 
 -- ColorMyPencils("default", "0.9.0")
--- ColorMyPencils("default")
-ColorMyPencils('rose-pine')
+ColorMyPencils("default")
+-- ColorMyPencils('rose-pine')
 
 -- ==== Defult =====
 -- ColorMyPencils('industry') -- black
