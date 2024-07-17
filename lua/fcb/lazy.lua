@@ -84,63 +84,75 @@ require("lazy").setup({
     { "github/copilot.vim" },
 
     -- COLORSCHEME
-    { 'rose-pine/neovim',              as = 'rose-pine', },
-    -- { 'rktjmp/lush.nvim' },
-    -- { "catppuccin/nvim",               as = "catppuccin" },
-    -- { 'Shatur/neovim-ayu',             as = 'ayu' },
-    -- { 'folke/tokyonight.nvim',         as = 'tokyonight', },
-    -- { 'maxmx03/solarized.nvim',        as = 'solarized' },
-    -- { 'mcchrish/zenbones.nvim',        as = 'zenbones', },
-    -- { 'bluz71/vim-moonfly-colors',     as = 'moonfly' },
-    -- { 'blazkowolf/gruber-darker.nvim', as = 'gruber-darker' },
-    -- {
-    --     'uloco/bluloco.nvim',
-    --     lazy = false,
-    --     priority = 1000,
-    -- },
-    -- {
-    --     "scottmckendry/cyberdream.nvim",
-    --     lazy = false,
-    --     priority = 1000,
-    -- },
-    -- {
-    --     'Verf/deepwhite.nvim',
-    --     lazy = false,
-    --     priority = 1000,
-    -- }
-
-    -- STATUSLINE
-    -- { 'nvim-lualine/lualine.nvim', },
-
-    -- FILE EXPLORER
-    -- {
-    --     "nvim-tree/nvim-tree.lua",
-    --     version = "*",
-    --     lazy = false,
-    --     dependencies = {
-    --         "nvim-tree/nvim-web-devicons",
-    --     }
-    -- },
-
-    -- COQ
-    -- { 'whonore/Coqtail' },
-
-    -- CUSTOM COLORSCHEME
-    -- { dir = '~/TMP/gruber-darker.nvim/',  as = 'gruber-darker' },
-
-    -- SHOW INDENTATION
-    -- { "lukas-reineke/indent-blankline.nvim",  main = "ibl", opts = {} },
-    -- { "shellRaining/hlchunk.nvim", event = { "UIEnter" } },
-
-    -- LATEX PREVIEW
-    -- { "lervag/vimtex" },
-
-    -- FILE NAVIGATION
-    -- { "theprimeagen/harpoon" },
-
-    -- UNDO TREE
-    -- { "mbbill/undotree" },
-
-    -- ZEN MODE
-    -- { "folke/zen-mode.nvim" },
+    { 'rose-pine/neovim',  as = 'rose-pine', },
+    {
+        'AlexvZyl/nordic.nvim',
+        lazy = false,
+        priority = 1000,
+        config = function()
+            require 'nordic'.load()
+        end
+    }
 })
+
+
+
+
+-- { 'rktjmp/lush.nvim' },
+-- { "catppuccin/nvim",               as = "catppuccin" },
+-- { 'Shatur/neovim-ayu',             as = 'ayu' },
+-- { 'folke/tokyonight.nvim',         as = 'tokyonight', },
+-- { 'maxmx03/solarized.nvim',        as = 'solarized' },
+-- { 'mcchrish/zenbones.nvim',        as = 'zenbones', },
+-- { 'bluz71/vim-moonfly-colors',     as = 'moonfly' },
+-- { 'blazkowolf/gruber-darker.nvim', as = 'gruber-darker' },
+-- {
+--     'uloco/bluloco.nvim',
+--     lazy = false,
+--     priority = 1000,
+-- },
+-- {
+--     "scottmckendry/cyberdream.nvim",
+--     lazy = false,
+--     priority = 1000,
+-- },
+-- {
+--     'Verf/deepwhite.nvim',
+--     lazy = false,
+--     priority = 1000,
+-- }
+
+-- STATUSLINE
+-- { 'nvim-lualine/lualine.nvim', },
+
+-- FILE EXPLORER
+-- {
+--     "nvim-tree/nvim-tree.lua",
+--     version = "*",
+--     lazy = false,
+--     dependencies = {
+--         "nvim-tree/nvim-web-devicons",
+--     }
+-- },
+
+-- COQ
+-- { 'whonore/Coqtail' },
+
+-- CUSTOM COLORSCHEME
+-- { dir = '~/TMP/gruber-darker.nvim/',  as = 'gruber-darker' },
+
+-- SHOW INDENTATION
+-- { "lukas-reineke/indent-blankline.nvim",  main = "ibl", opts = {} },
+-- { "shellRaining/hlchunk.nvim", event = { "UIEnter" } },
+
+-- LATEX PREVIEW
+-- { "lervag/vimtex" },
+
+-- FILE NAVIGATION
+-- { "theprimeagen/harpoon" },
+
+-- UNDO TREE
+-- { "mbbill/undotree" },
+
+-- ZEN MODE
+-- { "folke/zen-mode.nvim" },

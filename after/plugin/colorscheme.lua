@@ -1,3 +1,5 @@
+
+
 -- =============================================================================
 require('rose-pine').setup({
     variant = 'main',     --- @usage 'auto'|'main'|'moon'|'dawn'
@@ -218,6 +220,26 @@ function ColorMyPencils(color, version)
         -- vim.cmd('highlight Special cterm=italic gui=italic')
     end
 end
+ColorMyPencils("nordic")
+-- ColorMyPencils("default")
+-- ColorMyPencils('rose-pine')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 -- ColorMyPencils('rose-pine')
 -- ColorMyPencils('tokyonight')
@@ -235,10 +257,8 @@ end
 
 -- ColorMyPencils("deepwhite")
 -- ColorMyPencils("cyberdream")
-
 -- ColorMyPencils("default", "0.9.0")
-ColorMyPencils("default")
--- ColorMyPencils('rose-pine')
+
 
 -- ==== Defult =====
 -- ColorMyPencils('industry') -- black
