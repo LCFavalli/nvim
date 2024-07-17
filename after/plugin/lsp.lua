@@ -4,7 +4,7 @@
 local lspconfig = require('lspconfig')
 local lsp_defaults = lspconfig.util.default_config
 if vim.lsp.inlay_hint then
-    vim.lsp.inlay_hint.enable(true, { 0 })
+    vim.lsp.inlay_hint.enable(false, { 0 })
     -- Toggle inlay hints
     vim.keymap.set('n', 'L', function()
         if vim.lsp.inlay_hint.is_enabled() then
@@ -77,18 +77,19 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end,
 })
 
-require('lspconfig.ui.windows').default_options.border = 'single'
-vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' })
-vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' })
+-- Round the borders of the floating windows
+-- require('lspconfig.ui.windows').default_options.border = 'single'
+-- vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' })
+-- vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' })
 
 vim.diagnostic.config {
     virtual_text = true,
+    underline = true,
     -- virtual_text = {
     --     -- source = "always",  -- Or "if_many"
     --     prefix = '●', -- Could be '■', '▎', 'x'
     -- },
-    underline = true,
-    float = { border = "rounded" },
+    -- float = { border = "rounded" },
 }
 
 local sign = function(opts)
@@ -129,10 +130,10 @@ cmp.setup({
         completeopt = 'menu,menuone,noinsert,noselect',
         -- autocomplete = false
     },
-    window = {
-        documentation = cmp.config.window.bordered(),
-        completion = cmp.config.window.bordered(),
-    },
+    -- window = {
+    --     documentation = cmp.config.window.bordered(),
+    --     completion = cmp.config.window.bordered(),
+    -- },
     formatting = {
         fields = { 'abbr', 'menu', 'kind' },
         format = function(entry, item)
