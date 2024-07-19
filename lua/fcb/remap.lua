@@ -25,26 +25,13 @@ vim.keymap.set("n", "<leader>pe", "A <Esc>p")
 -- next greatest remap ever
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 
--- vim.keymap.set("n", "<leader>p", [["+p]])
--- vim.keymap.set({"n", "v"}, "<leader>Y<CR>", [["+Y]])
-
 -- This is going to get me cancelled
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "Q", "<nop>")
 
--- vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
--- vim.keymap.set("n", "<C-f>", vim.lsp.buf.format)
--- vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
--- vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
--- vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
--- vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
-
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
-
--- NEW REMAP
--- vim.keymap.set("n", "<tab>", "<cmd>tabNext<CR>")
 
 -- vim.keymap.set("n", "<leader>ppv", ":Lex 20<CR>")
 vim.api.nvim_set_keymap('n', '<ESC>u', ':nohlsearch<CR>', { noremap = true, silent = true })
@@ -133,51 +120,46 @@ end
 
 vim.api.nvim_set_keymap("v", "<leader>aw", ":lua Align()<CR>", { noremap = true, silent = true })
 
--- function HighlightWordUnderCursor()
---     local disabled_ft = { "qf", "fugitive", "nerdtree", "gundo", "diff", "fzf", "floaterm" }
---     local ft = vim.bo.filetype
---     local bt = vim.bo.buftype
---     local diff = vim.wo.diff
---
---     if diff or bt == "terminal" or vim.tbl_contains(disabled_ft, ft) then
---         return
---     end
---
---     local col = vim.fn.col(".")
---     local line = vim.fn.getline(".")
---     local char = line:sub(col, col)
---
---     if not char:match("[%p%s]") then
---         vim.cmd("hi MatchWord guibg=#3b404a") -- vim.cmd("hi MatchWord gui=undercurl guibg=#3b404a")
---         vim.cmd("match MatchWord /\\V\\<" .. vim.fn.expand("<cword>") .. "\\>/")
---         vim.fn.setreg("/", vim.fn.expand("<cword>"))
---     else
---         vim.cmd("match none")
---     end
--- end
--- vim.api.nvim_create_augroup("MatchWord", { clear = true })
--- vim.api.nvim_create_autocmd({"CursorHold", "CursorHoldI"}, { group = "MatchWord", callback = HighlightWordUnderCursor })
--- vim.api.nvim_set_keymap("n", "<leader>h", ":lua HighlightWordUnderCursor()<CR>", { noremap = true, silent = true })
+function HighlightWordUnderCursor()
+    local disabled_ft = { "qf", "fugitive", "nerdtree", "gundo", "diff", "fzf", "floaterm" }
+    local ft = vim.bo.filetype
+    local bt = vim.bo.buftype
+    local diff = vim.wo.diff
+
+    if diff or bt == "terminal" or vim.tbl_contains(disabled_ft, ft) then
+        return
+    end
+
+    local col = vim.fn.col(".")
+    local line = vim.fn.getline(".")
+    local char = line:sub(col, col)
+
+    if not char:match("[%p%s]") then
+        vim.cmd("hi MatchWord guibg=#3b404a") -- vim.cmd("hi MatchWord gui=undercurl guibg=#3b404a")
+        vim.cmd("match MatchWord /\\V\\<" .. vim.fn.expand("<cword>") .. "\\>/")
+        -- vim.fn.setreg("/", vim.fn.expand("<cword>"))
+    else
+        vim.cmd("match none")
+    end
+end
+vim.api.nvim_create_augroup("MatchWord", { clear = true })
+vim.api.nvim_create_autocmd({"CursorHold", "CursorHoldI"}, { group = "MatchWord", callback = HighlightWordUnderCursor })
 
 -- GUI FONT SIZE
 if vim.fn.has("gui_running") then
     -- vim.cmd("set guifont=PragmataProMonoLiga\\ Nerd\\ Font:h12")
     -- vim.opt.guifont = "PragmataProMonoLiga Nerd Font:h12"
-    vim.opt.guifont = "MonoLisa Nerd Font Mono:h20"
+    vim.opt.guifont = "Iosevka Nerd Font Mono:h20"
 end
 
 local fontsize = 20 -- 12
 function AdjustFontSize(amount)
     fontsize = fontsize + amount
-    vim.opt.guifont = "MonoLisa Nerd Font Mono:h" .. fontsize
+    vim.opt.guifont = "Iosevka Nerd Font Mono:h" .. fontsize
 end
 
 vim.api.nvim_set_keymap('n', '<C-ScrollWheelUp>', [[:lua AdjustFontSize(1)<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-ScrollWheelDown>', [[:lua AdjustFontSize(-1)<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('i', '<C-ScrollWheelUp>', [[<Esc>:lua AdjustFontSize(1)<CR>a]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('i', '<C-ScrollWheelDown>', [[<Esc>:lua AdjustFontSize(-1)<CR>a]], { noremap = true, silent = true })
-
-
--- vim.cmd[[imap <silent><script><expr> <C-,> copilot#Accept("\<CR>")]]
--- vim.g.copilot_no_tab_map = true
--- vim.g.copilot_assume_mapped = true
+vim.api.nvim_set_keymap('i', '<C-ScrollWheelDown>', [[<Esc>:lua AdjustFontSize(-1)<CR>a]],
+    { noremap = true, silent = true })
