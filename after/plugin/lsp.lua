@@ -295,6 +295,8 @@ require("lspconfig").typst_lsp.setup {
     }
 }
 require("lspconfig").texlab.setup {}
+require("lspconfig").html.setup {}
+require("lspconfig").cssls.setup {}
 
 vim.api.nvim_create_autocmd('FileType', {
     pattern = 'testlang',
