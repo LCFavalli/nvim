@@ -84,21 +84,22 @@ require("lazy").setup({
     { "github/copilot.vim" },
 
     -- COLORSCHEME
-    { 'rose-pine/neovim',  as = 'rose-pine', },
-    {
-        'AlexvZyl/nordic.nvim',
-        lazy = false,
-        priority = 1000,
-        config = function()
-            require 'nordic'.load()
-        end
-    }
+    { 'rose-pine/neovim',       as = 'rose-pine' },
+    { "EdenEast/nightfox.nvim", as = 'nightfox' },
 })
 
 
 
 
 -- { 'rktjmp/lush.nvim' },
+-- {
+--     'AlexvZyl/nordic.nvim',
+--     lazy = false,
+--     priority = 1000,
+--     config = function()
+--         require 'nordic'.load()
+--     end
+-- }
 -- { "catppuccin/nvim",               as = "catppuccin" },
 -- { 'Shatur/neovim-ayu',             as = 'ayu' },
 -- { 'folke/tokyonight.nvim',         as = 'tokyonight', },

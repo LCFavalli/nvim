@@ -1,8 +1,6 @@
-
-
 -- =============================================================================
 require('rose-pine').setup({
-    variant = 'main',     --- @usage 'auto'|'main'|'moon'|'dawn'
+    variant = 'main', --- @usage 'auto'|'main'|'moon'|'dawn'
     disable_background = true,
     disable_italics = true,
     -- disable_float_background = true,
@@ -16,6 +14,117 @@ require('rose-pine').setup({
     --     StatusLine = { fg = 'pine', bg = 'pine', blend = 10 },
     -- }
 })
+-- =============================================================================
+-- Default options
+require('nightfox').setup({
+    options = {
+        -- Compiled file's destination location
+        compile_path = vim.fn.stdpath("cache") .. "/nightfox",
+        compile_file_suffix = "_compiled", -- Compiled file suffix
+        transparent = false,               -- Disable setting background
+        terminal_colors = true,            -- Set terminal colors (vim.g.terminal_color_*) used in `:terminal`
+        dim_inactive = false,              -- Non focused panes set to alternative background
+        module_default = true,             -- Default enable value for modules
+        colorblind = {
+            enable = false,                -- Enable colorblind support
+            simulate_only = false,         -- Only show simulated colorblind colors and not diff shifted
+            severity = {
+                protan = 0,                -- Severity [0,1] for protan (red)
+                deutan = 0,                -- Severity [0,1] for deutan (green)
+                tritan = 0,                -- Severity [0,1] for tritan (blue)
+            },
+        },
+        styles = {             -- Style to be applied to different syntax groups
+            comments = "italic", -- Value is any valid attr-list value `:help attr-list`
+            conditionals = "NONE",
+            constants = "NONE",
+            functions = "bold",
+            keywords = "bold",
+            numbers = "NONE",
+            operators = "NONE",
+            strings = "NONE",
+            types = "italic, bold",
+            variables = "NONE",
+        },
+        inverse = { -- Inverse highlight for different types
+            match_paren = false,
+            visual = false,
+            search = false,
+        },
+        modules = { -- List of various plugins and additional options
+            -- ...
+        },
+    },
+    palettes = {},
+    specs = {},
+    groups = {},
+})
+-- =============================================================================
+-- local set_hl_for_floating_window = function()
+--     -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" }) -- FORCE TRANSPARENCY
+--     -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+--     vim.api.nvim_set_hl(0, 'NormalFloat', { link = "Normal", })
+--     vim.api.nvim_set_hl(0, 'FloatBorder', { bg = "none" })
+--     vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
+--     vim.api.nvim_set_hl(0, "NormalSB", { bg = "none" })
+--
+--     -- Transparent background for Diagnostic virtual text
+--     vim.api.nvim_set_hl(0, "DiagnosticVirtualTextError", { link = "DiagnosticError" })
+--     vim.api.nvim_set_hl(0, "DiagnosticVirtualTextWarn", { link = "DiagnosticWarn" })
+--     vim.api.nvim_set_hl(0, "DiagnosticVirtualTextInfo", { link = "DiagnosticInfo" })
+--     vim.api.nvim_set_hl(0, "DiagnosticVirtualTextHint", { link = "DiagnosticHint" })
+-- end
+-- vim.api.nvim_create_autocmd('ColorScheme', {
+--     pattern = '*',
+--     callback = set_hl_for_floating_window,
+-- })
+-- =============================================================================
+function ColorMyPencils(color, version)
+    vim.cmd.colorscheme(color)
+
+    if color == "vim" or (color == "default" and version == "0.9.0") then
+        vim.api.nvim_set_hl(0, "SignColumn", { bg = "None" }) -- vim.cmd('hi SignColumn ctermbg=0 guibg=black')
+        vim.cmd('highlight GitSignsAdd guibg=NONE guifg=green')
+        vim.cmd('highlight GitSignsChange guibg=NONE guifg=yellow')
+        vim.cmd('highlight GitSignsDelete guibg=NONE guifg=red')
+        vim.cmd('highlight GitSignsChangeDelete guibg=NONE guifg=purple')
+
+        -- Enable italic
+        vim.cmd('highlight Comment cterm=italic gui=italic')
+        vim.cmd('highlight Conditional cterm=italic gui=italic')
+        vim.cmd('highlight Repeat cterm=italic gui=italic')
+        vim.cmd('highlight Statement cterm=italic gui=italic')
+        -- vim.cmd('highlight Type cterm=italic gui=italic')
+        -- vim.cmd('highlight Function cterm=italic gui=italic')
+        -- vim.cmd('highlight Identifier cterm=italic gui=italic')
+        -- vim.cmd('highlight PreProc cterm=italic gui=italic')
+        -- vim.cmd('highlight Special cterm=italic gui=italic')
+        -- vim.cmd('highlight Todo cterm=italic gui=italic')
+        -- vim.cmd('highlight Underlined cterm=italic gui=italic')
+        -- vim.cmd('highlight Label cterm=italic gui=italic')
+        -- vim.cmd('highlight SpecialKey cterm=italic gui=italic')
+        -- vim.cmd('highlight NonText cterm=italic gui=italic')
+        -- vim.cmd('highlight SpecialComment cterm=italic gui=italic')
+        -- vim.cmd('highlight SpecialChar cterm=italic gui=italic')
+        -- vim.cmd('highlight SpecialComment cterm=italic gui=italic')
+        -- vim.cmd('highlight Special cterm=italic gui=italic')
+    end
+end
+
+-- ColorMyPencils("default") -- habamax
+-- ColorMyPencils('rose-pine')
+ColorMyPencils('dawnfox') -- ColorMyPencils('terafox')
+
+
+
+
+
+
+
+
+
+
+
 -- =============================================================================
 -- require("tokyonight").setup({
 --         style = "night", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
@@ -170,71 +279,6 @@ require('rose-pine').setup({
 --     -- },
 -- })
 -- =============================================================================
--- local set_hl_for_floating_window = function()
---     -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" }) -- FORCE TRANSPARENCY
---     -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
---     vim.api.nvim_set_hl(0, 'NormalFloat', { link = "Normal", })
---     vim.api.nvim_set_hl(0, 'FloatBorder', { bg = "none" })
---     vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
---     vim.api.nvim_set_hl(0, "NormalSB", { bg = "none" })
---
---     -- Transparent background for Diagnostic virtual text
---     vim.api.nvim_set_hl(0, "DiagnosticVirtualTextError", { link = "DiagnosticError" })
---     vim.api.nvim_set_hl(0, "DiagnosticVirtualTextWarn", { link = "DiagnosticWarn" })
---     vim.api.nvim_set_hl(0, "DiagnosticVirtualTextInfo", { link = "DiagnosticInfo" })
---     vim.api.nvim_set_hl(0, "DiagnosticVirtualTextHint", { link = "DiagnosticHint" })
--- end
--- vim.api.nvim_create_autocmd('ColorScheme', {
---     pattern = '*',
---     callback = set_hl_for_floating_window,
--- })
--- =============================================================================
-function ColorMyPencils(color, version)
-    vim.cmd.colorscheme(color)
-
-    if color == "vim" or (color == "default" and version == "0.9.0") then
-        vim.api.nvim_set_hl(0, "SignColumn", { bg = "None" }) -- vim.cmd('hi SignColumn ctermbg=0 guibg=black')
-        vim.cmd('highlight GitSignsAdd guibg=NONE guifg=green')
-        vim.cmd('highlight GitSignsChange guibg=NONE guifg=yellow')
-        vim.cmd('highlight GitSignsDelete guibg=NONE guifg=red')
-        vim.cmd('highlight GitSignsChangeDelete guibg=NONE guifg=purple')
-
-        -- Enable italic
-        vim.cmd('highlight Comment cterm=italic gui=italic')
-        vim.cmd('highlight Conditional cterm=italic gui=italic')
-        vim.cmd('highlight Repeat cterm=italic gui=italic')
-        vim.cmd('highlight Statement cterm=italic gui=italic')
-        -- vim.cmd('highlight Type cterm=italic gui=italic')
-        -- vim.cmd('highlight Function cterm=italic gui=italic')
-        -- vim.cmd('highlight Identifier cterm=italic gui=italic')
-        -- vim.cmd('highlight PreProc cterm=italic gui=italic')
-        -- vim.cmd('highlight Special cterm=italic gui=italic')
-        -- vim.cmd('highlight Todo cterm=italic gui=italic')
-        -- vim.cmd('highlight Underlined cterm=italic gui=italic')
-        -- vim.cmd('highlight Label cterm=italic gui=italic')
-        -- vim.cmd('highlight SpecialKey cterm=italic gui=italic')
-        -- vim.cmd('highlight NonText cterm=italic gui=italic')
-        -- vim.cmd('highlight SpecialComment cterm=italic gui=italic')
-        -- vim.cmd('highlight SpecialChar cterm=italic gui=italic')
-        -- vim.cmd('highlight SpecialComment cterm=italic gui=italic')
-        -- vim.cmd('highlight Special cterm=italic gui=italic')
-    end
-end
-ColorMyPencils("nordic")
--- ColorMyPencils("default")
--- ColorMyPencils('rose-pine')
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
