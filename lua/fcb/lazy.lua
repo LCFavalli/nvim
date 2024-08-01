@@ -14,7 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     { 'nvim-telescope/telescope.nvim' },
     { 'nvim-lua/plenary.nvim' },
-    { 'nvim-tree/nvim-web-devicons' },
+    -- { 'nvim-tree/nvim-web-devicons' },
 
     -- LSP
     { "neovim/nvim-lspconfig" },   -- enable LSP
@@ -36,7 +36,6 @@ require("lazy").setup({
     -- SYNTAX HIGHLIGHTING
     { 'nvim-treesitter/nvim-treesitter',  build = ":TSUpdate" },
     -- { "nvim-treesitter/nvim-treesitter-context"},
-
 
     -- GIT
     { "lewis6991/gitsigns.nvim" },
