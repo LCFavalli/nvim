@@ -35,7 +35,7 @@ require('nightfox').setup({
             },
         },
         styles = {               -- Style to be applied to different syntax groups
-            comments = "italic", -- Value is any valid attr-list value `:help attr-list`
+            comments = "NONE", -- Value is any valid attr-list value `:help attr-list`
             conditionals = "NONE",
             constants = "NONE",
             functions = "bold",
@@ -43,7 +43,7 @@ require('nightfox').setup({
             numbers = "NONE",
             operators = "NONE",
             strings = "NONE",
-            types = "italic, bold",
+            types = "bold",
             variables = "NONE",
         },
         inverse = { -- Inverse highlight for different types
