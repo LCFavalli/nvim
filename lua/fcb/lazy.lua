@@ -84,7 +84,7 @@ require("lazy").setup({
 
     -- COLORSCHEME
     { 'rose-pine/neovim',       as = 'rose-pine' },
-    { "EdenEast/nightfox.nvim", as = 'nightfox' },
+    { 'metalelf0/base16-black-metal-scheme' },
 })
 
 
@@ -121,6 +121,7 @@ require("lazy").setup({
 --     lazy = false,
 --     priority = 1000,
 -- }
+-- { "EdenEast/nightfox.nvim", as = 'nightfox' },
 
 -- STATUSLINE
 -- { 'nvim-lualine/lualine.nvim', },
