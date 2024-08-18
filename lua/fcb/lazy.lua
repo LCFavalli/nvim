@@ -83,8 +83,8 @@ require("lazy").setup({
     { "github/copilot.vim" },
 
     -- COLORSCHEME
-    { 'rose-pine/neovim',       as = 'rose-pine' },
-    { 'metalelf0/base16-black-metal-scheme' },
+    { 'rose-pine/neovim',   as = 'rose-pine' },
+    { 'RRethy/nvim-base16', as = 'base16' },
 })
 
 
@@ -122,6 +122,7 @@ require("lazy").setup({
 --     priority = 1000,
 -- }
 -- { "EdenEast/nightfox.nvim", as = 'nightfox' },
+-- { 'metalelf0/base16-black-metal-scheme' },
 
 -- STATUSLINE
 -- { 'nvim-lualine/lualine.nvim', },

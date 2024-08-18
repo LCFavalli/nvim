@@ -15,6 +15,16 @@ require('rose-pine').setup({
     -- }
 })
 -- =============================================================================
+require('base16-colorscheme').with_config({
+    telescope = true,
+    indentblankline = true,
+    notify = true,
+    ts_rainbow = true,
+    cmp = true,
+    illuminate = true,
+    dapui = true,
+})
+-- =============================================================================
 -- local set_hl_for_floating_window = function()
 --     -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" }) -- FORCE TRANSPARENCY
 --     -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
@@ -77,4 +87,4 @@ end
 
 -- ColorMyPencils("default") -- habamax
 -- ColorMyPencils('rose-pine')
-ColorMyPencils('base16-black-metal-mayhem')
+ColorMyPencils('base16-default-dark')
