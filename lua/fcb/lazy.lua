@@ -84,7 +84,6 @@ require("lazy").setup({
 
     -- COLORSCHEME
     { 'rose-pine/neovim',   as = 'rose-pine' },
-    { 'RRethy/nvim-base16', as = 'base16' },
 })
 
 

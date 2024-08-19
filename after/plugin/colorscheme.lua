@@ -1,7 +1,7 @@
 -- =============================================================================
 require('rose-pine').setup({
     variant = 'main', --- @usage 'auto'|'main'|'moon'|'dawn'
-    disable_background = true,
+    disable_background = false,
     disable_italics = true,
     -- disable_float_background = true,
     -- groups = {
@@ -13,16 +13,6 @@ require('rose-pine').setup({
     --     CursorLine = { bg = 'pine', blend = 10 },
     --     StatusLine = { fg = 'pine', bg = 'pine', blend = 10 },
     -- }
-})
--- =============================================================================
-require('base16-colorscheme').with_config({
-    telescope = true,
-    indentblankline = true,
-    notify = true,
-    ts_rainbow = true,
-    cmp = true,
-    illuminate = true,
-    dapui = true,
 })
 -- =============================================================================
 -- local set_hl_for_floating_window = function()
@@ -87,4 +77,3 @@ end
 
 -- ColorMyPencils("default") -- habamax
 -- ColorMyPencils('rose-pine')
-ColorMyPencils('base16-default-dark')

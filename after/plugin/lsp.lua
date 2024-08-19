@@ -78,9 +78,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 -- Round the borders of the floating windows
--- require('lspconfig.ui.windows').default_options.border = 'single'
--- vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' })
--- vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' })
+require('lspconfig.ui.windows').default_options.border = 'single'
+vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' })
+vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' })
 
 vim.diagnostic.config {
     virtual_text = true,
@@ -89,7 +89,7 @@ vim.diagnostic.config {
     --     -- source = "always",  -- Or "if_many"
     --     prefix = '●', -- Could be '■', '▎', 'x'
     -- },
-    -- float = { border = "rounded" },
+    float = { border = "rounded" },
 }
 
 local sign = function(opts)
@@ -130,10 +130,10 @@ cmp.setup({
         completeopt = 'menu,menuone,noinsert,noselect',
         -- autocomplete = false
     },
-    -- window = {
-    --     documentation = cmp.config.window.bordered(),
-    --     completion = cmp.config.window.bordered(),
-    -- },
+    window = {
+        documentation = cmp.config.window.bordered(),
+        completion = cmp.config.window.bordered(),
+    },
     formatting = {
         fields = { 'abbr', 'menu', 'kind' },
         format = function(entry, item)
