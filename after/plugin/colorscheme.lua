@@ -54,10 +54,11 @@ function ColorMyPencils(color, version)
         vim.cmd('highlight GitSignsChangeDelete guibg=NONE guifg=purple')
 
         -- Enable italic
-        vim.cmd('highlight Comment cterm=italic gui=italic')
-        vim.cmd('highlight Conditional cterm=italic gui=italic')
-        vim.cmd('highlight Repeat cterm=italic gui=italic')
-        vim.cmd('highlight Statement cterm=italic gui=italic')
+        -- vim.cmd('highlight Comment cterm=italic gui=italic')
+        -- vim.cmd('highlight Conditional cterm=italic gui=italic')
+        -- vim.cmd('highlight Repeat cterm=italic gui=italic')
+        -- vim.cmd('highlight Statement cterm=italic gui=italic')
+
         -- vim.cmd('highlight Type cterm=italic gui=italic')
         -- vim.cmd('highlight Function cterm=italic gui=italic')
         -- vim.cmd('highlight Identifier cterm=italic gui=italic')
@@ -77,3 +78,4 @@ end
 
 -- ColorMyPencils("default") -- habamax
 -- ColorMyPencils('rose-pine')
+ColorMyPencils('vim')
