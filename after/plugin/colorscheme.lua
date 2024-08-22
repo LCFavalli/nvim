@@ -53,6 +53,12 @@ function ColorMyPencils(color, version)
         vim.cmd('highlight GitSignsDelete guibg=NONE guifg=red')
         vim.cmd('highlight GitSignsChangeDelete guibg=NONE guifg=purple')
 
+        vim.api.nvim_set_hl(0, 'NormalFloat', { link = "Normal", })
+        vim.api.nvim_set_hl(0, 'FloatBorder', { bg = "none" })
+        vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
+        vim.api.nvim_set_hl(0, "NormalSB", { bg = "none" })
+        vim.api.nvim_set_hl(0, "Pmenu", { bg = "none" })
+
         -- Enable italic
         -- vim.cmd('highlight Comment cterm=italic gui=italic')
         -- vim.cmd('highlight Conditional cterm=italic gui=italic')

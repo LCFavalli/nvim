@@ -51,7 +51,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
         bufmap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>')
 
         -- Displays a function's signature information
-        -- bufmap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<cr>')
+        bufmap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<cr>')
 
         -- Renames all references to the symbol under the cursor
         bufmap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<cr>')
@@ -83,8 +83,9 @@ vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { 
 vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' })
 
 vim.diagnostic.config {
-    virtual_text = true,
-    underline = true,
+    virtual_text = false, -- true,
+    underline = false, -- true,
+    signs = true,
     -- virtual_text = {
     --     -- source = "always",  -- Or "if_many"
     --     prefix = '●', -- Could be '■', '▎', 'x'
