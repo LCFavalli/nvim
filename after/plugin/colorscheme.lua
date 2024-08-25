@@ -83,5 +83,5 @@ function ColorMyPencils(color, version)
 end
 
 -- ColorMyPencils("default") -- habamax
--- ColorMyPencils('rose-pine')
-ColorMyPencils('vim')
+-- ColorMyPencils('vim')
+ColorMyPencils('rose-pine')

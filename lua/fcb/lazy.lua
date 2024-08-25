@@ -81,7 +81,7 @@ require("lazy").setup({
     { "github/copilot.vim" },
 
     -- COLORSCHEME
-    { 'rose-pine/neovim',  as = 'rose-pine' },
+    { 'rose-pine/neovim',   as = 'rose-pine' },
 
     {
         "folke/trouble.nvim",

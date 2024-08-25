@@ -216,6 +216,7 @@
 -- ColorMyPencils("cyberdream")
 -- ColorMyPencils("default", "0.9.0")
 -- ColorMyPencils('base16-black-metal-mayhem')
+-- ColorMyPencils('perpetua')
 
 -- ==== Defult =====
 -- ColorMyPencils('industry') -- black
