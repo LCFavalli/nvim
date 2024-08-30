@@ -138,9 +138,10 @@ function HighlightWordUnderCursor()
     local char = line:sub(col, col)
 
     if not char:match("[%p%s]") then
-        vim.cmd("hi MatchWord guibg=#222222") -- #3b404a -- vim.cmd("hi MatchWord gui=undercurl guibg=#3b404a")
+        -- vim.cmd("hi MatchWord guibg=#222222") -- #3b404a -- vim.cmd("hi MatchWord gui=undercurl guibg=#3b404a")
+        -- Underline
+        vim.cmd("hi MatchWord gui=underline")
         vim.cmd("match MatchWord /\\V\\<" .. vim.fn.expand("<cword>") .. "\\>/")
-        -- vim.fn.setreg("/", vim.fn.expand("<cword>"))
     else
         vim.cmd("match none")
     end

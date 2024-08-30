@@ -82,7 +82,9 @@ require("lazy").setup({
 
     -- COLORSCHEME
     { 'rose-pine/neovim',   as = 'rose-pine' },
+    { 'ellisonleao/gruvbox.nvim', as = 'gruvbox' },
 
+    -- ERROR HANDLING
     {
         "folke/trouble.nvim",
         opts = {}, -- for default options, refer to the configuration section for custom setup.
