@@ -41,7 +41,7 @@ vim.cmd(":set sidescrolloff=0")
 vim.opt.runtimepath:remove("/usr/share/vim/vimfiles") -- separate vim plugins from neovim in case vim still in use
 
 vim.opt.modeline = true
--- vim.opt.showmode = false
+vim.opt.showmode = false
 
 -- Block cursor
 vim.opt.guicursor = ""
@@ -64,9 +64,7 @@ vim.opt.foldmethod = "indent" -- "syntax"
 vim.opt.foldlevel = 99
 vim.opt.foldnestmax = 10
 
--- REMOVE COMMAND LINE
-vim.opt.cmdheight = 0
-
+-- vim.opt.cmdheight = 0
 -- vim.opt.autochdir = true
 
 -- vim.opt.cursorcolumn = true
