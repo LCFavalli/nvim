@@ -23,7 +23,7 @@ vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 vim.opt.scrolloff = 8
-vim.opt.signcolumn = "yes"
+vim.opt.signcolumn = "no" -- "yes"
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
@@ -41,6 +41,7 @@ vim.cmd(":set sidescrolloff=0")
 vim.opt.runtimepath:remove("/usr/share/vim/vimfiles") -- separate vim plugins from neovim in case vim still in use
 
 vim.opt.modeline = true
+-- vim.opt.showmode = false
 
 -- Block cursor
 vim.opt.guicursor = ""
@@ -63,11 +64,13 @@ vim.opt.foldmethod = "indent" -- "syntax"
 vim.opt.foldlevel = 99
 vim.opt.foldnestmax = 10
 
--- vim.opt.cmdheight = 0
+-- REMOVE COMMAND LINE
+vim.opt.cmdheight = 0
+
 -- vim.opt.autochdir = true
 
 -- vim.opt.cursorcolumn = true
--- vim.opt.cursorline = true
+vim.opt.cursorline = true
 
 --------------------------------
 -- vim.opt.listchars = {

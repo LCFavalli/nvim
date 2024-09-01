@@ -37,7 +37,8 @@ require("lazy").setup({
     { 'nvim-treesitter/nvim-treesitter',  build = ":TSUpdate" }, -- { "nvim-treesitter/nvim-treesitter-context"},
 
     -- GIT
-    { "lewis6991/gitsigns.nvim" }, -- { "tpope/vim-fugitive" },
+    { "lewis6991/gitsigns.nvim" },
+    -- { "tpope/vim-fugitive" },
 
     -- COMMENT
     { 'numToStr/Comment.nvim' },
@@ -81,8 +82,7 @@ require("lazy").setup({
     { "github/copilot.vim" },
 
     -- COLORSCHEME
-    { 'rose-pine/neovim',   as = 'rose-pine' },
-    { 'ellisonleao/gruvbox.nvim', as = 'gruvbox' },
+    { "phha/zenburn.nvim" },
 
     -- ERROR HANDLING
     {
