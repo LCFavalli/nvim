@@ -281,6 +281,12 @@ require("lspconfig").pyright.setup {
 require("lspconfig").tsserver.setup {}
 require("lspconfig").ocamllsp.setup {}
 require("lspconfig").rust_analyzer.setup {
+    settings = {
+        ["rust-analyzer"] = {
+            rustcSource = "discover",
+        }
+    },
+
     -- diagnostics = {
     --     disabled = { "unresolved-proc-macro" }
     -- },
