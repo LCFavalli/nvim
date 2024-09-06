@@ -30,4 +30,5 @@ require("gruvbox").setup({
     transparent_mode = false,
 })
 
+-- vim.cmd('set background=light')
 vim.cmd("colorscheme gruvbox")
