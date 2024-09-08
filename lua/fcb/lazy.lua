@@ -40,7 +40,7 @@ require("lazy").setup({
 
     -- GIT
     { "lewis6991/gitsigns.nvim" },
-    -- { "tpope/vim-fugitive" },
+    { "tpope/vim-fugitive" },
 
     -- COMMENT
     { 'numToStr/Comment.nvim' },
