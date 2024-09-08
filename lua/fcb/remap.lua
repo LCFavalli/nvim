@@ -1,7 +1,20 @@
+-- Terminal options
+vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-n>', { noremap = true, silent = true })
+-- Remove numbers in terminal mode
+vim.api.nvim_create_autocmd("TermOpen", {
+    pattern = "*",
+    command = "setlocal nonumber norelativenumber"
+})
+
+-- exit terminal mode
+-- vim.api.nvim_set_keymap('t', '<C-w>N', '<C-\\><C-n>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('t', '<C-w>w', '<C-\\><C-n><C-w>W', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('t', '<C-w><C-w>', '<C-\\><C-n><C-w>W', { noremap = true, silent = true })
+
 vim.g.mapleader = " "
-vim.api.nvim_set_keymap('i', '<esc>', '<nop>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>ce', ':Copilot enable<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>cd', ':Copilot disable<CR>', { noremap = true })
+-- vim.api.nvim_set_keymap('i', '<esc>', '<nop>', { noremap = true, silent = true })
 
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
@@ -36,10 +49,6 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 -- vim.keymap.set("n", "<leader>ppv", ":Lex 20<CR>")
 vim.api.nvim_set_keymap('n', '<ESC>u', ':nohlsearch<CR>', { noremap = true, silent = true })
 
--- exit terminal mode
-vim.api.nvim_set_keymap('t', '<C-w>N', '<C-\\><C-n>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('t', '<C-w>w', '<C-\\><C-n><C-w>W', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('t', '<C-w><C-w>', '<C-\\><C-n><C-w>W', { noremap = true, silent = true })
 
 -- resize with shift + arrow
 vim.api.nvim_set_keymap('n', '<S-Up>', ':resize +2<CR>', { noremap = true, silent = true })
@@ -146,8 +155,9 @@ function HighlightWordUnderCursor()
         vim.cmd("match none")
     end
 end
+
 vim.api.nvim_create_augroup("MatchWord", { clear = true })
-vim.api.nvim_create_autocmd({"CursorHold", "CursorHoldI"}, { group = "MatchWord", callback = HighlightWordUnderCursor })
+vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, { group = "MatchWord", callback = HighlightWordUnderCursor })
 
 -- GUI FONT SIZE
 if vim.fn.has("gui_running") then
