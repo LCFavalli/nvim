@@ -6,11 +6,6 @@ vim.api.nvim_create_autocmd("TermOpen", {
     command = "setlocal nonumber norelativenumber"
 })
 
--- exit terminal mode
--- vim.api.nvim_set_keymap('t', '<C-w>N', '<C-\\><C-n>', { noremap = true, silent = true })
--- vim.api.nvim_set_keymap('t', '<C-w>w', '<C-\\><C-n><C-w>W', { noremap = true, silent = true })
--- vim.api.nvim_set_keymap('t', '<C-w><C-w>', '<C-\\><C-n><C-w>W', { noremap = true, silent = true })
-
 vim.g.mapleader = " "
 vim.api.nvim_set_keymap('n', '<leader>ce', ':Copilot enable<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>cd', ':Copilot disable<CR>', { noremap = true })
@@ -18,14 +13,16 @@ vim.api.nvim_set_keymap('n', '<leader>cd', ':Copilot disable<CR>', { noremap = t
 
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
+-- Move line up in visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+-- Move line down in visual mode
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
+--
 vim.keymap.set("n", "J", "mzJ`z")
+
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
 -- greatest remap ever
 
 vim.keymap.set("x", "<leader>p", [["_dP]])
