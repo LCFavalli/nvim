@@ -12,8 +12,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    { 'ellisonleao/gruvbox.nvim' },
-
     { 'nvim-telescope/telescope.nvim' },
     { 'nvim-lua/plenary.nvim' },
     -- { 'nvim-tree/nvim-web-devicons' },
