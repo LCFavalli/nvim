@@ -12,6 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+    { 'rebelot/kanagawa.nvim' },
     { 'nvim-telescope/telescope.nvim' },
     { 'nvim-lua/plenary.nvim' },
     -- { 'nvim-tree/nvim-web-devicons' },
@@ -72,6 +73,20 @@ require("lazy").setup({
             { "<Leader>l", "<Cmd>MultipleCursorsLock<CR>",             mode = { "n", "x" },      desc = "Lock virtual cursors" },
         },
     },
+
+    -- Autopairs
+    {
+        'windwp/nvim-autopairs',
+        event = "InsertEnter",
+        config = true
+    },
+    {
+        'windwp/nvim-ts-autotag',
+        event = "InsertEnter",
+        config = true
+    },
+
+
     -- MARKDOWN PREVIEW
     {
         "iamcco/markdown-preview.nvim",
@@ -81,8 +96,12 @@ require("lazy").setup({
     },
 
     -- COPILOT
-    { "github/copilot.vim" },
-
+    {
+        "github/copilot.vim",
+        config = function()
+            vim.g.copilot_enabled = 0
+        end
+    },
 
     -- ERROR HANDLING
     {
