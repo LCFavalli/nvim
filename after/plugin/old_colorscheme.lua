@@ -340,3 +340,4 @@
 -- -- vim.g.tokyobones = {transparent_background = true}
 -- vim.cmd('set background=light')
 -- vim.cmd.colorscheme('tokyobones')
+-- vim.cmd('colorscheme kanagawa-dragon') -- vim.cmd('colorscheme retrobox')

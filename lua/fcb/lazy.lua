@@ -12,7 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    { 'rebelot/kanagawa.nvim' },
+    { 'rose-pine/neovim' },
     { 'nvim-telescope/telescope.nvim' },
     { 'nvim-lua/plenary.nvim' },
     -- { 'nvim-tree/nvim-web-devicons' },
