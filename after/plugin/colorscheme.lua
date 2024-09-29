@@ -1,16 +1,16 @@
 require("rose-pine").setup({
-    variant = "auto", -- auto, main, moon, or dawn
+    variant = "auto",      -- auto, main, moon, or dawn
     dark_variant = "main", -- main, moon, or dawn
     styles = {
         bold = true,
         italic = true,
-        transparency = false,
+        transparency = true,
     },
-    palette = {
-        main = {
-            base = '#232627',
-        }
-    },
+    -- palette = {
+    --     main = {
+    --         base = '#232627',
+    --     }
+    -- },
 })
 
 -- vim.cmd('set background=light')

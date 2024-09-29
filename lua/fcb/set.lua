@@ -1,5 +1,5 @@
--- Set laststatus to 2
-vim.opt.laststatus = 0
+-- Set laststatus to 0 to remove the statusline
+vim.opt.laststatus = 2
 -- Set number
 vim.opt.nu = true
 -- Set relativenumber
