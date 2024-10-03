@@ -73,12 +73,6 @@ require("lazy").setup({
         },
     },
 
-    -- Autopairs
-    {
-        'windwp/nvim-autopairs',
-        event = "InsertEnter",
-        config = true
-    },
     {
         'windwp/nvim-ts-autotag',
         event = "InsertEnter",
@@ -142,6 +136,12 @@ require("lazy").setup({
     }
 })
 
+-- -- Autopairs
+-- {
+--     'windwp/nvim-autopairs',
+--     event = "InsertEnter",
+--     config = true
+-- },
 -- { 'nvim-tree/nvim-web-devicons' },
 -- { "phha/zenburn.nvim" },
 -- { 'rktjmp/lush.nvim' },
