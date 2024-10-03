@@ -12,10 +12,9 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    { 'rose-pine/neovim' },
+    -- { 'rose-pine/neovim' },
     { 'nvim-telescope/telescope.nvim' },
     { 'nvim-lua/plenary.nvim' },
-    -- { 'nvim-tree/nvim-web-devicons' },
 
     -- LSP
     { "neovim/nvim-lspconfig" },   -- enable LSP
@@ -143,9 +142,7 @@ require("lazy").setup({
     }
 })
 
-
-
-
+-- { 'nvim-tree/nvim-web-devicons' },
 -- { "phha/zenburn.nvim" },
 -- { 'rktjmp/lush.nvim' },
 -- {
