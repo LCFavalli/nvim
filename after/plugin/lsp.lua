@@ -278,7 +278,7 @@ require("lspconfig").pyright.setup {
         }
     }
 }
-require("lspconfig").tsserver.setup {}
+require("lspconfig").ts_ls.setup {}
 require("lspconfig").ocamllsp.setup {}
 require("lspconfig").rust_analyzer.setup {
     settings = {
@@ -294,7 +294,7 @@ require("lspconfig").rust_analyzer.setup {
 require("lspconfig").jdtls.setup {}
 require("lspconfig").gopls.setup {}
 require("lspconfig").erlangls.setup {}
-require("lspconfig").typst_lsp.setup {
+require("lspconfig").tinymist.setup {
     settings = {
         exportPdf = "onType" -- Choose onType, onSave or never.
         -- serverPath = "" -- Normally, there is no need to uncomment it.

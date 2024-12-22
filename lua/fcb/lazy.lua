@@ -12,7 +12,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    -- { 'rose-pine/neovim' },
     { 'nvim-telescope/telescope.nvim' },
     { 'nvim-lua/plenary.nvim' },
 
@@ -64,16 +63,18 @@ require("lazy").setup({
             { "<C-S-Up>",   "<Cmd>MultipleCursorsAddUp<CR>",            mode = { "n", "i", "x" }, desc = "Add cursor and move up" },
             { "<C-S-Down>", "<Cmd>MultipleCursorsAddDown<CR>",          mode = { "n", "i", "x" }, desc = "Add cursor and move down" },
             { "<C-d>",      "<Cmd>MultipleCursorsAddJumpNextMatch<CR>", mode = { "n", "x" },      desc = "Add cursor and jump to next cword" },
-            { "<leader>l",    "<Cmd>MultipleCursorsAddMatches<CR>",       mode = { "n", "x" },      desc = "Add cursors to cword" },
+            { "<leader>l",  "<Cmd>MultipleCursorsAddMatches<CR>",       mode = { "n", "x" },      desc = "Add cursors to cword" },
         },
     },
 
     {
-        'windwp/nvim-ts-autotag',
-        event = "InsertEnter",
-        config = true
+        'rmagatti/auto-session',
+        lazy = false,
+        opts = {
+            suppressed_dirs = { '~/', '~/dev', '~/Downloads', '/' },
+            -- log_level = 'debug',
+        }
     },
-
 
     -- MARKDOWN PREVIEW
     {
@@ -87,7 +88,7 @@ require("lazy").setup({
     {
         "github/copilot.vim",
         config = function()
-            vim.g.copilot_enabled = 0
+            -- vim.g.copilot_enabled = 0 -- Disable copilot
         end
     },
 
@@ -148,6 +149,7 @@ require("lazy").setup({
 --         require 'nordic'.load()
 --     end
 -- }
+-- { 'rose-pine/neovim' },
 -- { "catppuccin/nvim",               as = "catppuccin" },
 -- { 'Shatur/neovim-ayu',             as = 'ayu' },
 -- { 'folke/tokyonight.nvim',         as = 'tokyonight', },

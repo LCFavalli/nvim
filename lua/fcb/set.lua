@@ -32,8 +32,8 @@ vim.opt.hlsearch = true
 vim.opt.incsearch = true
 -- Show the signcolumn
 vim.opt.signcolumn = "yes"
--- Highlight current line
-vim.opt.cursorline = true
+-- Not highlight current line
+vim.opt.cursorline = false
 -- Disable the orizontal scroll
 vim.opt.sidescrolloff = 0 -- vim.opt.mousescroll = "ver:1,hor:0"
 -- Set splitbelow (new split window is below the current)
