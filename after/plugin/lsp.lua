@@ -51,7 +51,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
         bufmap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>')
 
         -- Displays a function's signature information
-        -- bufmap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<cr>')
+        bufmap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<cr>')
 
         -- Renames all references to the symbol under the cursor
         bufmap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<cr>')
@@ -70,6 +70,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
         -- Show the diagnostic list
         bufmap('n', '<leader>dl', '<cmd>lua vim.diagnostic.setloclist()<cr>')
+
         -- Format the current buffer
         bufmap('n', '<C-f>', '<cmd>lua vim.lsp.buf.format()<cr>')
         -- bufmap('n', '<leader>f', '<cmd>lua vim.lsp.buf.format()<cr>')
@@ -98,11 +99,10 @@ local sign = function(opts)
         text = opts.text,
     })
 end
-sign({ name = 'DiagnosticSignError', text = '✘' }) -- text = ' ' })
-sign({ name = 'DiagnosticSignWarn', text = '▲' }) --text = '' })
-sign({ name = 'DiagnosticSignHint', text = '⚑' }) --text = '' })
-sign({ name = 'DiagnosticSignInfo', text = '' }) --text = '󰌵' })
-
+sign({ name = 'DiagnosticSignError', text = '✘' })
+sign({ name = 'DiagnosticSignWarn', text = '▲' })
+sign({ name = 'DiagnosticSignHint', text = '⚑' })
+sign({ name = 'DiagnosticSignInfo', text = '' })
 ------------------------------------------------------
 -------------------- CMP CONFIG ----------------------
 ------------------------------------------------------
@@ -286,7 +286,6 @@ require("lspconfig").rust_analyzer.setup {
             rustcSource = "discover",
         }
     },
-
     -- diagnostics = {
     --     disabled = { "unresolved-proc-macro" }
     -- },
@@ -296,8 +295,7 @@ require("lspconfig").gopls.setup {}
 require("lspconfig").erlangls.setup {}
 require("lspconfig").tinymist.setup {
     settings = {
-        exportPdf = "onType" -- Choose onType, onSave or never.
-        -- serverPath = "" -- Normally, there is no need to uncomment it.
+        exportPdf = "onType"
     }
 }
 require("lspconfig").texlab.setup {}

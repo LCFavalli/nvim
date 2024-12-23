@@ -23,7 +23,6 @@ vim.keymap.set("n", "J", "mzJ`z")
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
--- greatest remap ever
 
 vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set({ "v" }, "p", [["_dP]], { noremap = true, silent = true })
@@ -35,7 +34,6 @@ vim.keymap.set("n", "<leader>pe", "A <Esc>p")
 -- next greatest remap ever
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 
--- This is going to get me cancelled
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "Q", "<nop>")
