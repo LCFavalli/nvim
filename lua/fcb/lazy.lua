@@ -1,3 +1,5 @@
+local utf8 = require 'lua-utf8'
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
@@ -99,6 +101,11 @@ require("lazy").setup({
         config = function()
             -- vim.g.copilot_enabled = 0 -- Disable copilot
         end
+    },
+
+    -- Agda
+    {
+        "ashinkarov/nvim-agda",
     },
 
     -- ERROR HANDLING
