@@ -106,6 +106,14 @@ require("lazy").setup({
     -- Agda
     {
         "ashinkarov/nvim-agda",
+        lazy = false,
+        config = function()
+            vim.g.nvim_agda_settings = {
+                -- agda = "/usr/local/bin/agda",       -- Location of Agda binary
+                -- agda_args = { "--arg1", "--arg2" }, -- Default arguments to Agda binary
+                debug_p = true                      -- Turn debug prints on or off
+            }
+        end
     },
 
     -- ERROR HANDLING
