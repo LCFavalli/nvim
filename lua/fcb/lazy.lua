@@ -14,6 +14,13 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     { 'nvim-telescope/telescope.nvim' },
     { 'nvim-lua/plenary.nvim' },
+    -- UNICODE CHARACTERS
+    {
+        "nvim-telescope/telescope-symbols.nvim",
+        keys = {
+            { "<C-u>", "<cmd>Telescope symbols<cr>", desc = "Unicode symbols" },
+        },
+    },
 
     -- LSP
     { "neovim/nvim-lspconfig" },   -- enable LSP
@@ -67,6 +74,7 @@ require("lazy").setup({
         },
     },
 
+    -- HANDLE SESSIONS
     {
         'rmagatti/auto-session',
         lazy = false,
@@ -75,6 +83,7 @@ require("lazy").setup({
             -- log_level = 'debug',
         }
     },
+
 
     -- MARKDOWN PREVIEW
     {
