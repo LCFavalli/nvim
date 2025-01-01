@@ -16,13 +16,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     { 'nvim-telescope/telescope.nvim' },
     { 'nvim-lua/plenary.nvim' },
-    -- UNICODE CHARACTERS
-    {
-        "nvim-telescope/telescope-symbols.nvim",
-        keys = {
-            { "<C-u>", "<cmd>Telescope symbols<cr>", desc = "Unicode symbols" },
-        },
-    },
+    { "nvim-telescope/telescope-symbols.nvim" }, -- UNICODE CHARACTERS
 
     -- LSP
     { "neovim/nvim-lspconfig" },   -- enable LSP
@@ -42,7 +36,7 @@ require("lazy").setup({
     { "nvimtools/none-ls.nvim" },       -- { "jose-elias-alvarez/null-ls.nvim" },
 
     -- SYNTAX HIGHLIGHTING
-    { 'nvim-treesitter/nvim-treesitter',  build = ":TSUpdate" }, -- { "nvim-treesitter/nvim-treesitter-context"},
+    { 'nvim-treesitter/nvim-treesitter',       build = ":TSUpdate" }, -- { "nvim-treesitter/nvim-treesitter-context"},
 
     -- GIT
     { "lewis6991/gitsigns.nvim" },
@@ -111,7 +105,7 @@ require("lazy").setup({
             vim.g.nvim_agda_settings = {
                 -- agda = "/usr/local/bin/agda",       -- Location of Agda binary
                 -- agda_args = { "--arg1", "--arg2" }, -- Default arguments to Agda binary
-                debug_p = true                      -- Turn debug prints on or off
+                debug_p = true -- Turn debug prints on or off
             }
         end
     },

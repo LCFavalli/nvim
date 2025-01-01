@@ -27,6 +27,8 @@ vim.keymap.set('n', '<leader>ws', builtin.lsp_workspace_symbols, {})
 vim.api.nvim_set_hl(0, 'TelescopeNormal', { bg = 'none' })
 vim.api.nvim_set_hl(0, 'TelescopeBorder', { bg = 'none' })
 
+vim.keymap.set({'n', 'i'}, '<C-u>', '<cmd>Telescope symbols<CR>', { noremap = true, silent = true })
+
 -- vim.keymap.set('n', '<leader>ps', function()
 --     builtin.grep_string({ search = vim.fn.input("Grep > ") })
 -- end)
