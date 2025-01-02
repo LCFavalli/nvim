@@ -346,41 +346,42 @@ vim.api.nvim_create_autocmd('FileType', {
     end,
 })
 
--- Socket connection
--- vim.api.nvim_create_autocmd('FileType', {
---     pattern = 'simplelanguage',
---     callback = function()
---         -- os.execute('./runLSP.sh > /dev/null 2>&1 &') -- UNUSED
---         -- os.execute('./gradlew runLSP -q --console=plain > /dev/null 2>&1 &')
---         -- os.execute('sleep 1')
---
---         vim.lsp.start({
---             name = 'simplelanguage',
---             cmd = vim.lsp.rpc.connect('127.0.0.1', 5123),
---             root_dir = vim.fs.dirname(vim.fs.find({ 'start.lsp', 'build.gradle' }, { upward = true })[1]),
---             -- filetypes = { 'tst', 'nl },
---         })
---     end,
--- })
-
--- Pipe connection
+-- Socket connection (for debug purposes)
 vim.api.nvim_create_autocmd('FileType', {
     pattern = 'simplelanguage',
     callback = function()
-        local cmd = {
-            "java",
-            "-jar",
-            -- "/Users/federicobruzzone/Documents/ADAPT-LAB/tesi-dagostino/trunk/neverlang-lsp/simplelang-lsp/build/libs/simplelang-client.jar"
-            "/Users/federicobruzzone/Documents/ADAPT-LAB/tesi-dagostino/trunk/examples/simplelanguage/build/libs/simplelang.SimpleLang-client.jar"
-        }
-        local client = vim.lsp.start({
+        -- os.execute('./runLSP.sh > /dev/null 2>&1 &') -- UNUSED
+        -- os.execute('./gradlew runLSP -q --console=plain > /dev/null 2>&1 &')
+        -- os.execute('sleep 1')
+
+        vim.lsp.start({
             name = 'simplelanguage',
-            cmd = cmd,
+            cmd = vim.lsp.rpc.connect('127.0.0.1', 5123),
             root_dir = vim.fs.dirname(vim.fs.find({ 'start.lsp', 'build.gradle' }, { upward = true })[1]),
+            -- filetypes = { 'tst', 'nl },
         })
-        vim.lsp.buf_attach_client(0, client)
     end,
 })
+
+-- Pipe connection
+-- vim.api.nvim_create_autocmd('FileType', {
+--     pattern = 'simplelanguage',
+--     callback = function()
+--         local cmd = {
+--             "java",
+--             "-jar",
+--             -- "/Users/federicobruzzone/Documents/ADAPT-LAB/tesi-dagostino/trunk/neverlang-lsp/simplelang-lsp/build/libs/simplelang-client.jar"
+--             -- "/Users/federicobruzzone/Documents/ADAPT-LAB/tesi-dagostino/trunk/examples/simplelanguage/build/libs/simplelang.SimpleLang-client.jar"
+--             "/home/fcb/dev/tesi-bruzzone/trunk/master-thesis/neverlang-lsp/examples/simplelanguage/build/libs/simplelang.SimpleLang-client.jar"
+--         }
+--         local client = vim.lsp.start({
+--             name = 'simplelanguage',
+--             cmd = cmd,
+--             root_dir = vim.fs.dirname(vim.fs.find({ 'start.lsp', 'build.gradle' }, { upward = true })[1]),
+--         })
+--         vim.lsp.buf_attach_client(0, client)
+--     end,
+-- })
 
 vim.api.nvim_create_autocmd('FileType', {
     pattern = 'statemachine',
