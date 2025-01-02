@@ -1,5 +1,3 @@
-local utf8 = require 'lua-utf8'
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
@@ -14,6 +12,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+    { 'projekt0n/github-nvim-theme' },
+
     { 'nvim-telescope/telescope.nvim' },
     { 'nvim-lua/plenary.nvim' },
     { "nvim-telescope/telescope-symbols.nvim" }, -- UNICODE CHARACTERS
