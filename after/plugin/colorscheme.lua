@@ -1,5 +1,5 @@
 -- vim.cmd('set background=dark')
-vim.cmd('colorscheme github_light')
+vim.cmd('colorscheme nordic')
 vim.api.nvim_set_hl(0, "SignColumn", { bg = "None" })
 vim.api.nvim_set_hl(0, 'NormalFloat', { link = "Normal" })
 vim.api.nvim_set_hl(0, 'Pmenu', { link = "Normal" })
