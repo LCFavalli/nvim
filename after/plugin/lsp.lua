@@ -280,16 +280,75 @@ require("lspconfig").pyright.setup {
 }
 require("lspconfig").ts_ls.setup {}
 require("lspconfig").ocamllsp.setup {}
-require("lspconfig").rust_analyzer.setup {
-    settings = {
-        ["rust-analyzer"] = {
-            rustcSource = "discover",
-        }
-    },
-    -- diagnostics = {
-    --     disabled = { "unresolved-proc-macro" }
-    -- },
-}
+
+-- TODO: Remove this when the issue is fixed
+for _, method in ipairs({ 'textDocument/diagnostic', 'workspace/diagnostic' }) do
+    local default_diagnostic_handler = vim.lsp.handlers[method]
+    vim.lsp.handlers[method] = function(err, result, context, config)
+        if err ~= nil and err.code == -32802 then
+            return
+        end
+        return default_diagnostic_handler(err, result, context, config)
+    end
+end
+-- Check if the `CWD` is equal ro `rust`
+if vim.fn.expand('%:p:h:t') == "rust" then
+    require("lspconfig").rust_analyzer.setup {
+        settings = {
+            ["rust-analyzer"] = {
+                check = {
+                    invocationStrategy = "once",
+                    overrideCommand = { "python3", "x.py", "check", "--json-output" },
+                },
+                linkedProjects = {
+                    "Cargo.toml",
+                    "library/Cargo.toml",
+                    "src/tools/x/Cargo.toml",
+                    "src/bootstrap/Cargo.toml",
+                    "src/tools/rust-analyzer/Cargo.toml",
+                    "compiler/rustc_codegen_cranelift/Cargo.toml",
+                    "compiler/rustc_codegen_gcc/Cargo.toml",
+                },
+                rustfmt = {
+                    overrideCommand = { "./build/host/rustfmt/bin/rustfmt", "--edition=2021" },
+                },
+                procMacro = {
+                    server = "./build/host/stage0/libexec/rust-analyzer-proc-macro-srv",
+                    enable = true,
+                },
+                cargo = {
+                    sysrootSrc = "./library",
+                    buildScripts = {
+                        enable = true,
+                        invocationStrategy = "once",
+                        overrideCommand = { "python3", "x.py", "check", "--json-output" },
+                    },
+                    extraEnv = {
+                        RUSTC_BOOTSTRAP = "1",
+                    },
+                },
+                server = {
+                    extraEnv = {
+                        RUSTUP_TOOLCHAIN = "nightly",
+                    },
+                },
+                rustcSource = "./Cargo.toml",
+            },
+        },
+    }
+else
+    require("lspconfig").rust_analyzer.setup {
+        settings = {
+            ["rust-analyzer"] = {
+                rustcSource = "discover",
+            }
+            -- diagnostics = {
+            --     disabled = { "unresolved-proc-macro" }
+            -- },
+        },
+    }
+end
+
 require("lspconfig").jdtls.setup {}
 require("lspconfig").gopls.setup {}
 require("lspconfig").erlangls.setup {}
