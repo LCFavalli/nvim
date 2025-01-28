@@ -12,14 +12,14 @@ require("nvim-tree").setup({
     },
     renderer = {
         group_empty = true,
-
-        icons = {
-            show = {
-                folder_arrow = false,
-                folder = false,
-                file = false,
-            },
-        },
+        -- Remove devicons
+        -- icons = {
+        --     show = {
+        --         folder_arrow = false,
+        --         folder = false,
+        --         file = false,
+        --     },
+        -- },
     },
     -- filters = {
     --         dotfiles = true,
