@@ -43,9 +43,15 @@ require("lazy").setup({
 
     -- GIT
     { "lewis6991/gitsigns.nvim" },
-    { "tpope/vim-fugitive" },
 
     -- COMMENT
+    {
+        "NeogitOrg/neogit",
+        dependencies = {
+            "sindrets/diffview.nvim", -- optional - Diff integration
+        },
+        config = true
+    },
     { 'numToStr/Comment.nvim' },
 
     -- MULTICURSOR
@@ -223,3 +229,6 @@ require("lazy").setup({
 
 -- ZEN MODE
 -- { "folke/zen-mode.nvim" },
+
+-- GIT
+-- { "tpope/vim-fugitive" },

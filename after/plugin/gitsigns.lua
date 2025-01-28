@@ -16,7 +16,7 @@ require('gitsigns').setup {
         follow_files = true
     },
     attach_to_untracked          = true,
-    -- current_line_blame = true, -- Toggle with `:Gitsigns toggle_current_line_blame`
+    current_line_blame = true, -- Toggle with `:Gitsigns toggle_current_line_blame`
     current_line_blame_opts      = {
         virt_text = true,
         virt_text_pos = 'eol', -- 'eol' | 'overlay' | 'right_align'
@@ -72,8 +72,8 @@ require('gitsigns').setup {
         -- map('n', '<leader>hp', gs.preview_hunk)
         -- map('n', '<leader>hb', function() gs.blame_line { full = true } end)
         -- map('n', '<leader>tb', gs.toggle_current_line_blame)
-        -- map('n', '<leader>hd', gs.diffthis)
-        -- map('n', '<leader>hD', function() gs.diffthis('~') end)
+        -- map('n', '<leader>hD', gs.diffthis)
+        map('n', '<leader>hd', function() gs.diffthis('~') end)
         -- map('n', '<leader>td', gs.toggle_deleted)
 
         -- Text object
