@@ -36,7 +36,10 @@ require("lazy").setup({
     { "nvimtools/none-ls.nvim" },       -- { "jose-elias-alvarez/null-ls.nvim" },
 
     -- SYNTAX HIGHLIGHTING
-    { 'nvim-treesitter/nvim-treesitter',       build = ":TSUpdate" }, -- { "nvim-treesitter/nvim-treesitter-context"},
+    { 'nvim-treesitter/nvim-treesitter',      build = ":TSUpdate" }, -- { "nvim-treesitter/nvim-treesitter-context"},
+
+    -- FILE EXPLORER
+    { "nvim-tree/nvim-tree.lua", },
 
     -- GIT
     { "lewis6991/gitsigns.nvim" },
@@ -71,14 +74,7 @@ require("lazy").setup({
     },
 
     -- HANDLE SESSIONS
-    {
-        'rmagatti/auto-session',
-        lazy = false,
-        opts = {
-            suppressed_dirs = { '~/', '~/dev', '~/Downloads', '/' },
-            -- log_level = 'debug',
-        }
-    },
+    { 'rmagatti/auto-session', },
 
 
     -- MARKDOWN PREVIEW
