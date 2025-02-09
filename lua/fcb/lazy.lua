@@ -12,7 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    { "rebelot/kanagawa.nvim", name = "kanagawa" },
+    { "wtfox/jellybeans.nvim" },
 
     { 'nvim-telescope/telescope.nvim' },
     { 'nvim-lua/plenary.nvim' },

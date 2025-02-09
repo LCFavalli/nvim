@@ -28,7 +28,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     callback = function()
         -- Enable completion triggered by <c-x><c-o>
         local bufmap = function(mode, lhs, rhs)
-            local opts = { buffer = true }
+            local opts = {}   -- buffer = true
             vim.keymap.set(mode, lhs, rhs, opts)
         end
 
@@ -58,6 +58,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
         -- Selects a code action available at the current cursor position
         bufmap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<cr>')
+        bufmap('n', '<C-a>', '<cmd>lua vim.lsp.buf.code_action()<cr>')
 
         -- Show diagnostics in a floating window
         bufmap('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<cr>')
@@ -85,24 +86,40 @@ vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.s
 vim.diagnostic.config {
     virtual_text = true,
     underline = true,
-    signs = true,
-    -- virtual_text = {
-    --     -- source = "always",  -- Or "if_many"
-    --     prefix = '●', -- Could be '■', '▎', 'x'
-    -- },
+    virtual_text = {
+        -- source = "always",  -- Or "if_many"
+        prefix = '●', -- Could be '■', '▎', 'x'
+    },
     float = { border = "rounded" },
+
+    -- signs = true,
+    signs = {
+        text = {
+            [vim.diagnostic.severity.ERROR] = '',
+            [vim.diagnostic.severity.WARN] = '',
+            [vim.diagnostic.severity.INFO] = '',
+            [vim.diagnostic.severity.HINT] = '',
+        },
+        numhl = {
+            [vim.diagnostic.severity.WARN] = 'WarningMsg',
+            [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
+            [vim.diagnostic.severity.INFO] = 'DiagnosticInfo',
+            [vim.diagnostic.severity.HINT] = 'DiagnosticHint',
+
+        },
+    },
 }
 
-local sign = function(opts)
-    vim.fn.sign_define(opts.name, {
-        texthl = opts.name,
-        text = opts.text,
-    })
-end
-sign({ name = 'DiagnosticSignError', text = ""}) -- '✘'
-sign({ name = 'DiagnosticSignWarn',  text = ""}) -- '▲'
-sign({ name = 'DiagnosticSignHint',  text = ""}) -- '⚑'
-sign({ name = 'DiagnosticSignInfo',  text = ''}) -- ''
+-- local sign = function(opts)
+--     vim.fn.sign_define(opts.name, {
+--         texthl = opts.name,
+--         text = opts.text,
+--     })
+-- end
+-- sign({ name = 'DiagnosticSignError', text = "" }) -- '✘'
+-- sign({ name = 'DiagnosticSignWarn', text = "" }) -- '▲'
+-- sign({ name = 'DiagnosticSignHint', text = "" }) -- '⚑'
+-- sign({ name = 'DiagnosticSignInfo', text = '' }) -- ''
 
 ------------------------------------------------------
 -------------------- CMP CONFIG ----------------------

@@ -1,2 +1,3 @@
+require("jellybeans").setup()
 vim.cmd('set background=dark')
-vim.cmd("colorscheme kanagawa-dragon") -- wave, lotus
+vim.cmd("colorscheme jellybeans")
