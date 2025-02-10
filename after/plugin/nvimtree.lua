@@ -3,6 +3,8 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+-- <S-i> will toggle visibility of hidden files
+-- <S-h> will toggle visibility of dotfiles
 require("nvim-tree").setup({
     sort = {
         sorter = "case_sensitive",
