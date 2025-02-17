@@ -1,3 +1,6 @@
+vim.api.nvim_set_keymap('n', '<M-k>', '<Cmd>lua require("dapui").toggle()<CR>', { noremap = true, silent = true })
+
+
 -- Terminal options
 vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-n>', { noremap = true, silent = true })
 -- Remove numbers in terminal mode

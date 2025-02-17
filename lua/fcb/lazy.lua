@@ -18,6 +18,11 @@ require("lazy").setup({
     { 'nvim-lua/plenary.nvim' },
     { "nvim-telescope/telescope-symbols.nvim" }, -- UNICODE CHARACTERS
 
+    -- DAP
+    { "mfussenegger/nvim-dap" },
+    { "nvim-neotest/nvim-nio" },
+    { "rcarriga/nvim-dap-ui" },
+
     -- LSP
     { "neovim/nvim-lspconfig" },   -- enable LSP
     { "williamboman/mason.nvim" }, -- simple to use language server installer
@@ -98,6 +103,7 @@ require("lazy").setup({
             -- vim.g.copilot_enabled = 0 -- Disable copilot
         end
     },
+
 
     -- Agda
     {
@@ -208,8 +214,6 @@ require("lazy").setup({
 --     }
 -- },
 
--- COQ
--- { 'whonore/Coqtail' },
 
 -- CUSTOM COLORSCHEME
 -- { dir = '~/TMP/gruber-darker.nvim/',  as = 'gruber-darker' },
@@ -232,3 +236,6 @@ require("lazy").setup({
 
 -- GIT
 -- { "tpope/vim-fugitive" },
+
+-- -- COQ
+-- { 'whonore/Coqtail', },
