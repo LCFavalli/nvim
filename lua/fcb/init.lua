@@ -3,7 +3,7 @@ require("fcb.remap")
 require("fcb.lazy")
 -- require("fcb.packer")
 
-vim.g.python3_host_prog = '/usr/bin/python3.6'
+vim.g.python3_host_prog = '/usr/bin/python3'
 
 local augroup = vim.api.nvim_create_augroup
 local fcb = augroup('fcb', {})
