@@ -84,7 +84,7 @@ vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { 
 vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' })
 
 vim.diagnostic.config {
-    virtual_text = true,
+    -- virtual_text = true,
     underline = true,
     virtual_text = {
         -- source = "always",  -- Or "if_many"
@@ -92,22 +92,20 @@ vim.diagnostic.config {
     },
     float = { border = "rounded" },
 
-    -- signs = true,
-    signs = {
-        text = {
-            [vim.diagnostic.severity.ERROR] = '',
-            [vim.diagnostic.severity.WARN] = '',
-            [vim.diagnostic.severity.INFO] = '',
-            [vim.diagnostic.severity.HINT] = '',
-        },
-        numhl = {
-            [vim.diagnostic.severity.WARN] = 'WarningMsg',
-            [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
-            [vim.diagnostic.severity.INFO] = 'DiagnosticInfo',
-            [vim.diagnostic.severity.HINT] = 'DiagnosticHint',
-
-        },
-    },
+    -- signs = {
+    --     text = {
+    --         [vim.diagnostic.severity.ERROR] = '',
+    --         [vim.diagnostic.severity.WARN] = '',
+    --         [vim.diagnostic.severity.INFO] = '',
+    --         [vim.diagnostic.severity.HINT] = '',
+    --     },
+    --     numhl = {
+    --         [vim.diagnostic.severity.WARN] = 'WarningMsg',
+    --         [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
+    --         [vim.diagnostic.severity.INFO] = 'DiagnosticInfo',
+    --         [vim.diagnostic.severity.HINT] = 'DiagnosticHint',
+    --     },
+    -- },
 }
 
 -- local sign = function(opts)
@@ -125,24 +123,20 @@ vim.diagnostic.config {
 -------------------- CMP CONFIG ----------------------
 ------------------------------------------------------
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
-require('luasnip.loaders.from_vscode').lazy_load()
+-- require('luasnip.loaders.from_vscode').lazy_load() -- TOGGLE SNIPPETS
 
 local cmp = require('cmp')
-local luasnip = require('luasnip')
+-- local luasnip = require('luasnip') -- TOGGLE SNIPPETS
 
 local select_opts = { behavior = cmp.SelectBehavior.Select }
 cmp.setup({
-    snippet = {
-        expand = function(args)
-            luasnip.lsp_expand(args.body)
-        end
-    },
+    -- snippet = { expand = function(args) luasnip.lsp_expand(args.body) end }, -- TOGGLE SNIPPETS
     sources = {
         { name = 'nvim_lsp', keyword_length = 1 },
         { name = 'path' },
         { name = 'nvim_lua', keyword_length = 1 },
         { name = 'buffer',   keyword_length = 3 },
-        { name = 'luasnip',  keyword_length = 2 },
+        -- { name = 'luasnip',  keyword_length = 2 }, -- TOGGLE SNIPPETS
     },
     completion = {
         completeopt = 'menu,menuone,noinsert,noselect',
@@ -158,9 +152,9 @@ cmp.setup({
             local menu_icon = {
                 nvim_lsp = 'λ',
                 nvim_lua = '',
-                luasnip = '⋗',
                 buffer = 'Ω',
                 path = '🖫',
+                -- luasnip = '⋗',
             }
             item.menu = menu_icon[entry.source.name]
             -- Set the fixed width of the completion menu to 60 characters.
@@ -211,19 +205,19 @@ cmp.setup({
         ['<CR>'] = cmp.mapping.confirm({ select = false }),
 
         ["<Tab>"] = cmp.mapping(function(fallback)
-            if luasnip.expand_or_jumpable() then
-                luasnip.expand_or_jump()
-            else
+            -- if luasnip.expand_or_jumpable() then
+            --     luasnip.expand_or_jump()
+            -- else
                 fallback()
-            end
+            -- end
         end, { "i", "s" }),
 
         ["<S-Tab>"] = cmp.mapping(function(fallback)
-            if luasnip.jumpable(-1) then
-                luasnip.jump(-1)
-            else
+            -- if luasnip.jumpable(-1) then
+            --     luasnip.jump(-1)
+            -- else
                 fallback()
-            end
+            -- end
         end, { "i", "s" }),
     }
 })

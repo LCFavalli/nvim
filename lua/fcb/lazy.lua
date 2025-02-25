@@ -12,33 +12,32 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    { "wtfox/jellybeans.nvim" },
+    { "rebelot/kanagawa.nvim" },
 
     { 'nvim-telescope/telescope.nvim' },
     { 'nvim-lua/plenary.nvim' },
     { "nvim-telescope/telescope-symbols.nvim" }, -- UNICODE CHARACTERS
 
-    -- DAP
-    { "mfussenegger/nvim-dap" },
-    { "nvim-neotest/nvim-nio" },
-    { "rcarriga/nvim-dap-ui" },
-
     -- LSP
     { "neovim/nvim-lspconfig" },   -- enable LSP
     { "williamboman/mason.nvim" }, -- simple to use language server installer
     { "williamboman/mason-lspconfig.nvim" },
+    -- DAP
+    { "mfussenegger/nvim-dap" },
+    { "nvim-neotest/nvim-nio" },
+    { "rcarriga/nvim-dap-ui" },
     -- AUTO COMPLETION
-    { "hrsh7th/nvim-cmp" },             -- The completion plugin
-    { "hrsh7th/cmp-buffer" },           -- buffer completions
-    { "hrsh7th/cmp-path" },             -- path completions
-    { "saadparwaiz1/cmp_luasnip" },     -- snippet completions
-    { "hrsh7th/cmp-nvim-lsp" },         -- LSP completions
-    { "hrsh7th/cmp-nvim-lua" },         -- nvim lua completions
-    -- SNIPPETS
-    { "L3MON4D3/LuaSnip" },             --snippet engine
-    { "rafamadriz/friendly-snippets" }, -- a bunch of snippets to use
+    { "hrsh7th/nvim-cmp" },         -- The completion plugin
+    { "hrsh7th/cmp-buffer" },       -- buffer completions
+    { "hrsh7th/cmp-path" },         -- path completions
+    { "saadparwaiz1/cmp_luasnip" }, -- snippet completions
+    { "hrsh7th/cmp-nvim-lsp" },     -- LSP completions
+    { "hrsh7th/cmp-nvim-lua" },     -- nvim lua completions
     -- FORMAT
-    { "nvimtools/none-ls.nvim" },       -- { "jose-elias-alvarez/null-ls.nvim" },
+    { "nvimtools/none-ls.nvim" },
+    -- SNIPPETS
+    -- { "L3MON4D3/LuaSnip" },             --snippet engine
+    -- { "rafamadriz/friendly-snippets" }, -- a bunch of snippets to use
 
     -- SYNTAX HIGHLIGHTING
     { 'nvim-treesitter/nvim-treesitter',      build = ":TSUpdate" }, -- { "nvim-treesitter/nvim-treesitter-context"},
@@ -48,8 +47,6 @@ require("lazy").setup({
 
     -- GIT
     { "lewis6991/gitsigns.nvim" },
-
-    -- COMMENT
     {
         "NeogitOrg/neogit",
         dependencies = {
@@ -57,6 +54,8 @@ require("lazy").setup({
         },
         config = true
     },
+
+    -- COMMENT
     { 'numToStr/Comment.nvim' },
 
     -- MULTICURSOR
@@ -64,19 +63,11 @@ require("lazy").setup({
         "brenton-leighton/multiple-cursors.nvim",
         version = "*", -- Use the latest tagged version
         opts = {
-            -- custom_key_maps = {
-            --     { "n", "<Leader>|", function() require("multiple-cursors").align() end },
-            -- },
+            custom_key_maps = {
+                { "n", "<Leader>|", function() require("multiple-cursors").align() end },
+            },
         },
         keys = {
-            -- { "<C-j>",         "<Cmd>MultipleCursorsAddDown<CR>",          mode = { "n", "x" },      desc = "Add cursor and move down" },
-            -- { "<C-k>",         "<Cmd>MultipleCursorsAddUp<CR>",            mode = { "n", "x" },      desc = "Add cursor and move up" },
-            -- { "<C-LeftMouse>", "<Cmd>MultipleCursorsMouseAddDelete<CR>",   mode = { "n", "i" },      desc = "Add or remove cursor" },
-            -- { "<Leader>a",     "<Cmd>MultipleCursorsAddMatches<CR>",       mode = { "n", "x" },      desc = "Add cursors to cword" },
-            -- { "<Leader>A",     "<Cmd>MultipleCursorsAddMatchesV<CR>",      mode = { "n", "x" },      desc = "Add cursors to cword in previous area" },
-            -- { "<Leader>d",     "<Cmd>MultipleCursorsAddJumpNextMatch<CR>", mode = { "n", "x" },      desc = "Add cursor and jump to next cword" },
-            -- { "<Leader>D",     "<Cmd>MultipleCursorsJumpNextMatch<CR>",    mode = { "n", "x" },      desc = "Jump to next cword" },
-            -- { "<Leader>l",     "<Cmd>MultipleCursorsLock<CR>",             mode = { "n", "x" },      desc = "Lock virtual cursors" },
             { "<C-S-Up>",   "<Cmd>MultipleCursorsAddUp<CR>",            mode = { "n", "i", "x" }, desc = "Add cursor and move up" },
             { "<C-S-Down>", "<Cmd>MultipleCursorsAddDown<CR>",          mode = { "n", "i", "x" }, desc = "Add cursor and move down" },
             { "<C-d>",      "<Cmd>MultipleCursorsAddJumpNextMatch<CR>", mode = { "n", "x" },      desc = "Add cursor and jump to next cword" },
@@ -86,37 +77,6 @@ require("lazy").setup({
 
     -- HANDLE SESSIONS
     { 'rmagatti/auto-session', },
-
-
-    -- MARKDOWN PREVIEW
-    {
-        "iamcco/markdown-preview.nvim",
-        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-        ft = { "markdown" },
-        build = function() vim.fn["mkdp#util#install"]() end,
-    },
-
-    -- COPILOT
-    {
-        "github/copilot.vim",
-        config = function()
-            -- vim.g.copilot_enabled = 0 -- Disable copilot
-        end
-    },
-
-
-    -- Agda
-    {
-        "ashinkarov/nvim-agda",
-        lazy = false,
-        config = function()
-            vim.g.nvim_agda_settings = {
-                -- agda = "/usr/local/bin/agda",       -- Location of Agda binary
-                -- agda_args = { "--arg1", "--arg2" }, -- Default arguments to Agda binary
-                debug_p = true -- Turn debug prints on or off
-            }
-        end
-    },
 
     -- ERROR HANDLING
     {
@@ -139,23 +99,59 @@ require("lazy").setup({
                 "<cmd>Trouble symbols toggle focus=false<cr>",
                 desc = "Symbols (Trouble)",
             },
-            {
-                "<leader>cl",
-                "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
-                desc = "LSP Definitions / references / ... (Trouble)",
-            },
-            {
-                "<leader>xL",
-                "<cmd>Trouble loclist toggle<cr>",
-                desc = "Location List (Trouble)",
-            },
-            {
-                "<leader>xQ",
-                "<cmd>Trouble qflist toggle<cr>",
-                desc = "Quickfix List (Trouble)",
-            },
         },
-    }
+    },
+
+    -- Agda
+    {
+        "ashinkarov/nvim-agda",
+        lazy = false,
+        config = function()
+            vim.g.nvim_agda_settings = {
+                -- agda = "/usr/local/bin/agda",       -- Location of Agda binary
+                -- agda_args = { "--arg1", "--arg2" }, -- Default arguments to Agda binary
+                debug_p = true -- Turn debug prints on or off
+            }
+        end
+    },
+
+    -- COQ
+    {
+        'whonore/Coqtail',
+        init = function()
+            vim.g.loaded_coqtail = 1
+            vim.g["coqtail#supported"] = 0
+        end,
+    },
+    {
+        'tomtomjhj/vscoq.nvim',
+        filetypes = 'coq',
+        dependecies = {
+            'neovim/nvim-lspconfig',
+            'whonore/Coqtail',
+        },
+        opts = {
+            -- vscoq = { ... }
+            -- lsp = { ... }
+        },
+    },
+
+
+    -- MARKDOWN PREVIEW
+    {
+        "iamcco/markdown-preview.nvim",
+        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+        ft = { "markdown" },
+        build = function() vim.fn["mkdp#util#install"]() end,
+    },
+
+    -- COPILOT
+    {
+        "github/copilot.vim",
+        config = function()
+            -- vim.g.copilot_enabled = 0 -- Disable copilot
+        end
+    },
 })
 
 -- -- Autopairs
