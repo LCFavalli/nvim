@@ -2,7 +2,7 @@ require'vscoq'.setup {
   vscoq = {
     proof = {
       -- In manual mode, don't move the cursor when stepping forward/backward a command
-      cursor = { sticky = false },
+      cursor = { sticky = true },
     },
   },
   lsp = {

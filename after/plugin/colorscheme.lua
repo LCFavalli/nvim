@@ -1,2 +1,2 @@
-vim.cmd('set background=light')
-vim.cmd("colorscheme kanagawa")
+-- vim.cmd('set background=light')
+vim.cmd("colorscheme dayfox")
