@@ -440,8 +440,7 @@ vim.api.nvim_create_autocmd('FileType', {
         local cmd = {
             "java",
             "-jar",
-            -- "/home/fcb/dev/tesi-bruzzone/trunk/master-thesis/neverlang-lsp/examples/simplelanguage/build/libs/simplelang.SimpleLang-client.jar"
-            "/home/fcb/dev/tesi-bruzzone/trunk/papers/jss24/replication-package/examples/simplelanguage/build/libs/simplelang.SimpleLang-client.jar"
+            "/home/fcb/dev/SVN/neverlang-commons/trunk/neverlang-commons/simplelang-lsp/build/libs/simplelang-client.jar"
         }
         local client = vim.lsp.start({
             name = 'simplelanguage',
