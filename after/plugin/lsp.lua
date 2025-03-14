@@ -372,6 +372,7 @@ require("lspconfig").texlab.setup {}
 require("lspconfig").html.setup {}
 require("lspconfig").cssls.setup {}
 
+-- ======== CUSTOM LSP CONFIG ========
 vim.api.nvim_create_autocmd('FileType', {
     pattern = 'testlang',
     callback = function()
@@ -384,6 +385,7 @@ vim.api.nvim_create_autocmd('FileType', {
     end,
 })
 
+-- ------------ NEVERALNG ------------
 -- Socket connection
 -- vim.api.nvim_create_autocmd('FileType', {
 --         pattern = 'neverlang',
@@ -416,6 +418,7 @@ vim.api.nvim_create_autocmd('FileType', {
     end,
 })
 
+-- ------------ SIMPLELANG ------------
 -- Socket connection (for debug purposes)
 -- vim.api.nvim_create_autocmd('FileType', {
 --     pattern = 'simplelanguage',
@@ -451,15 +454,21 @@ vim.api.nvim_create_autocmd('FileType', {
     end,
 })
 
+-- ------------ TMPLANG ------------
 vim.api.nvim_create_autocmd('FileType', {
-    pattern = 'statemachine',
+    pattern = 'litlang',
     callback = function()
-        vim.lsp.start({
-            name = 'statemachine',
-            cmd = vim.lsp.rpc.connect('127.0.0.1', 5123),
+        local cmd = {
+            "java",
+            "-jar",
+            "/home/fcb/dev/SVN/neverlang-commons/trunk/neverlang-commons/litlang/build/libs/litlang-client.jar"
+        }
+        local client = vim.lsp.start({
+            name = 'litlang',
+            cmd = cmd,
             root_dir = vim.fs.dirname(vim.fs.find({ 'start.lsp', 'build.gradle' }, { upward = true })[1]),
-            -- filetypes = { 'tst', 'nl },
         })
+        vim.lsp.buf_attach_client(0, client)
     end,
 })
 ------------------------------------------------------
