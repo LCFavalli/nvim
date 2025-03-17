@@ -12,8 +12,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    { "EdenEast/nightfox.nvim" },
-
     { 'nvim-telescope/telescope.nvim' },
     { 'nvim-lua/plenary.nvim' },
     { "nvim-telescope/telescope-symbols.nvim" }, -- UNICODE CHARACTERS

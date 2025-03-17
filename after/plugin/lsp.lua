@@ -160,10 +160,7 @@ cmp.setup({
             -- fixed_width = 20
             -- Set 'fixed_width' to false if not provided.
             fixed_width = fixed_width or false
-            -- Get the completion entry text shown in the completion window.
-            local content = item.abbr
-
-            -- Set the fixed completion window width.
+            -- Get the completion entry text shown in the completion window. local content = item.abbr Set the fixed completion window width.
             if fixed_width then
                 vim.o.pumwidth = fixed_width
             end
@@ -454,7 +451,7 @@ vim.api.nvim_create_autocmd('FileType', {
     end,
 })
 
--- ------------ TMPLANG ------------
+-- ------------ LITLANG ------------
 vim.api.nvim_create_autocmd('FileType', {
     pattern = 'litlang',
     callback = function()
@@ -469,6 +466,40 @@ vim.api.nvim_create_autocmd('FileType', {
             root_dir = vim.fs.dirname(vim.fs.find({ 'start.lsp', 'build.gradle' }, { upward = true })[1]),
         })
         vim.lsp.buf_attach_client(0, client)
+    end,
+})
+
+-- ------------ EXPRLANG ------------
+-- vim.api.nvim_create_autocmd('FileType', {
+--     pattern = 'exprlang',
+--     callback = function()
+--         local cmd = {
+--             "java",
+--             "-jar",
+--             "/home/fcb/dev/SVN/neverlang-commons/trunk/neverlang-commons/exprlang/build/libs/exprlang-client.jar"
+--         }
+--         local client = vim.lsp.start({
+--             name = 'exprlang',
+--             cmd = cmd,
+--             root_dir = vim.fs.dirname(vim.fs.find({ 'start.lsp', 'build.gradle' }, { upward = true })[1]),
+--         })
+--         vim.lsp.buf_attach_client(0, client)
+--     end,
+-- })
+
+vim.api.nvim_create_autocmd('FileType', {
+    pattern = 'exprlang',
+    callback = function()
+        -- os.execute('./runLSP.sh > /dev/null 2>&1 &') -- UNUSED
+        -- os.execute('./gradlew runLSP -q --console=plain > /dev/null 2>&1 &')
+        -- os.execute('sleep 1')
+
+        vim.lsp.start({
+            name = 'exprlang',
+            cmd = vim.lsp.rpc.connect('127.0.0.1', 5123),
+            root_dir = vim.fs.dirname(vim.fs.find({ 'start.lsp', 'build.gradle' }, { upward = true })[1]),
+            -- filetypes = { 'tst', 'nl },
+        })
     end,
 })
 ------------------------------------------------------
