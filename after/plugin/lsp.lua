@@ -173,6 +173,8 @@ cmp.setup({
             -- We subtract 10 from 'fixed_width' to leave room for 'kind' fields.
             local max_content_width = fixed_width and fixed_width - 10 or math.floor(win_width * 0.2)
 
+            local content = item.abbr -- FIXME
+
             -- Truncate the completion entry text if it's longer than the
             -- max content width. We subtract 3 from the max content width
             -- to account for the "..." that will be appended to it.
