@@ -12,7 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    { 'scottmckendry/cyberdream.nvim' },
+    { 'ellisonleao/gruvbox.nvim' },
 
     { 'nvim-telescope/telescope.nvim' },
     { 'nvim-lua/plenary.nvim' },
