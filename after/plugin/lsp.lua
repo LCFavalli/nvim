@@ -361,7 +361,7 @@ end
 
 require("lspconfig").jdtls.setup {}
 require("lspconfig").gopls.setup {}
-require("lspconfig").erlangls.setup {}
+-- require("lspconfig").erlangls.setup {}
 require("lspconfig").tinymist.setup {
     settings = {
         exportPdf = "onType"
