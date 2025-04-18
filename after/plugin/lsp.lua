@@ -1,7 +1,8 @@
 ------------------------------------------------------
 -------------------- LSP CONFIG ----------------------
 ------------------------------------------------------
-local lspconfig = require('lspconfig') local lsp_defaults = lspconfig.util.default_config
+local lspconfig = require('lspconfig')
+local lsp_defaults = lspconfig.util.default_config
 if vim.lsp.inlay_hint then
     vim.lsp.inlay_hint.enable(false, { 0 })
     -- Toggle inlay hints
@@ -27,7 +28,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     callback = function()
         -- Enable completion triggered by <c-x><c-o>
         local bufmap = function(mode, lhs, rhs)
-            local opts = {}   -- buffer = true
+            local opts = {} -- buffer = true
             vim.keymap.set(mode, lhs, rhs, opts)
         end
 
@@ -206,7 +207,7 @@ cmp.setup({
             -- if luasnip.expand_or_jumpable() then
             --     luasnip.expand_or_jump()
             -- else
-                fallback()
+            fallback()
             -- end
         end, { "i", "s" }),
 
@@ -214,7 +215,7 @@ cmp.setup({
             -- if luasnip.jumpable(-1) then
             --     luasnip.jump(-1)
             -- else
-                fallback()
+            fallback()
             -- end
         end, { "i", "s" }),
     }

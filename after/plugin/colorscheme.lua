@@ -6,5 +6,4 @@
 -- vim.cmd('set background=light')
 -- vim.api.nvim_set_hl(0, "SignColumn", { bg = "None" })
 
--- vesper
-vim.cmd("colorscheme vesper")
+vim.cmd("colorscheme tokyonight-moon")

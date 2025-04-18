@@ -13,7 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     { 'ellisonleao/gruvbox.nvim' },
-    { 'datsfilipe/vesper.nvim' },
+    { 'folke/tokyonight.nvim' },
 
     { 'nvim-telescope/telescope.nvim' },
     { 'nvim-lua/plenary.nvim' },
@@ -41,7 +41,9 @@ require("lazy").setup({
     -- { "rafamadriz/friendly-snippets" }, -- a bunch of snippets to use
 
     -- SYNTAX HIGHLIGHTING
-    { 'nvim-treesitter/nvim-treesitter',      build = ":TSUpdate" }, -- { "nvim-treesitter/nvim-treesitter-context"},
+    { 'nvim-treesitter/nvim-treesitter-textobjects' },
+    { 'nvim-treesitter/nvim-treesitter-context' },
+    { 'nvim-treesitter/nvim-treesitter',            build = ":TSUpdate" },
 
     -- FILE EXPLORER
     { "nvim-tree/nvim-tree.lua", },
@@ -156,6 +158,29 @@ require("lazy").setup({
             -- vim.g.copilot_enabled = 0 -- Disable copilot
         end
     },
+
+
+    --- UI
+    {
+        "folke/noice.nvim",
+        event = "VeryLazy",
+        opts = {
+            -- add any options here
+        },
+        dependencies = {
+            -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+            "MunifTanjim/nui.nvim",
+            -- OPTIONAL:
+            --   `nvim-notify` is only needed, if you want to use the notification view.
+            --   If not available, we use `mini` as the fallback
+            "rcarriga/nvim-notify",
+        }
+    },
+    {
+        'nvim-lualine/lualine.nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons' }
+    }
+
 })
 
 -- -- Autopairs
