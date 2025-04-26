@@ -23,13 +23,13 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
 
 --
-vim.keymap.set("n", "J", "mzJ`z")
+-- vim.keymap.set("n", "J", "mzJ`z") -- Useless
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 vim.keymap.set("x", "<leader>p", [["_dP]])
-vim.keymap.set({ "v" }, "p", [["_dP]], { noremap = true, silent = true })
+vim.keymap.set("v", "p", [["_dP]], { noremap = true, silent = true })
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- Paste at the end of the line
@@ -147,7 +147,7 @@ function HighlightWordUnderCursor()
 
     if not char:match("[%p%s]") then
         -- vim.cmd("hi MatchWord guibg=#222222") -- #3b404a -- vim.cmd("hi MatchWord gui=undercurl guibg=#3b404a")
-        -- Underline
+        -- vim.cmd("hi MatchWord gui=reverse")
         vim.cmd("hi MatchWord gui=underline")
         vim.cmd("match MatchWord /\\V\\<" .. vim.fn.expand("<cword>") .. "\\>/")
     else

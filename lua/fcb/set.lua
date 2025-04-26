@@ -50,3 +50,9 @@ vim.opt.foldlevel = 99
 vim.opt.foldnestmax = 10
 -- Update the screen every 50ms (used also to highlight the occurrency of the word under the cursor)
 vim.opt.updatetime = 50
+
+-- hi CursorLineNr guifg=#af00af
+-- set cursorlineopt=number
+-- set cursorline
+
+vim.opt.cursorlineopt="number"
