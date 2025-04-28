@@ -6,4 +6,5 @@
 -- vim.cmd('set background=light')
 -- vim.api.nvim_set_hl(0, "SignColumn", { bg = "None" })
 
-vim.cmd("colorscheme tokyonight-moon")
+vim.g.nord_disable_background = true
+require('nord').set()
