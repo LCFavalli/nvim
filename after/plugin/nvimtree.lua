@@ -6,11 +6,11 @@ vim.g.loaded_netrwPlugin = 1
 -- <S-i> will toggle visibility of hidden files
 -- <S-h> will toggle visibility of dotfiles
 require("nvim-tree").setup({
-    actions = {
-        open_file = {
-            quit_on_open = true,
-        },
-    },
+    -- actions = {
+    --     open_file = {
+    --         quit_on_open = true,
+    --     },
+    -- },
     sort = {
         sorter = "case_sensitive",
     },
