@@ -2,7 +2,7 @@ if exists("b:current_syntax")
     finish
 endif
 
-syntax keyword neverlangKeyword module slice slices role roles reference concrete syntax from with language endemic imports provides requires tags 
+syntax keyword neverlangKeyword module slice slices role roles reference concrete syntax from with language endemic imports provides requires tags
 syntax keyword neverlangRoleKeyword eval type when
 
 syntax match neverlangComment "\v//.*$"
