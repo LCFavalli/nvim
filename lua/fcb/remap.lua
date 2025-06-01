@@ -9,6 +9,7 @@ vim.api.nvim_create_autocmd("TermOpen", {
     command = "setlocal nonumber norelativenumber"
 })
 
+-- General key mappings
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 vim.api.nvim_set_keymap('n', '<leader>ce', ':Copilot enable<CR>', { noremap = true })
@@ -22,11 +23,7 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
 -- Move line down in visual mode
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
 
---
--- vim.keymap.set("n", "J", "mzJ`z") -- Useless
-
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
+-- vim.keymap.set("n", "J", "mzJ`z") -- Only for VIM
 
 vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set("v", "p", [["_dP]], { noremap = true, silent = true })
@@ -48,6 +45,7 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 -- vim.keymap.set("n", "<leader>ppv", ":Lex 20<CR>")
 vim.api.nvim_set_keymap('n', '<ESC>u', ':nohlsearch<CR>', { noremap = true, silent = true })
 
+vim.keymap.set({ 'n', 'v' }, "\\", "%", { noremap = true, silent = true })
 
 -- resize with shift + arrow
 vim.api.nvim_set_keymap('n', '<S-Up>', ':resize +2<CR>', { noremap = true, silent = true })
