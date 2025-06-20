@@ -22,11 +22,11 @@ autocmd('TextYankPost', {
   end,
 })
 
-autocmd({ "BufWritePre" }, {
-  group = fcb,
-  pattern = "*",
-  command = [[%s/\s\+$//e]],
-})
+-- autocmd({ "BufWritePre" }, {
+--   group = fcb,
+--   pattern = "*",
+--   command = [[%s/\s\+$//e]],
+-- })
 
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
