@@ -59,6 +59,11 @@ vim.api.nvim_set_keymap('v', '>', '>gv', { noremap = true, silent = true })
 -- Go to definition in splitted right window
 vim.keymap.set("n", "gw", "<cmd>vsp | lua vim.lsp.buf.definition()<CR>") -- vim.api.nvim_set_keymap('n', '<leader>gd', '<C-w>v<C-]><C-w>h', { noremap = true, silent = true })
 
+
+
+
+
+
 function ToggleLineNumbers()
     if vim.wo.number then
         vim.opt.nu = false
