@@ -59,6 +59,5 @@
 --     }
 -- })
 
-vim.opt.cursorline = true
 vim.cmd('set background=light')
 vim.cmd("colorscheme rose-pine")

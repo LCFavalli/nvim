@@ -32,8 +32,6 @@ vim.opt.hlsearch = true
 vim.opt.incsearch = true
 -- Show the signcolumn
 vim.opt.signcolumn = "yes"
--- Not highlight current line
-vim.opt.cursorline = false
 -- Disable the orizontal scroll
 vim.opt.sidescrolloff = 0 -- vim.opt.mousescroll = "ver:1,hor:0"
 -- Set splitbelow (new split window is below the current)
@@ -50,9 +48,7 @@ vim.opt.foldlevel = 99
 vim.opt.foldnestmax = 10
 -- Update the screen every 50ms (used also to highlight the occurrency of the word under the cursor)
 vim.opt.updatetime = 50
-
--- hi CursorLineNr guifg=#af00af
--- set cursorlineopt=number
--- set cursorline
-
-vim.opt.cursorlineopt="number"
+-- Highlight current line
+vim.opt.cursorline = true
+-- How and where to highlight the current line
+vim.opt.cursorlineopt="line,number" -- valid values: "line", "number", "both"
