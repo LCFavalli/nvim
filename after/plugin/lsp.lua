@@ -368,7 +368,29 @@ require("lspconfig").tinymist.setup {
         exportPdf = "onType"
     }
 }
-require("lspconfig").texlab.setup {}
+require("lspconfig").texlab.setup {
+    bibtexFormatter = "texlab",
+    build = {
+      -- args = { "-pdf", "-interaction=nonstopmode", "-synctex=1", "%f" },
+      args = { "%f" },
+      executable = "dextex",
+      forwardSearchAfter = false,
+      onSave = false
+    },
+    chktex = {
+      onEdit = false,
+      onOpenAndSave = false
+    },
+    diagnosticsDelay = 300,
+    formatterLineLength = 80,
+    forwardSearch = {
+      args = {}
+    },
+    latexFormatter = "latexindent",
+    latexindent = {
+      modifyLineBreaks = false
+    }
+}
 require("lspconfig").html.setup {}
 require("lspconfig").cssls.setup {}
 
